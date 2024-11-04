@@ -1,0 +1,53 @@
+.opportunitiesSection {
+    padding: 80px 40px;
+  }
+  
+  .sectionTitle {
+    color: #02a1f9;
+    letter-spacing: 2.91px;
+    font: 500 19px Poppins, sans-serif;
+    margin-bottom: 40px;
+  }
+  
+  .subtitle {
+    color: #2b2b2b;
+    font: 600 40px/1 Poppins, sans-serif;
+    margin-bottom: 91px;
+  }
+  
+  .opportunitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .opportunityCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .icon {
+    width: 140px;
+    height: auto;
+    margin-bottom: 24px;
+  }
+  
+  .opportunityTitle {
+    font: 600 28px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .opportunitiesSection {
+      padding: 40px 20px;
+    }
+  
+    .opportunitiesGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .subtitle {
+      margin-bottom: 40px;
+    }
+  }

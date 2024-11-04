@@ -1,0 +1,97 @@
+.contactSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .contactInfo, .messageForm {
+    flex: 1;
+  }
+  
+  .campusImage {
+    width: 100%;
+    aspect-ratio: 2.11;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .infoContent {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #2b2b2b;
+  }
+  
+  .address, .phone, .email {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 25px;
+    margin-right: 10px;
+  }
+  
+  .formTitle {
+    font-size: 23px;
+    font-weight: 500;
+    color: #0b090a;
+    margin-bottom: 26px;
+  }
+  
+  .form {
+    display: flex;
+    background-color: #fff;
+    border-radius: 36px;
+    box-shadow: 5px 12px 24px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .input {
+    flex-grow: 1;
+    border: none;
+    padding: 20px 24px;
+    font-size: 19px;
+    color: #2b2b2b;
+  }
+  
+  .input::placeholder {
+    color: #aaa;
+  }
+  
+  .submitButton {
+    background-color: #02a1f9;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .sendIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .socialMedia {
+    margin-top: 38px;
+  }
+  
+  .socialTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .socialIcons {
+    width: 114px;
+  }
+  
+  @media (max-width: 991px) {
+    .contactSection {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+  
+    .messageForm {
+      margin-top: 40px;
+    }
+  }
