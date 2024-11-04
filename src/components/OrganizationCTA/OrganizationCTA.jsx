@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './OrganizationCTA.module.css';
+import styles from './organizationCTA.module.css';
 
 const OrganizationCTA = () => {
   return (

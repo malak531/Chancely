@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TrustedCompanies.module.css';
+import styles from './trustedCompanies.module.css';
 
 const companies = [
   { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/dd282d007a454d49138fa2ee1dcb26f93fdb0381832d59aaf695565671cf6789?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1", alt: "Company 1" },
