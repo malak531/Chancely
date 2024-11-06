@@ -1,0 +1,49 @@
+.frame {
+    align-items: center;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 10px;
+    padding: 19px 30px;
+    position: relative;
+  }
+  
+  .frame .rent {
+    font-family: var(--h5-buttons-font-family);
+    font-size: var(--h5-buttons-font-size);
+    font-style: var(--h5-buttons-font-style);
+    font-weight: var(--h5-buttons-font-weight);
+    letter-spacing: var(--h5-buttons-letter-spacing);
+    line-height: var(--h5-buttons-line-height);
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .frame.disabled {
+    background-color: var(--text-colour-5);
+  }
+  
+  .frame.outline-button {
+    background-color: var(--white);
+    border: 1px solid;
+    border-color: var(--primary-colour);
+  }
+  
+  .frame.solid-button {
+    background-color: var(--primary-colour);
+  }
+  
+  .frame.disabled .rent {
+    color: var(--white);
+  }
+  
+  .frame.outline-button .rent {
+    color: var(--primary-colour);
+  }
+  
+  .frame.solid-button .rent {
+    color: var(--white);
+  }
+  
