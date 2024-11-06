@@ -1,43 +1,89 @@
-.checkboxGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .checkboxItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .checkboxLabel {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-  }
-  
-  .checkboxInput {
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    border: 1px solid #616161;
-    border-radius: 6px;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .checkboxInput:checked {
-    background-color: #02a1f9;
-    border-color: #02a1f9;
-  }
-  
-  .checkboxText {
-    color: #616161;
-    font: 400 16px Jost, sans-serif;
-  }
-  
-  .optionCount {
-    color: #737373;
-    font: 600 14px/24px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
-  }
+.group {
+  justify-content: flex-end;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  margin-top: -38px;
+  min-height: 263px;
+  width: 269px;
+  max-width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 55px 8px 8px;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.radioWrapper {
+  border-radius: 8px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.controller {
+  align-self: stretch;
+  display: flex;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  margin: auto 0;
+}
+
+.thumb {
+  border-radius: 6px;
+  border: 1px solid #616161;
+  background: #fff;
+  align-self: stretch;
+  display: flex;
+  min-height: 22px;
+  width: 22px;
+  height: 22px;
+  margin: auto 0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.thumb.checked {
+  background-color: #0077FF;
+}
+
+.label {
+  color: #616161;
+  font-variant-numeric: lining-nums tabular-nums;
+  align-self: stretch;
+  flex: 1;
+  flex-basis: 0%;
+  margin: auto 0;
+  font: 400 16px Jost, sans-serif;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radioWrapper:hover .thumb {
+  border-color: #424242;
+}
+
+.radioWrapper:focus-within {
+  outline: 2px solid #0077FF;
+  outline-offset: 2px;
+}
