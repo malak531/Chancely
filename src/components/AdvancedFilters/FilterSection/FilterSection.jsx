@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './FilterSection.module.css';
+import styles from './filterSection.module.css';
 
 function FilterSection({ title, clearText, children }) {
   return (

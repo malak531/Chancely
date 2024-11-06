@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LocationFilter.module.css';
+import styles from './locationFilter.module.css';
 
 function LocationFilter() {
   const locations = [
