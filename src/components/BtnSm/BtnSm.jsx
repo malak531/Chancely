@@ -1,3 +1,4 @@
+//button
 import React from 'react';
 
 const BtnSm = ({ className, hclassName, text }) => {
@@ -5,3 +6,4 @@ const BtnSm = ({ className, hclassName, text }) => {
 };
 
 export default BtnSm;
+
