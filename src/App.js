@@ -11,7 +11,7 @@ import DatePicker from './components/FilterComponents/DatePicker/DatePicker';
 function App() {
   return (
     <div>
-      <DatePicker/>
+      <OpportunityHomePage/>
         
     </div>
         
