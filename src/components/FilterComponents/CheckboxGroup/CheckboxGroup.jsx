@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './CheckboxGroup.module.css';
 
-const CheckboxGroup = ({ options, showCount = false }) => {
+const CheckboxItem = ({ label, checked, onChange }) => (
+  <div className={styles.item}>
+    <label className={styles.radioWrapper}>
+      <input
+        type="checkbox"
+        className={styles.hiddenCheckbox}
+        checked={checked}
+        onChange={onChange}
+      />
+      <div className={styles.controller}>
+        <div className={`${styles.thumb} ${checked ? styles.checked : ''}`} />
+      </div>
+      <div className={styles.label}>{label}</div>
+    </label>
+  </div>
+);
+
+const CheckboxGroup = () => {
+  const [checkedItems, setCheckedItems] = useState({
+    Conferences: false,
+    Exhibitions: false,
+    Competitions: false,
+    'Short Courses': false,
+    'Summer Programs': false,
+  });
+
+  const handleChange = (item) => {
+    setCheckedItems(prevState => ({
+      ...prevState,
+      [item]: !prevState[item]
+    }));
+  };
+
   return (
-    <div className={styles.checkboxGroup}>
-      {options.map((option, index) => (
-        <div key={index} className={styles.checkboxItem}>
-          <label className={styles.checkboxLabel}>
-            <input type="checkbox" className={styles.checkboxInput} />
-            <span className={styles.checkboxText}>{typeof option === 'string' ? option : option.label}</span>
-          </label>
-          {showCount && typeof option !== 'string' && (
-            <span className={styles.optionCount}>{option.count}</span>
-          )}
-        </div>
+    <section className={styles.group}>
+      {Object.entries(checkedItems).map(([item, checked]) => (
+        <CheckboxItem
+          key={item}
+          label={item}
+          checked={checked}
+          onChange={() => handleChange(item)}
+        />
       ))}
-    </div>
+    </section>
   );
 };
 

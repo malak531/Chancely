@@ -7,12 +7,13 @@ import OpportunityHomePage from './components/OpportunityHomePage/OpportunityHom
 import FilterSection from './components/AdvancedFilters/FilterSection/FilterSection';
 import LocationFilter from './components/AdvancedFilters/LocationFilter/LocationFilter';
 import DatePicker from './components/FilterComponents/DatePicker/DatePicker';
+import CheckboxGroup from './components/FilterComponents/CheckboxGroup/CheckboxGroup'
 
 function App() {
   return (
     <div>
-      <DatePicker/>
-        
+      <CheckboxGroup/>
+      
     </div>
         
   );
