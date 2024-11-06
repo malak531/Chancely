@@ -1,0 +1,74 @@
+.hero {
+    border-radius: 0 0 800px 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    justify-content: center;
+    padding: 212px 80px;
+  }
+  
+  .content {
+    display: flex;
+    width: 777px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tagline {
+    color: #02a1f9;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 2.91px;
+  }
+  
+  .title {
+    color: #0b090a;
+    text-align: center;
+    font-size: 57px;
+    line-height: 65px;
+    background: linear-gradient(90deg, #28f19d 0%, #02a1f9 67.5%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 45px;
+  }
+  
+  .description {
+    color: #808080;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+    margin-top: 40px;
+  }
+  
+  .cta {
+    border-radius: 30px;
+    background-image: url('https://cdn.builder.io/api/v1/image/assets/TEMP/9bf6a8a37999e8e3b2ed56393e76522b61c3cbf8798bc64e6fa75ed8eb58f372?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 28px 70px;
+    border: none;
+    cursor: pointer;
+    margin-top: 102px;
+  }
+  
+  @media (max-width: 991px) {
+    .hero {
+      padding: 100px 20px;
+    }
+  
+    .title {
+      font-size: 40px;
+      line-height: 51px;
+    }
+  
+    .cta {
+      margin-top: 40px;
+      padding: 20px 40px;
+    }
+  }

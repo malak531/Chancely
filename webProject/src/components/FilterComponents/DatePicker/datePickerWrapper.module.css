@@ -1,0 +1,35 @@
+.datePickerWrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .datePicker {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    font: 400 14px/22px Helvetica Neue, -apple-system, Roboto, Helvetica, sans-serif;
+    color: #c4c4c4;
+  }
+  
+  .calendarIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+  }
+  
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }

@@ -1,0 +1,53 @@
+.chancely-new {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .chancely-new .div {
+    background-color: #ffffff;
+    height: 882px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .chancely-new .frame {
+    background: linear-gradient(rgba(56, 246, 164, 0.5), rgba(163, 230, 240, 0.5)),
+    url(https://c.animaapp.com/DvWBMqHZ/img/frame-1.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 1024px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 705px;
+  }
+  
+  .chancely-new .logofull {
+    height: 53px;
+    left: 42px;
+    position: absolute;
+    top: 38px;
+    width: 54px;
+    
+  }
+  
+  .chancely-new .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 19px;
+    left: 979px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 517px;
+    white-space: nowrap;
+    width: 141px;
+  }
+  

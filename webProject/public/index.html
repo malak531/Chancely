@@ -1,0 +1,82 @@
+<style>
+    .homepage-not-logged { display: flex; flex-direction: column; overflow: hidden; }
+    .window-frame { border-radius: 10px; background-color: rgba(255, 255, 255, 0.75); display: flex; width: 100%; flex-direction: column; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.12); }
+    @media (max-width: 991px) { .window-frame { max-width: 100%; } }
+    .address-bar { border-radius: 10px 10px 0 0; background-color: #f7f7f7; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15); display: flex; width: 100%; gap: 20px; overflow: hidden; flex-wrap: wrap; justify-content: space-between; padding: 9px 24px; }
+    @media (max-width: 991px) { .address-bar { max-width: 100%; padding: 0 20px; } }
+    .browser-controls { display: flex; gap: 25px; margin: auto 0; }
+    .browser-icon { aspect-ratio: 4.42; object-fit: contain; object-position: center; width: 53px; margin: auto 0; }
+    .tab-container { display: flex; gap: 3px; }
+    .tab-controls { display: flex; align-items: center; gap: 4px; font-family: Al Nile, sans-serif; color: #3d3d3d; font-weight: 400; white-space: nowrap; letter-spacing: -0.36px; justify-content: start; }
+    @media (max-width: 991px) { .tab-controls { white-space: initial; } }
+    .tab-icon { font-size: 17px; align-self: stretch; margin: auto 0; }
+    .tab-separator { background-color: #3d3d3d; align-self: stretch; display: flex; width: 1px; height: 19px; margin: auto 0; }
+    .tab-indicator { font-size: 8px; align-self: stretch; margin: auto 0; }
+    .safari-tabs { display: flex; height: 18px; align-items: center; gap: 7px; justify-content: space-between; margin: auto 0; }
+    .tab-image { aspect-ratio: 0.96; object-fit: contain; object-position: center; width: 27px; align-self: stretch; margin: auto 0; }
+    .tab-image-alt { aspect-ratio: 1; object-fit: contain; object-position: center; width: 28px; align-self: stretch; margin: auto 0; }
+    .address-container { display: flex; gap: 40px 100px; flex-wrap: wrap; }
+    @media (max-width: 991px) { .address-container { max-width: 100%; } }
+    .search-field { border-radius: 9px; background-color: rgba(255, 255, 255, 0.88); box-shadow: 0 0 14px rgba(0, 0, 0, 0.17); display: flex; gap: 40px 100px; color: #000; white-space: nowrap; padding: 10px 10px 10px 80px; font: 400 12px Actor, sans-serif; }
+    @media (max-width: 991px) { .search-field { max-width: 100%; padding-left: 20px; white-space: initial; } }
+    .safari-address { display: flex; align-items: center; gap: 3px; justify-content: center; }
+    @media (max-width: 991px) { .safari-address { white-space: initial; } }
+    .lock-icon { aspect-ratio: 0.7; object-fit: contain; object-position: center; width: 7px; align-self: stretch; margin: auto 0; }
+    .domain { align-self: stretch; margin: auto 0; }
+    .search-icon { aspect-ratio: 0.86; object-fit: contain; object-position: center; width: 12px; fill: #000; align-self: start; }
+    .tab-controls-container { display: flex; align-items: start; margin: auto 0; }
+    .safari-tabs-alt { z-index: 10; display: flex; margin-right: -72px; align-items: center; gap: 30px; justify-content: space-between; }
+    .tab-image-1 { aspect-ratio: 1; object-fit: contain; object-position: center; width: 26px; align-self: stretch; margin: auto 0; }
+    .tab-image-2 { aspect-ratio: 0.96; object-fit: contain; object-position: center; width: 25px; align-self: stretch; margin: auto 0; }
+    .tab-image-3 { aspect-ratio: 1; object-fit: contain; object-position: center; width: 26px; align-self: stretch; margin: auto 0; }
+    .browser-icons { display: flex; align-items: start; gap: 25px; color: #3d3d3d; white-space: nowrap; letter-spacing: -0.36px; justify-content: start; font: 400 17px Al Nile, sans-serif; }
+    @media (max-width: 991px) { .browser-icons { white-space: initial; } }
+    .main-content { aspect-ratio: 1.63; object-fit: contain; object-position: center; width: 100%; }
+    @media (max-width: 991px) { .main-content { max-width: 100%; } }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
+    
+    <section class="homepage-not-logged">
+      <div class="window-frame">
+        <header class="address-bar">
+          <div class="browser-controls">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/92497e7e45fa62fdae997e104120bf8764753c47f5e1346e8d3dd53317a988e9?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="" class="browser-icon" />
+            <div class="tab-container">
+              <div class="tab-controls">
+                <span class="tab-icon">􀏚</span>
+                <div class="tab-separator"></div>
+                <span class="tab-indicator">􀆈</span>
+              </div>
+              <nav class="safari-tabs">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/00b8143b83d39f2ed3a7962c89b7f877956b6aaa0da81006511c53ce560e4eb8?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="" class="tab-image" />
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/75c1c0e3e6db89097b2b17495e099908965bad294dd7d0aefa1371163701ed78?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="" class="tab-image-alt" />
+              </nav>
+            </div>
+          </div>
+          <div class="address-container">
+            <div class="search-field">
+              <div class="safari-address">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c77c18f77a80d3e5248d6f3876f460cd5b33261595ad7305f4a5624602da655?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="Secure connection" class="lock-icon" />
+                <span class="domain">chancely.com</span>
+              </div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9dd2ea566348eb7425968cc282a076181996dc7f093c6b4b036577e6137a4b51?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="Search" class="search-icon" />
+            </div>
+            <div class="tab-controls-container">
+              <nav class="safari-tabs-alt">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d411b4b4dcd98107af96be1cd9a576dc3ec5a4ec96fff45d247b85904a108063?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="" class="tab-image-1" />
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/12550e5204dfe6c686b173fbacbe6845d5fa2c18b50a035a520d910a75989d83?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="" class="tab-image-2" />
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8083af8eece74503185a0a2a4157c0149605dbb31051aa2ce2875cfa41d372fb?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="" class="tab-image-3" />
+              </nav>
+              <div class="browser-icons">
+                <span aria-hidden="true">􀁸</span>
+                <span aria-hidden="true">􀈂</span>
+                <span aria-hidden="true">􀅼</span>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1089549a984d618561231d2b377ddbeac72cf5c4abaf2922882efb3db82cc686?placeholderIfAbsent=true&apiKey=05d1d044449441c1b326e0ad9c21dcf1" alt="Main content of the webpage" class="main-content" />
+        </main>
+      </div>
+    </section>

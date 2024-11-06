@@ -1,0 +1,43 @@
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .checkboxItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .checkboxInput {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #616161;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .checkboxInput:checked {
+    background-color: #02a1f9;
+    border-color: #02a1f9;
+  }
+  
+  .checkboxText {
+    color: #616161;
+    font: 400 16px Jost, sans-serif;
+  }
+  
+  .optionCount {
+    color: #737373;
+    font: 600 14px/24px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }

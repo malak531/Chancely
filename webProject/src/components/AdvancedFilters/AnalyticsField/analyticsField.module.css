@@ -1,0 +1,22 @@
+.analyticsField {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .fieldButton {
+    border-radius: 100px;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: Inter, sans-serif;
+    border: none;
+    cursor: pointer;
+    background-color: #f2f4f7;
+    color: rgba(75, 75, 75, 1);
+  }
+  
+  .fieldButton:first-child {
+    background-color: #8692a6;
+    color: #fff;
+  }
