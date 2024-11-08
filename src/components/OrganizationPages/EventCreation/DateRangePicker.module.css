@@ -1,0 +1,37 @@
+.datePickerContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dateLabel {
+    color: #000;
+    font: 400 16px Poppins, sans-serif;
+  }
+  
+  .dateInputWrapper {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    padding: 12px;
+  }
+  
+  .dateInput {
+    flex: 1;
+    border: none;
+    font: 400 14px Helvetica Neue, -apple-system, Roboto, Helvetica, sans-serif;
+    color: #333;
+  }
+  
+  .dateSeparator {
+    margin: 0 10px;
+    color: #bdbdbd;
+  }
+  
+  .calendarIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }

@@ -8,6 +8,7 @@ import Services from './Services';
 import WorldMap from './WorldMap';
 import LabeledTitle from './LabeledTitle';
 import StorySection from './StorySection';
+import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
 const AboutUs = () => {
   return (
     <div className={styles.content}>
@@ -43,6 +44,7 @@ const AboutUs = () => {
         <StorySection />
       </div>
     </section>
+    <ContactInfoFooter/>
     </div>
 
     
