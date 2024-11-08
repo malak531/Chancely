@@ -1,0 +1,105 @@
+.trustedCompanies {
+    display: flex;
+    width: 100%;
+    max-width: 1287px;
+    gap: 34px;
+    color: #808080;
+    text-align: center;
+    flex-wrap: wrap;
+    font: 500 16px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .trustedCompanies {
+      max-width: 100%;
+    }
+  }
+  
+  .decorativeImage {
+    aspect-ratio: 200;
+    object-fit: contain;
+    width: fit-content;
+    stroke-width: 2px;
+    stroke: #ededed;
+    flex-grow: 0;
+    flex-basis: 0;
+    margin: auto 0;
+  }
+  
+  .textWrapper {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .textWrapper {
+      max-width: 100%;
+    }
+  }
+  
+  .trustedText {
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .trustedText {
+      max-width: 100%;
+    }
+  }
+  
+  .companyLogos {
+    align-self: center;
+    display: flex;
+    margin-top: 30px;
+    width: 977px;
+    max-width: 100%;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .logo1 {
+    aspect-ratio: 1.7;
+    object-fit: contain;
+    width: 141px;
+    align-self: stretch;
+    max-width: 100%;
+  }
+  
+  .logo2 {
+    aspect-ratio: 1.67;
+    object-fit: contain;
+    width: 102px;
+    align-self: stretch;
+    max-width: 100%;
+    margin: auto 0;
+  }
+  
+  .logo3 {
+    aspect-ratio: 0.95;
+    object-fit: contain;
+    width: 55px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .logo4 {
+    aspect-ratio: 1.15;
+    object-fit: contain;
+    width: 67px;
+    align-self: start;
+    margin-top: 4px;
+  }
+  
+  .logo5 {
+    aspect-ratio: 3.75;
+    object-fit: contain;
+    width: 221px;
+    align-self: stretch;
+    max-width: 100%;
+    margin: auto 0;
+  }

@@ -1,0 +1,75 @@
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1155px;
+  }
+  
+  .heroSection {
+    margin-top: 143px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .heroSection {
+      margin-top: 40px;
+    }
+  }
+  
+  .heroTitle {
+    font-size: 55px;
+    font-weight: 600;
+    line-height: 71px;
+  }
+  
+  @media (max-width: 991px) {
+    .heroTitle {
+      font-size: 40px;
+      line-height: 57px;
+    }
+  }
+  
+  .highlightedText {
+    color: #0387d0;
+  }
+  
+  .divider {
+    background-color: #fff;
+    height: 5px;
+    width: 570px;
+    max-width: 100%;
+    margin: 6px auto 0;
+  }
+  
+  .missionStatement {
+    position: relative;
+    border-radius: 32px;
+    margin-top: -27px;
+    width: 1027px;
+    max-width: 100%;
+    padding: 38px 62px 90px;
+    font-size: 29px;
+    color: #000;
+    line-height: 38px;
+  }
+  
+  @media (max-width: 991px) {
+    .missionStatement {
+      padding: 20px;
+    }
+  }
+  
+  .backgroundImage {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .missionText {
+    position: relative;
+    z-index: 1;
+  }

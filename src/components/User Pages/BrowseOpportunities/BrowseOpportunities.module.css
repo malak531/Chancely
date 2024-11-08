@@ -1,0 +1,86 @@
+*{
+  font-family: Poppins;
+}
+.browseOpportunities {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    padding: 46px 26px;
+    flex-grow: 1;
+  }
+  
+  .pageTitle {
+    color: #8692a6;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 2.91px;
+    margin-bottom: 78px;
+  }
+  
+  .pageDescription {
+    color: #2b2b2b;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 47px;
+    margin-bottom: 78px;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .opportunitiesSection {
+    flex-grow: 1;
+  }
+  
+  .searchBar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 41px;
+  }
+  
+  .searchInput {
+    flex-grow: 1;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    padding: 11px 25px;
+    font-size: 14px;
+  }
+  
+  .filterButton {
+    border-radius: 30px;
+    width: 57px;
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+  }
+  
+  .filterIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .opportunitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column;
+    }
+  
+    .opportunitiesGrid {
+      grid-template-columns: 1fr;
+    }
+  }
