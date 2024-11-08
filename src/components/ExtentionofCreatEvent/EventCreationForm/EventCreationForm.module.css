@@ -1,0 +1,79 @@
+.eventCreationContainer {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 102px 79px;
+  }
+  
+  .formWrapper {
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    padding: 54px 46px;
+  }
+  
+  .formHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 84px;
+  }
+  
+  .formTitle {
+    font: 600 44px Poppins, sans-serif;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .sectionTitle {
+    color: #000;
+    font: 500 30px Poppins, sans-serif;
+    margin-bottom: 67px;
+  }
+  
+  .eventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .submitButton {
+    border-radius: 30px;
+    background-color: #02a1f9;
+    box-shadow: 4px 10px 30px rgba(0, 0, 0, 0.06);
+    color: #fff;
+    font: 600 24px Poppins, sans-serif;
+    padding: 19px 70px;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #0288d1;
+  }
+  
+  @media (max-width: 991px) {
+    .eventCreationContainer {
+      padding: 100px 20px 0;
+    }
+  
+    .formWrapper {
+      padding: 54px 20px;
+    }
+  
+    .formTitle {
+      font-size: 36px;
+    }
+  
+    .sectionTitle {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  
+    .submitButton {
+      padding: 15px 50px;
+      font-size: 20px;
+    }
+  }

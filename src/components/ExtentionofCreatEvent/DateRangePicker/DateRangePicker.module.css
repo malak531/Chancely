@@ -1,0 +1,45 @@
+.dateRangeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .dateLabel {
+    color: #000;
+    font: 400 16px Poppins, sans-serif;
+  }
+  
+  .dateInputWrapper {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    padding: 12px;
+  }
+  
+  .dateInput {
+    flex: 1;
+    border: none;
+    font: 400 14px/22px Helvetica Neue, -apple-system, Roboto, Helvetica, sans-serif;
+    color: #c4c4c4;
+  }
+  
+  .dateSeparator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    padding: 1px 8px;
+  }
+  
+  .separatorIcon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .calendarIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
