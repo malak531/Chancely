@@ -1,64 +1,46 @@
-import React, { useState } from 'react';
-import './ContactInfoFooter.css';
+import React from 'react';
+import styles from './ContactInfoFooter.module.css';
 
 const ContactInfoFooter = () => {
-    const [message, setMessage] = useState('');
-
-    const contactDetails = [
-        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/ff4506e50563f360ab12cfb90118c8c9dd943c68000399fc780b48965608b1b1?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a", text: "+966585673359", alt: "Phone icon" },
-        { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/43918da014f64be1f93870132a73479cf1ed1abe73119cac08d7f2578a47c121?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a", text: "support@chancely.com", alt: "Email icon" }
-    ];
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Message submitted:', message);
-        setMessage('');
-    };
-
-    return (
-        <main className='contactSection'>
-            <div className="contentWrapper">
-                <section className='contactInfoSection'>
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0217b733d431d736ebc051338f1003195d7b2544aacb64b7ad1ceb726f99273b?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="KFUPM campus" className='campusImage' />
-                    <div className='infoContainer'>
-                        <address className='address'>
-                            KFUPM, Dhahran <br /> Saudi Arabia
-                        </address>
-                        {contactDetails.map((detail, index) => (
-                            <div key={index} className='contactDetail'>
-                                <img src={detail.icon} alt={detail.alt} className='contactIcon' />
-                                <span className='contactText'>{detail.text}</span>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-                <section className='messageFormSection'>
-                    <h2 className='formTitle'>
-                        Have anything to say? <br /> Leave us a message
-                    </h2>
-                    <form className='messageForm' onSubmit={handleSubmit}>
-                        <label htmlFor="messageInput" className='visuallyHidden'></label>
-                        <input
-                            type="text"
-                            id="messageInput"
-                            className='messageInput'
-                            placeholder="Write your thoughts..."
-                            aria-label="Write your thoughts"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                        />
-                        <button type="submit" className='submitButton' aria-label="Send message">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cbe486f1-3ac6-4122-9c56-a0be7b5d045c?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="" className='sendIcon' />
-                        </button>
-                    </form>
-                    <div className='socialFollow'>
-                        <p className='followText'>Follow Us on</p>
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/feb5d36b01659ffd6b6137d2131361aa1e201f44736d1fc46fb5b9decf24639f?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="Social media icons" className='socialIcons' />
-                    </div>
-                </section>
-            </div>
-        </main>
-    );
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.contactInfo}>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0217b733d431d736ebc051338f1003195d7b2544aacb64b7ad1ceb726f99273b?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="Company logo" className={styles.footerLogo} />
+        <address className={styles.address}>
+          KFUPM, Dhahran<br />
+          Saudi Arabia
+        </address>
+        <p className={styles.phone}>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/21cd1870657142b9677655b9184759b245de587a5fd8983fc7b708da4894ab35?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="" className={styles.contactIcon} />
+          +966585673359
+        </p>
+        <p className={styles.email}>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/27d78d49f3e9fd8f7e5573bdce2f2945401e6bdee2ba7c7c2c99b29e04156fce?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="" className={styles.contactIcon} />
+          support@chancely.com
+        </p>
+      </div>
+      <div className={styles.messageForm}>
+        <h2 className={styles.messageTitle}>Have anything to say?<br />Leave us a message</h2>
+        <form className={styles.form}>
+          <label htmlFor="messageInput" className={styles.visuallyHidden}>Write your message</label>
+          <input type="text" id="messageInput" className={styles.messageInput} placeholder="write your thoughts" />
+          <button type="submit" className={styles.submitButton} aria-label="Send message">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66ce6467-4da7-4a0e-bcfa-ea51433a4ab9?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="" className={styles.submitIcon} />
+          </button>
+        </form>
+        <p className={styles.socialMediaText}>Follow Us on</p>
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/73ecc3c99643e7490362f29902421d40f835441040c6dddb32e95844f1e6ae0f?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="Social media icons" className={styles.socialMediaIcons} />
+      </div>
+      <div className={styles.footerBottom}>
+        <p className={styles.copyright}>© Chancely – All rights reserved</p>
+        <nav className={styles.footerNav}>
+          <a href="/terms" className={styles.footerLink}>Terms and Conditions</a>
+          <a href="/privacy" className={styles.footerLink}>Privacy Policy</a>
+          <a href="/disclaimer" className={styles.footerLink}>Disclaimer</a>
+        </nav>
+      </div>
+    </footer>
+  );
 };
 
 export default ContactInfoFooter;

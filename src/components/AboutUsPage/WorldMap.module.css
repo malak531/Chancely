@@ -1,0 +1,36 @@
+.worldMapSection {
+    display: flex;
+    padding-bottom: 91px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .mapContainer {
+    display: flex;
+    width: 1219px;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 30px;
+  }
+  
+  .mapImage {
+    aspect-ratio: 2.1;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    min-width: 240px;
+    height: auto;
+  }
+  
+  @media (max-width: 991px) {
+    .worldMapSection,
+    .mapContainer {
+      max-width: 100%;
+    }
+  
+    .mapContainer {
+      padding: 0 20px;
+    }
+  }

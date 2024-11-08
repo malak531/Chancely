@@ -1,0 +1,80 @@
+.servicesSection {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 89px;
+    padding-bottom: 89px;
+    padding-left: 100px;
+    margin-top: 34px;
+    align-items: center;
+    background: linear-gradient(rgba(86, 199, 216, 0.5),rgba(56, 246, 164, 0.5));
+  }
+  
+  .servicesContent {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .servicesHeader {
+    width: 31%;
+  }
+  
+  .labelWrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .iconLabel {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .label {
+    color: #000;
+    font: 400 18px Poppins, sans-serif;
+  }
+  
+  .servicesTitle {
+    color: #000;
+    font: 600 36px Poppins, sans-serif;
+    margin-top: 24px;
+  }
+  
+  .serviceCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    width: 69%;
+  }
+  
+  @media (max-width: 991px) {
+    .servicesSection {
+      padding: 40px 20px;
+    }
+  
+    .servicesContent {
+      flex-direction: column;
+    }
+  
+    .servicesHeader,
+    .serviceCards {
+      width: 100%;
+    }
+  
+    .servicesHeader {
+      margin-bottom: 40px;
+    }
+  }

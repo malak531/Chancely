@@ -1,0 +1,121 @@
+.filterSection {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+  }
+  
+  .filterTitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .filterGroup {
+    margin-bottom: 30px;
+  }
+  
+  .filterGroupTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .clearButton {
+    background: none;
+    border: none;
+    color: #737373;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .checkboxGroup,
+  .radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .checkboxLabel,
+  .radioLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  
+  .checkbox,
+  .radio {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #616161;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .checkbox:checked,
+  .radio:checked {
+    background-color: #02a1f9;
+    border-color: #02a1f9;
+  }
+  
+  .radio {
+    border-radius: 50%;
+  }
+  
+  .checkboxText,
+  .radioText {
+    font-size: 16px;
+    color: #616161;
+  }
+  
+  .dateInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .viewAllButton {
+    background: none;
+    border: none;
+    color: #737373;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .advancedFiltersButton,
+  .applyButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .advancedFiltersButton {
+    background-color: #f1f1f1;
+    color: #02a1f9;
+  }
+  
+  .applyButton {
+    background-color: #02a1f9;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .filterSection {
+      width: 100%;
+    }
+  }

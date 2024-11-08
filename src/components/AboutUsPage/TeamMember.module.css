@@ -1,0 +1,32 @@
+.teamMember {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .memberImage {
+    aspect-ratio: 0.76;
+    object-fit: contain;
+    width: 195px;
+    border-radius: 120px 40px 40px 40px;
+  }
+  
+  @media (max-width: 991px) {
+    .memberImage {
+      margin: 0 5px 0 4px;
+    }
+  }
+  
+  .memberName {
+    color: #0b090a;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 27px;
+  }
+  
+  .memberRole {
+    color: #06ceca;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 27px;
+  }

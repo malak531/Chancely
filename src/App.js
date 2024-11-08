@@ -1,19 +1,17 @@
 import React from 'react';
-
-
-
+import AboutUs from './components/AboutUsPage/AboutUs';
 import ChancelyHomepageNotLoggedIn from './components/ChancelyHomepageNotLoggedIn/ChancelyHomepageNotLoggedIn';
-import LoginBackground from './components/LoginBackground/LoginBackground';
-import Alert from './components/Alert/Alert';
-import ContactInfoFooter from './components/ContactInfoFooter/ContactInfoFooter';
+import CompanyBox from './components/CompanyBox/CompanyBox';
 import OpportunityHomePage from './components/OpportunityHomePage/OpportunityHomePage';
-//import DatePicker from './components/FilterComponents/DatePicker/DatePicker';
-import PendingRequests from './components/AdminPages/PendingRequestsPage/PendingRequests';
+import BrowseOpportunities from './components/User Pages/BrowseOpportunities/BrowseOpportunities';
+import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
+import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
+import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
+
 function App() {
   return (
     <div>
-      <PendingRequests/>
-      
+     <ChancelyHomepageNotLoggedIn/>
     </div>
         
   );

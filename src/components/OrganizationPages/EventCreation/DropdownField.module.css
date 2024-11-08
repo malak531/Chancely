@@ -1,0 +1,35 @@
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dropdownLabel {
+    color: #000;
+    font: 400 16px Poppins, sans-serif;
+  }
+  
+  .selectWrapper {
+    position: relative;
+  }
+  
+  .selectField {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    background-color: #fff;
+    padding: 12px;
+    font: 400 14px Helvetica Neue, -apple-system, Roboto, Helvetica, sans-serif;
+    color: #333;
+    appearance: none;
+  }
+  
+  .dropdownIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+  }

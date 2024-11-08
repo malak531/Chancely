@@ -1,20 +1,18 @@
 //company box 
 import React from "react";
 import styles from "./companyBox.module.css";
-import BtnSm from '../BtnSm/BtnSm';
 
-const CompanyBox = () => {
+const CompanyBox = ({ title, date, location, image }) => {
     return (
-        <div className={styles.frame}>
-            <div className={styles.group}>
-                {/* Add an image or logo inside here if necessary */}
-            </div>
-            <div className={styles.textWrapper}>Aramco</div>
-            <div className={styles.div}>Saudi Arabia</div>
-            <div className={styles.textWrapper2}>www.aramco.com</div>
-            <BtnSm className={styles.btnSm1} hClassName={styles.btnSmInstance} text="Details" />
-            <BtnSm className={styles.btnSm1Instance} hClassName={styles.btnSmInstance} text="Delete" />
-        </div>
+        <article className={styles.opportunityCard}>
+      <img src={image} alt={title} className={styles.opportunityImage} />
+      <div className={styles.opportunityInfo}>
+        <h3 className={styles.opportunityTitle}>{title}</h3>
+        <p className={styles.opportunityDate}>{date}</p>
+        <p className={styles.opportunityLocation}>{location}</p>
+      </div>
+      <button className={styles.viewDetailsButton}>View Details</button>
+    </article>
     );
 };
 
