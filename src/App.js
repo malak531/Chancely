@@ -8,11 +8,12 @@ import Alert from './components/Alert/Alert';
 import ContactInfoFooter from './components/ContactInfoFooter/ContactInfoFooter';
 import OpportunityHomePage from './components/OpportunityHomePage/OpportunityHomePage';
 import DatePicker from './components/FilterComponents/DatePicker/DatePicker';
+import EventCreationForm from './components/EventCreationForm/EventCreationForm';
 
 function App() {
   return (
     <div>
-      <LocationFilter/>
+      <EventCreationForm/>
       
     </div>
         

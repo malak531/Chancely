@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './DatePickerWrapper.module.css';
+import styles from './datePickerWrapper.module.css';
 
 const DatePicker = () => {
   return (
