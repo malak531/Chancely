@@ -1,0 +1,562 @@
+.organizationProfile {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 42px 0 116px 79px;
+  }
+  
+  @media (max-width: 991px) {
+    .organizationProfile {
+      padding: 0 0 100px 20px;
+    }
+  }
+  
+  .header {
+    align-self: flex-end;
+    display: flex;
+    width: 100%;
+    max-width: 1316px;
+    align-items: flex-start;
+    gap: 20px;
+    color: #2b2b2b;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font: 500 16px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+    }
+  }
+  
+  .logo {
+    aspect-ratio: 6.71;
+    object-fit: contain;
+    object-position: center;
+    width: 228px;
+    margin-top: 4px;
+    max-width: 100%;
+  }
+  
+  .navContainer {
+    display: flex;
+    min-height: 37px;
+    align-items: flex-start;
+    gap: 8px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .navContainer {
+      max-width: 100%;
+    }
+  }
+  
+  .navItem {
+    border-radius: 30px;
+    gap: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 13px 16px;
+  }
+  
+  @media (max-width: 991px) {
+    .navItem {
+      white-space: initial;
+    }
+  }
+  
+  .navItemActive {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .userIcon {
+    aspect-ratio: 1.03;
+    object-fit: contain;
+    object-position: center;
+    width: 37px;
+  }
+  
+  .mainContent {
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 36px;
+    width: 100%;
+    max-width: 1282px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 72px 37px 72px 80px;
+  }
+  
+  @media (max-width: 991px) {
+    .mainContent {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  
+  .profileHeader {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-self: center;
+    position: relative;
+    min-height: 267px;
+    width: 1096px;
+    max-width: 100%;
+    align-items: flex-start;
+    padding: 153px 32px 0;
+  }
+  
+  @media (max-width: 991px) {
+    .profileHeader {
+      padding: 100px 20px 0;
+    }
+  }
+  
+  .coverImage {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .profileLogo {
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    display: flex;
+    margin-bottom: -73px;
+    width: 197px;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 27px 32px;
+  }
+  
+  @media (max-width: 991px) {
+    .profileLogo {
+      margin-bottom: 10px;
+      padding: 0 20px;
+    }
+  }
+  
+  .logoImage {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+  
+  .profileInfo {
+    align-self: center;
+    display: flex;
+    margin-top: 90px;
+    width: 100%;
+    max-width: 1046px;
+    gap: 40px 100px;
+    font-family: Poppins, sans-serif;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 991px) {
+    .profileInfo {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .organizationName {
+    color: #000;
+    font-size: 35px;
+    font-weight: 700;
+    flex-grow: 1;
+    width: 783px;
+  }
+  
+  @media (max-width: 991px) {
+    .organizationName {
+      max-width: 100%;
+    }
+  }
+  
+  .editProfileBtn {
+    color: #2b2b2b;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    align-self: flex-start;
+    margin-top: 18px;
+    flex-grow: 1;
+    width: 82px;
+  }
+  
+  .overviewSection {
+    margin-top: 81px;
+  }
+  
+  @media (max-width: 991px) {
+    .overviewSection {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .overviewContent {
+    gap: 20px;
+    display: flex;
+  }
+  
+  @media (max-width: 991px) {
+    .overviewContent {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+  
+  .overviewMain {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 68%;
+    margin-left: 0px;
+  }
+  
+  @media (max-width: 991px) {
+    .overviewMain {
+      width: 100%;
+    }
+  }
+  
+  .overviewText {
+    display: flex;
+    margin-top: 12px;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #000;
+    font: 600 25px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .overviewText {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .description {
+    font-size: 18px;
+    font-weight: 400;
+    align-self: stretch;
+    margin-top: 37px;
+  }
+  
+  @media (max-width: 991px) {
+    .description {
+      max-width: 100%;
+    }
+  }
+  
+  .fieldsOfInterest {
+    margin-top: 36px;
+  }
+  
+  .sidebarColumn {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 32%;
+    margin-left: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .sidebarColumn {
+      width: 100%;
+    }
+  }
+  
+  .sidebar {
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #1565d8;
+    margin: 0 auto;
+    padding: 12px 38px 84px;
+    font: 400 20px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .sidebar {
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+  }
+  
+  .sidebarTitle {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  
+  .sidebarItem {
+    display: flex;
+    margin-top: 59px;
+    gap: 21px;
+  }
+  
+  @media (max-width: 991px) {
+    .sidebarItem {
+      margin-top: 40px;
+    }
+  }
+  
+  .sidebarIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+    align-self: flex-start;
+  }
+  
+  .sidebarText {
+    flex-basis: auto;
+  }
+  
+  .divider {
+    opacity: 0.1;
+    background-color: #030229;
+    margin-top: 11px;
+    width: 231px;
+    height: 0px;
+    border: 1px solid #030229;
+  }
+  
+  .sidebarSubItem {
+    align-self: stretch;
+    display: flex;
+    margin-top: 12px;
+    gap: 26px;
+  }
+  
+  .sidebarSubIcon {
+    aspect-ratio: 0.87;
+    object-fit: contain;
+    object-position: center;
+    width: 14px;
+    align-self: flex-start;
+    margin-top: 7px;
+  }
+  
+  .sidebarSubText {
+    flex-grow: 1;
+    width: 218px;
+  }
+  
+  .sidebarLink {
+    display: flex;
+    margin-top: 16px;
+    gap: 19px;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 991px) {
+    .sidebarLink {
+      white-space: initial;
+    }
+  }
+  
+  .linkIcon {
+    aspect-ratio: 1.57;
+    object-fit: contain;
+    object-position: center;
+    width: 22px;
+    align-self: flex-start;
+    margin-top: 9px;
+  }
+  
+  .linkText {
+    flex-basis: auto;
+  }
+  
+  .sidebarImage {
+    object-fit: contain;
+    object-position: center;
+    width: 231px;
+    border-radius: 0px 0px 0px 0px;
+    margin-top: 16px;
+    max-width: 100%;
+  }
+  
+  .interestTags {
+    display: flex;
+    width: 507px;
+    max-width: 100%;
+    gap: 8px;
+    color: #fff;
+    flex-wrap: wrap;
+    margin: 39px 0 0 11px;
+    font: 500 14px/1 Inter, sans-serif;
+  }
+  
+  .interestTag {
+    align-self: stretch;
+    border-radius: 119px;
+    background-color: #02a1f9;
+    gap: 12px;
+    padding: 10px 12px;
+  }
+  
+  .opportunitiesSection {
+    margin-top: 43px;
+  }
+  
+  @media (max-width: 991px) {
+    .opportunitiesSection {
+      margin: 40px 0 0 3px;
+    }
+  }
+  
+  .opportunitiesGrid {
+    margin-top: 9px;
+    width: 936px;
+    max-width: 100%;
+  }
+  
+  .opportunitiesRow {
+    gap: 20px;
+    display: flex;
+  }
+  
+  @media (max-width: 991px) {
+    .opportunitiesRow {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0px;
+    }
+  }
+  
+  .opportunityCard {
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+    margin: 0 auto;
+    padding: 18px 11px;
+    border: 1px solid #dcdcdc;
+  }
+  
+  @media (max-width: 991px) {
+    .opportunityCard {
+      margin-top: 40px;
+    }
+  }
+  
+  .opportunityImage {
+    aspect-ratio: 1.84;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    border-radius: 11px;
+  }
+  
+  @media (max-width: 991px) {
+    .opportunityImage {
+      margin: 0 3px;
+    }
+  }
+  
+  .opportunityInfo {
+    align-self: center;
+    display: flex;
+    margin-top: 15px;
+    gap: 10px;
+    color: #2b2b2b;
+  }
+  
+  .opportunityDetails {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+  }
+  
+  .opportunityTitle {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .opportunityDate {
+    font-size: 14px;
+    font-weight: 500;
+    align-self: flex-start;
+    margin-top: 14px;
+  }
+  
+  .opportunityAttendees {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 991px) {
+    .opportunityAttendees {
+      white-space: initial;
+    }
+  }
+  
+  .attendeesIcon {
+    aspect-ratio: 0.95;
+    object-fit: contain;
+    object-position: center;
+    width: 37px;
+  }
+  
+  .opportunityLocation {
+    color: #808080;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 2;
+    align-self: flex-start;
+    margin: 6px 0 0 10px;
+  }
+  
+  .opportunityActions {
+    display: flex;
+    margin-top: 29px;
+    gap: 20px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.14px;
+    font: 600 10px/17px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .actionButton {
+    border-radius: 21px;
+    background-color: #02a1f9;
+    overflow: hidden;
+    padding: 7px 14px;
+  }
+  
+  @media (max-width: 991px) {
+    .actionButton {
+      white-space: initial;
+    }
+  }

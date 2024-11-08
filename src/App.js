@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutUs from './components/AboutUsPage/AboutUs';
-import EventCreation from './components/Organization Pages/EventCreation /EventCreation';
+import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 
 
 
@@ -12,7 +12,7 @@ import BrowseOpportunities from './components/User Pages/BrowseOpportunities/Bro
 function App() {
   return (
     <div>
-     <EventCreation/>
+     <OrganizationProfile/>
         
     </div>
         
