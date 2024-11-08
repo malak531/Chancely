@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./companyBox.module.css";
 import BtnSm from '../BtnSm/BtnSm';
 
-const Frame = () => {
+const CompanyBox = () => {
     return (
         <div className={styles.frame}>
             <div className={styles.group}>
@@ -18,5 +18,5 @@ const Frame = () => {
     );
 };
 
-export default Frame;
+export default CompanyBox;
 
