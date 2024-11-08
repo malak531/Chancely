@@ -1,9 +1,10 @@
 .eventCreationContainer {
-    background-color: #fff;
+  background: linear-gradient(rgba(86, 199, 216, 0.5),rgba(56, 246, 164, 0.5)) ;
     display: flex;
     justify-content: center;
     padding: 102px 79px;
   }
+
   
   .formWrapper {
     border-radius: 10px;

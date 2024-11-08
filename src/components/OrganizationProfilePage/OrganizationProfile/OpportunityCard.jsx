@@ -24,4 +24,4 @@ const OpportunityCard = ({ title, date, location, attendees, image }) => {
   );
 };
 
-export default OpportunityCard;s
+export default OpportunityCard;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HOrgnizerHeader.module.css';
+import styles from './OrgnizerHeader.module.css';
 
 const OrgnizerHeader = () => {
   return (
