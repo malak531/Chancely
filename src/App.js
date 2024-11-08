@@ -1,6 +1,5 @@
 import React from 'react';
 import AboutUs from './components/AboutUsPage/AboutUs';
-import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 
 
 
@@ -9,10 +8,12 @@ import CompanyBox from './components/CompanyBox/CompanyBox';
 import OpportunityHomePage from './components/OpportunityHomePage/OpportunityHomePage';
 import BrowseOpportunities from './components/User Pages/BrowseOpportunities/BrowseOpportunities';
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
+import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
+
 function App() {
   return (
     <div>
-     <OrganizationProfile/>
+     <ChancelyHomepageNotLoggedIn/>
         
     </div>
         
