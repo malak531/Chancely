@@ -1,36 +1,7 @@
 import React from 'react';
 import styles from './OrganizationProfile.module.css';
-
-const NavItem = ({ text, isActive }) => {
-  return (
-    <button className={`${styles.navItem} ${isActive ? styles.navItemActive : ''}`}>
-      {text}
-    </button>
-  );
-};
-
-const OpportunityCard = ({ title, date, location, attendees, image }) => {
-  return (
-    <article className={styles.opportunityCard}>
-      <img src={image} alt={title} className={styles.opportunityImage} />
-      <div className={styles.opportunityInfo}>
-        <div className={styles.opportunityDetails}>
-          <h3 className={styles.opportunityTitle}>{title}</h3>
-          <time className={styles.opportunityDate}>{date}</time>
-        </div>
-        <div className={styles.opportunityAttendees}>
-          <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/97d128094b664ac9be4f8887290954bbc4662958237be8a2d1578d2967b3017a?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Attendees" className={styles.attendeesIcon} />
-          <span>{attendees}</span>
-        </div>
-      </div>
-      <p className={styles.opportunityLocation}>{location}</p>
-      <div className={styles.opportunityActions}>
-        <button className={styles.actionButton}>View Details</button>
-        <button className={styles.actionButton}>Edit</button>
-      </div>
-    </article>
-  );
-};
+import NavItem from './NavItem';
+import OpportunityCard from './OpportunityCard';
 
 const OrganizationProfile = () => {
   const navItems = [
@@ -84,6 +55,7 @@ const OrganizationProfile = () => {
           <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/3d6de7d767d4aabea1478af1c0668e49f79d1db7bb4219de7a29e350e31b2af1?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="User Icon" className={styles.userIcon} />
         </nav>
       </header>
+
       <section className={styles.mainContent}>
         <div className={styles.profileHeader}>
           <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/80253d05671816f31a5201bcaa88c6e8860998b68062a74620e7482f646d30a4?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Cover" className={styles.coverImage} />
@@ -91,10 +63,12 @@ const OrganizationProfile = () => {
             <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/169d94c56d8fe3e8b53a9672e5f6dcb7dc1875a725a90fc909a5b20d636e3a8d?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Profile Logo" className={styles.logoImage} />
           </div>
         </div>
+
         <div className={styles.profileInfo}>
           <h1 className={styles.organizationName}>King Fahd University of Petroleum & Minerals</h1>
           <button className={styles.editProfileBtn}>Edit Profile</button>
         </div>
+
         <div className={styles.overviewSection}>
           <div className={styles.overviewContent}>
             <div className={styles.overviewMain}>
@@ -128,11 +102,13 @@ const OrganizationProfile = () => {
             </aside>
           </div>
         </div>
+
         <div className={styles.interestTags}>
           {interestTags.map((tag, index) => (
             <span key={index} className={styles.interestTag}>{tag}</span>
           ))}
         </div>
+
         <section className={styles.opportunitiesSection}>
           <h2>This Organization's Opportunities</h2>
           <div className={styles.opportunitiesGrid}>
