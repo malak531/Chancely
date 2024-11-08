@@ -7,6 +7,7 @@
     text-align: center;
     flex-wrap: wrap;
     font: 500 16px Poppins, sans-serif;
+    padding-left: 120px;
   }
   
   @media (max-width: 991px) {
@@ -60,6 +61,7 @@
     align-items: center;
     gap: 20px;
     justify-content: space-between;
+    padding-left: 100px;
   }
   
   .logo1 {

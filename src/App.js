@@ -11,7 +11,7 @@ import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
 function App() {
   return (
     <div>
-     <EventCreation/>
+     <ChancelyHomepageNotLoggedIn/>
     </div>
         
   );

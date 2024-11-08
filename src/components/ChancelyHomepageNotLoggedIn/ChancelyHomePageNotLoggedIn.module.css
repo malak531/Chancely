@@ -1,0 +1,17 @@
+.container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0px 0;
+  background-image: url("/Users/malakkamaleldin/Desktop/Chancely/Untitled/Chancely/public/Images/HomepageNotloggedIn.png")  ;
+  background-size: 100vw 100vh;
+background-repeat: no-repeat;
+/* background-position: 0px 80px; */
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 20px 0;
+  }
+}

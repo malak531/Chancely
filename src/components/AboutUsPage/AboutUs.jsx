@@ -9,6 +9,7 @@ import WorldMap from './WorldMap';
 import LabeledTitle from './LabeledTitle';
 import StorySection from './StorySection';
 import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
+import TeamSection from './TeamSection';
 const AboutUs = () => {
   return (
     <div className={styles.content}>
@@ -44,6 +45,8 @@ const AboutUs = () => {
         <StorySection />
       </div>
     </section>
+    <section><TeamSection/></section>
+    
     <ContactInfoFooter/>
     </div>
 

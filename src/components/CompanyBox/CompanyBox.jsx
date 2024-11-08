@@ -1,7 +1,6 @@
 //company box 
 import React from "react";
 import styles from "./companyBox.module.css";
-import BtnSm from '../BtnSm/BtnSm';
 
 const CompanyBox = ({ title, date, location, image }) => {
     return (
