@@ -1,0 +1,17 @@
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #8692a6;
+    font: 600 16px Inter, sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .backIcon {
+    width: 10px;
+    height: 14px;
+    object-fit: contain;
+  }
