@@ -3,6 +3,7 @@ import styles from './EventDetails.module.css';
 
 function EventDetails() {
   return (
+    <>
     <section className={styles.eventDetails}>
       <h1 className={styles.title}>Edit Opportunity Details</h1>
       <h2 className={styles.subtitle}>Opportunity Details</h2>
@@ -16,8 +17,10 @@ function EventDetails() {
           </div>
         </div>
       </div>
-      <h3 className={styles.fieldsTitle}>Event Fields of Interest</h3>
     </section>
+    
+        <h3 className={styles.fieldsTitle}>Event Fields of Interest</h3>
+</>
   );
 }
 

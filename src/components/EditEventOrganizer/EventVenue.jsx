@@ -23,7 +23,6 @@ function EventVenue() {
           <select id="eventLocation" className={styles.select}>
             <option>Doha, Qatar</option>
           </select>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/192efd70a8a0849900a1062cb894ae1e26b5e01f5fe2a5e00b532e15b5845d50?placeholderIfAbsent=true&apiKey=ce557df0286d497daef1a15e3e8396b4" alt="" className={styles.selectIcon} />
         </div>
       </div>
     </section>

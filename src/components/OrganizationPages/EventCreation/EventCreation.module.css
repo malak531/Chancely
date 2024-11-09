@@ -9,15 +9,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(rgba(86, 199, 216, 0.5), rgba(56, 246, 164, 0.5));
   min-height: 100vh;
   padding: 20px;
 }
 
 .eventCreationContainer {
+
   display: flex;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 50px 26px;
   flex-direction: column;
   max-width: 1400px; /* Wider on large screens */
   width: 100%; /* Allows full width on smaller screens */
@@ -36,20 +36,20 @@ body {
 
 .formHeader {
   display: flex;
-  align-items: center;
+  align-items: left;
   margin-bottom: 20px;
 }
 
 .formTitle {
   font: 600 28px Poppins, sans-serif;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
 .sectionTitle {
   font: 500 24px Poppins, sans-serif;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .eventForm {

@@ -12,7 +12,6 @@ function Header() {
         <a href="#" className={styles.navLink}>About us</a>
         <a href="#" className={styles.navLink}>Sign out</a>
       </nav>
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fbbecafedfa3980bac004b31b08d888a97ccfd6a04db11cc11fb7cc99a38c18?placeholderIfAbsent=true&apiKey=ce557df0286d497daef1a15e3e8396b4" alt="User Profile" className={styles.profileIcon} />
     </header>
   );
 }

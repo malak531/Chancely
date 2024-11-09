@@ -26,7 +26,7 @@ function EventDates() {
             className={styles.datePicker}
             placeholder="Fecha inicio"
           />
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/665b623c509e34abc1647dbaa0dc88d1895811db104ef9ca435f86d64f5e9c38?placeholderIfAbsent=true&apiKey=ce557df0286d497daef1a15e3e8396b4" alt="" className={styles.calendarIcon} />
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/06df01c1068c643b48aaefd71d03ed83dd025ab1f0a40eb6f2aca9e26baf0759?placeholderIfAbsent=true&apiKey=ce557df0286d497daef1a15e3e8396b4" alt="" className={styles.calendarIcon} />
         </div>
       </div>
     </section>

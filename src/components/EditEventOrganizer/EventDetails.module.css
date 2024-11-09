@@ -30,7 +30,7 @@
   .imageTitle {
     color: #000;
     font-weight: 600;
-    text-align: center;
+    text-align: left;
   }
   
   .imageContainer {
@@ -50,19 +50,22 @@
   
   .imageChange {
     display: flex;
-    margin-top: 7px;
-    gap: 16px;
-    color: #fff;
-    font-weight: 400;
-    text-align: center;
+    flex-direction: row; 
     align-items: center;
-  }
-  
-  .changeIcon {
-    aspect-ratio: 1.08;
-    object-fit: contain;
+    gap: 8px;
+    color: #000;
+    font-weight: 400;
+    text-align: left; 
+    margin-top: 7px;
+    width: 100%; 
+    justify-content: flex-start; 
+}
+
+.changeIcon {
     width: 27px;
-  }
+    height: auto; /* Adjusts size to fit */
+}
+
   
   .fieldsTitle {
     color: #000;

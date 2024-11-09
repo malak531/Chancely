@@ -1,17 +1,35 @@
 .joiningCriteria {
+  margin-top: 40px;
+  width: 100%; /* Ensures full width within the container */
+}
+
+.criteriaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.criteriaTitle {
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.criteriaInput {
+  width: 100%; /* Matches the width of the container */
+  min-height: 324px; /* Ensures a similar height */
+  padding: 8px 16px; /* Matches padding for consistent look */
+  border: 1px solid rgba(18, 18, 18, 0.08); /* Same border styling */
+  border-radius: 8px;
+  font: 400 14px Poppins, sans-serif;
+  color: rgba(18, 18, 18, 0.38);
+  resize: vertical; /* Allows the user to adjust height */
+}
+
+/* Media query adjustments */
+@media (max-width: 991px) {
+  .joiningCriteria {
     margin-top: 40px;
   }
-  
-  .criteriaHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .criteriaTitle {
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  
+}

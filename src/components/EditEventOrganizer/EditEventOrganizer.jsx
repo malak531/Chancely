@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './EditEventOrganizerPage.module.css';
 import Header from './Header';
 import EventDetails from './EventDetails';
-import EventFields from './EventFields';
-import EventVenue from './EventVenue';
+import InterestTags from '../OrganizationPages/EventCreation/InterestTags';
 import EventDates from './EventDates';
 import JoiningCriteria from './JoiningCriteria';
 import EventDescription from './EventDescription';
+import EventVenue from './EventVenue';
+import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
+import OrgnizerHeader from '../OrgnizerHeader/OrgnizerHeader';
 
 function EditEventOrganizer() {
   return (
@@ -15,7 +17,7 @@ function EditEventOrganizer() {
       <section className={styles.contentContainer}>
         <EventDetails/>
         <div className={styles.twoColumnLayout}>
-          <EventFields/>
+          <InterestTags/>
           <EventVenue/>
         </div>
         <EventDates/>

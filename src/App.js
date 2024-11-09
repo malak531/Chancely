@@ -8,7 +8,7 @@ import OrganizationProfile from './components/OrganizationProfilePage/Organizati
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
 import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
-
+import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
 import OpportunityInfoTop from './components/OpportunityInfo/OpportunityInfoTop';
 import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
 import OpportunityDescription from './components/OpportunityInfo/OpportunityDescription';
@@ -18,8 +18,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 function App() {
   return (
     <div >
-      <EventCreation/>
-      <LoginPage/>
+      <EditEventOrganizer/>
     </div>
         
   );

@@ -1,0 +1,40 @@
+.eventDescription {
+  width: 100%;
+  margin-top: 43px;
+}
+
+.descriptionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures the icon aligns with the title */
+  margin-bottom: 20px;
+}
+
+.descriptionTitle {
+  font-weight: 600;
+  color: #000;
+  margin-right: 10px; /* Space between title and icon */
+}
+
+.infoIcon {
+  width: 17px;
+  height: auto;
+}
+
+.descriptionInput {
+  width: 100%;
+  min-height: 324px;
+  padding: 8px 16px;
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  border-radius: 8px;
+  font: 400 14px Poppins, sans-serif;
+  color: rgba(18, 18, 18, 0.38);
+  resize: vertical;
+}
+
+/* Media query adjustments */
+@media (max-width: 991px) {
+  .eventDescription {
+    margin-top: 40px;
+  }
+}

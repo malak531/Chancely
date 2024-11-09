@@ -1,15 +1,12 @@
 import React from 'react';
 import styles from './EventCreation.module.css';
-import BackButton from './BackButton';
 import ImageUploader from './ImageUploader';
-import InterestTags from './InterestTags';
 import DateRangePicker from './DateRangePicker';
 import FormField from './FormField';
 import DropdownField from './DropdownField';
 import TextAreaField from './TextAreaField';
-import OrgnizerHeader from '../../OrgnizerHeader/OrgnizerHeader';
-import InterestsSection from '../../User Pages/Profile/InterestsSection';
-import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
+import Header from '../../EditEventOrganizer/Header';
+import InterestTags from './InterestTags';
 
 const EventCreation = () => {
   let EventType = ['Conference', 'Exhibition', 'Competition', 'Short Course', 'Summer Program'];
@@ -19,12 +16,11 @@ const EventCreation = () => {
   return (
     <>
       {/* Organizer header positioned at the top of the page */}
-      <OrgnizerHeader />
+      <Header />
       
       <main className={styles.eventCreationContainer}>
         <section className={styles.formWrapper}>
           <header className={styles.formHeader}>
-            <BackButton />
             <h1 className={styles.formTitle}>Create Opportunity Post</h1>
           </header>
           
@@ -33,7 +29,7 @@ const EventCreation = () => {
             
             <ImageUploader label="Event Image" />
             
-            <InterestsSection />
+            <InterestTags/>
             
             <DateRangePicker label="Event Dates*" />
             
@@ -58,7 +54,6 @@ const EventCreation = () => {
           </form>
         </section>
       </main>
-      <ContactInfoFooter/>
     </>
   );
 };
