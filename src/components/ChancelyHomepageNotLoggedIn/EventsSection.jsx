@@ -2,7 +2,7 @@ import React from 'react';
 import EventCard from './EventCard';
 import styles from './EventsSection.module.css';
 
-const eventsData = [
+let eventsData = [
   {
     image: "https://cdn.builder.io/api/v1/image/assets/TEMP/9dcb55677e48d0699869861eb52c43ecc0f67505f072c86df146af707e1a2ec1?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a",
     title: "Web Summit Qatar",

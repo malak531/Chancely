@@ -7,11 +7,12 @@ import BrowseOpportunities from './components/User Pages/BrowseOpportunities/Bro
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
+import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
 
 function App() {
   return (
-    <div>
-     <ChancelyHomepageNotLoggedIn/>
+    <div >
+     <EditUserProfile/>
     </div>
         
   );

@@ -43,6 +43,11 @@
     color: #00c874;
     cursor: pointer;
   }
+
+  .registerButton:hover {
+    background-color:  #b6f4da;
+  }
+  
   
   @media (max-width: 991px) {
     .registerSection {
