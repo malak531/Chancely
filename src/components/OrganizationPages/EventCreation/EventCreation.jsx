@@ -8,8 +8,10 @@ import FormField from './FormField';
 import DropdownField from './DropdownField';
 import TextAreaField from './TextAreaField';
 import OrgnizerHeader from '../../OrgnizerHeader/OrgnizerHeader';
-
+import InterestsSection from '../../User Pages/Profile/InterestsSection';
 const EventCreation = () => {
+  let EventType = ['non-profit', 'Educational'
+  ];
   return (
     <>
       {/* Organizer header positioned at the top of the page */}
@@ -27,13 +29,14 @@ const EventCreation = () => {
             
             <ImageUploader label="Event Image" />
             
-            <InterestTags label="Event Fields of Interest*" />
+            <InterestsSection />
             
             <DateRangePicker label="Event Dates*" />
             
             <FormField label="Event Title*" placeholder="Type event title" />
             
-            <DropdownField label="Event Type*" placeholder="Select" />
+            <DropdownField label="Event Type*" options={EventType} />
+         
             
             <DropdownField label="Event Location*" placeholder="Select" />
             
