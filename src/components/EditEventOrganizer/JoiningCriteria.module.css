@@ -1,0 +1,17 @@
+.joiningCriteria {
+    margin-top: 40px;
+  }
+  
+  .criteriaHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .criteriaTitle {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
