@@ -8,13 +8,12 @@ import OrganizationProfile from './components/OrganizationProfilePage/Organizati
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
 import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
-import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
 import OpportunityInfoTop from './components/OpportunityInfo/OpportunityInfoTop';
 import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
 import OpportunityDescription from './components/OpportunityInfo/OpportunityDescription';
 import LoginForm from './components/LoginPage/LoginForm';
 import LoginPage from './components/LoginPage/LoginPage';
-
+import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer'
 function App() {
   return (
     <div >
