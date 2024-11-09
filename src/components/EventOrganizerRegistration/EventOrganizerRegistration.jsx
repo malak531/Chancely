@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './EventOrganizerRegistration.module.css';
 import InputField from './InputField';
 import SelectField from './SelectField';
+import Dropdown from './dropdown';
+
 
 const EventOrganizerRegistration = () => {
   return (
@@ -29,13 +31,12 @@ const EventOrganizerRegistration = () => {
                 <InputField label="Organization URL*" placeholder="Enter your organization website URL" />
               </div>
               <div className={styles.formColumn}>
-                <SelectField label="Country*" placeholder="Select your country" />
-                <SelectField label="Industry*" placeholder="Select your industry" />
-                <SelectField label="Type*" placeholder="Select your organization type" />
+                <Dropdown label="Country" placeholder="Select Your Country" options = {["Bahrain", "Saudi Arabia", "Kuwait", "UAE", "Lebanon", "Jordan", "Egypt", "Oman", "Qatar", "Iraq"]}/>
+                <Dropdown label="Industry" placeholder="Select your industry" options={["Information Technology", " Law & Policy ", " Art & Humanities ", " Education & Teaching ", " Real Estate & Urban Development "," Sports ", " Agriculture & Food ", " Startups & Innovation ", " Logistics & Supply Chain " , " Business & Management ", " Sustainability & Environment ", " Healthcare & Medicine "]} />
+                <Dropdown label="Type" placeholder="Select your organization type" options={["profit", "non profit"]} />
                 <div className={styles.inputGroup}>
                   <label className={styles.inputLabel}>Logo (optional)</label>
                   <div className={styles.logoUpload}>
-                    <input type="text" className={styles.urlInput} placeholder="Enter your organization website URL" />
                     <button type="button" className={styles.uploadButton}>
                       <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/d15380cc2c0805f7e46b6003c6a68a59edd8c3c396dde2dae2edef998d99a9fe?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="" className={styles.uploadIcon} />
                       <span className={styles.uploadText}>Upload Logo</span>
