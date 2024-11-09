@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styles from './BrowseOpportunities.module.css';
 import FilterSection from './FilterSection';
 import HeaderLoggedIn from '../../HeaderLoggedIn/HeaderLoggedInUser';
-// import OpportunityCard from './OpportunityCard';
-// import Footer from './Footer';
 import CompanyBox from '../../CompanyBox/CompanyBox';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
 
@@ -53,9 +51,16 @@ const BrowseOpportunities = () => {
     }
   ]);
 
-  const addOpportunity = (newOpportunity) => {
-    setOpportunities([...opportunities, { ...newOpportunity, id: opportunities.length + 1 }]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
   };
+
+  const filteredOpportunities = opportunities.filter((opportunity) =>
+    opportunity.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    opportunity.location.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className={styles.browseOpportunities}>
@@ -64,16 +69,22 @@ const BrowseOpportunities = () => {
         <h1 className={styles.pageTitle}>Explore Exciting Opportunities</h1>
         <p className={styles.pageDescription}>Find the perfect event to boost your career or expand your knowledge.</p>
         <div className={styles.contentWrapper}>
-          <FilterSection />
+            <FilterSection/>
           <section className={styles.opportunitiesSection}>
             <div className={styles.searchBar}>
-              <input type="text" placeholder="Search" className={styles.searchInput} />
+              <input
+                type="text"
+                placeholder="Search"
+                className={styles.searchInput}
+                value={searchTerm}
+                onChange={handleSearch}
+              />
               <button className={styles.filterButton} aria-label="Filter">
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e7da80c2bbaedde6fe4e8e71ae33f4345b586c404970bc1c6cec49f8bceeb49b?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="" className={styles.filterIcon} />
               </button>
             </div>
             <div className={styles.opportunitiesGrid}>
-              {opportunities.map(opportunity => (
+              {filteredOpportunities.map(opportunity => (
                 <CompanyBox key={opportunity.id} {...opportunity} />
               ))}
             </div>

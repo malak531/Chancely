@@ -9,11 +9,13 @@ import SaveButton from "./SaveButton";
 function EditUserProfile( ) {
     
   return (
-    <div className="content">
+    <div className={styles.content}>
       <HeaderLoggedIn />
       <div className={styles.container}>
         <ProfileCard />
+        <div className={styles.button}>
         <SaveButton/>
+        </div>
         <div className={styles.interest}>
           <InterestsSection />
         </div>

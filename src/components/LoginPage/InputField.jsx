@@ -1,20 +1,24 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
 
-const InputField = ({ label, type, placeholder, icon }) => {
+const InputField = ({ label, type, placeholder, icon, onChange, value, name, id }) => {
   return (
     <div className={styles.inputWrapper}>
-      <label htmlFor={`${type}Input`} className={styles.inputLabel}>
+      <label htmlFor={id} className={styles.inputLabel}>
         {label}
       </label>
       <div className={styles.inputField}>
         {icon && <img loading="lazy" src={icon} alt="" className={styles.inputIcon} />}
         <input
           type={type}
-          id={`${type}Input`}
+          id={id}
           placeholder={placeholder}
           className={styles.inputPlaceholder}
-          aria-label={label} required
+          aria-label={label} 
+          onChange={onChange}
+          value={value}
+          name={name}
+          required
         />
       </div>
     </div>

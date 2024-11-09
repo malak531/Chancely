@@ -10,7 +10,7 @@ const InfoItem = ({ label, value }) => {
         
     <form>
       <label className="info" for="info">{label}: </label>
-      <input type="text" id="info" className="info" placeholder={value}/>
+      <input type="text" id="info" className={styles.input1} placeholder={value}/>
     </form>
     </div>
   );

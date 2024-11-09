@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './PasswordField.module.css';
 
-function PasswordField({ label, placeholder, id }) {
+function PasswordField({ label, placeholder, id, onChange }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -13,6 +13,7 @@ function PasswordField({ label, placeholder, id }) {
           id={id}
           placeholder={placeholder}
           className={styles.passwordInput}
+          onChange={onChange}
           required
         />
         <button

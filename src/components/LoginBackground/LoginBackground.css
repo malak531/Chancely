@@ -1,57 +1,48 @@
 .chancely-new {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-  }
-  
-  .chancely-new .div {
-    background-color: #ffffff;
-    height: 882px;
-    width: 700px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .chancely-new .frame {
-    background: linear-gradient(rgba(56, 246, 164, 0.5), rgba(163, 230, 240, 0.5)),
-    url(https://c.animaapp.com/DvWBMqHZ/img/frame-1.png);
-    background-position: 50% 50%;
-    background-size: cover;
-    height: 1024px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width:100%;
-  }
-  
-  .chancely-new .logofull {
-    height: 53px;
-    left: 42px;
-    position: absolute;
-    top: 38px;
-    width: 54px;
-    
-  }
-  
-  .chancely-new .text-wrapper {
-    color: #ffffff;
-  font-family: "Inter", Helvetica;
-  font-size: 140px; /* Increased font size */
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Full viewport height */
+}
+
+.chancely-new .left-side {
+  flex: 1;
+  background: linear-gradient(rgba(86, 199, 216, 0.5) ,rgba(56, 246, 164, 0.5)),url(https://c.animaapp.com/DvWBMqHZ/img/frame-1.png) center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chancely-new .left-side .text-wrapper {
+  color: #ffffff;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-size: 140px;
   font-weight: 700;
-  position: absolute; /* Makes the text layer above the image */
-  top: 50%; /* Centers vertically */
-  left: 50%; /* Centers horizontally */
-  transform: translate(-50%, -50%); /* Corrects offset from centering */
   text-align: center;
-  width: 100%; /* Ensures the text will fit within the container */
-  white-space: nowrap; /* Prevents text from wrapping */
+  white-space: nowrap;
+}
+
+.chancely-new .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .chancely-new {
+    flex-direction: column;
   }
 
-  @media (max-width: 991px) {
-    .chancely-new .div{
-      width: 90%;
-    }
-   
+  .chancely-new .left-side {
+    display: none; /* Hide left-side background on small screens */
   }
-  
+
+  .chancely-new .right-side {
+    width: 100%;
+    padding: 40px;
+  }
+}

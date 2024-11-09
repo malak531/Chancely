@@ -6,13 +6,14 @@ margin-top: 50px;
 align-items: center;
 margin-bottom: 100px;
 align-items: center; /* Center all child elements horizontally */
+background-color: white;
 
 
 
 }
 
 .content{
-  background: linear-gradient(rgba(86, 199, 216, 0.5),rgba(56, 246, 164, 0.5));
+  background-color: white;
 }
 
 .interest{
@@ -20,6 +21,10 @@ align-items: center; /* Center all child elements horizontally */
   display: flex;
   justify-content: center; 
 
+}
+
+.button{
+  margin-left: 300px;
 }
 
 @media (max-width: 991px) {
