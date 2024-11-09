@@ -1,12 +1,19 @@
 .trustedCompanies {
     display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center;
     width: 100%;
     max-width: 1287px;
+    align-items: center; /* Center-aligns the entire section */
     gap: 34px;
     color: #808080;
     text-align: center;
-    flex-wrap: wrap;
     font: 500 16px Poppins, sans-serif;
+    flex-wrap: wrap;
+    margin: 0 auto;
+   
+    
+
   }
   
   @media (max-width: 991px) {
@@ -32,6 +39,7 @@
     flex-wrap: wrap;
     flex-grow: 1;
     flex-basis: auto;
+    
   }
   
   @media (max-width: 991px) {
@@ -45,9 +53,12 @@
     flex-basis: auto;
   }
   
-  @media (max-width: 991px) {
+  @media (min-width: 991px) {
     .trustedText {
       max-width: 100%;
+      justify-content: center; /* Centers the text horizontally */
+    align-items: center; /* Centers text and any icons vertically */
+    width: 100%; /* Ensures it spans the container width */
     }
   }
   
@@ -56,10 +67,13 @@
     display: flex;
     margin-top: 30px;
     width: 977px;
-    max-width: 100%;
     align-items: center;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 70px;
+    justify-content: center; /* Centers the logos within the container */
+    padding-left: 100px;
+    flex-wrap: wrap;
+    max-width: 100%; /* Ensures full width for responsiveness */
+    padding-left: 0; /* Remove left padding */
   }
   
   .logo1 {

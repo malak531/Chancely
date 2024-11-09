@@ -1,0 +1,49 @@
+.infoItem {
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px 100px;
+    flex: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    padding: 15px 19px;
+    width: 100%;
+  }
+input{
+    min-width: 260px;
+  }
+  label{
+    padding-right: 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .infoItem {
+      width: 100%;
+      padding-right: 20px;
+      white-space: initial;
+    }
+    input{
+        width: 100%;
+      }
+  }
+  
+  .infoIcon {
+    aspect-ratio: 0.92;
+    object-fit: contain;
+    object-position: center;
+    width: 12px;
+    margin-top: 5px;
+  }
+  
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }

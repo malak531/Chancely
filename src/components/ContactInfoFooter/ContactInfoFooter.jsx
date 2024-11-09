@@ -23,7 +23,7 @@ const ContactInfoFooter = () => {
         <h2 className={styles.messageTitle}>Have anything to say?<br />Leave us a message</h2>
         <form className={styles.form}>
           <label htmlFor="messageInput" className={styles.visuallyHidden}>Write your message</label>
-          <input type="text" id="messageInput" className={styles.messageInput} placeholder="write your thoughts" />
+          <input type="text" id="messageInput" className={styles.messageInput} placeholder="Write Your Thoughts" />
           <button type="submit" className={styles.submitButton} aria-label="Send message">
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66ce6467-4da7-4a0e-bcfa-ea51433a4ab9?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="" className={styles.submitIcon} />
           </button>

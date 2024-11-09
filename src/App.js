@@ -6,10 +6,11 @@ import OpportunityHomePage from './components/OpportunityHomePage/OpportunityHom
 import BrowseOpportunities from './components/User Pages/BrowseOpportunities/BrowseOpportunities';
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
-import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
+import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
+
 function App() {
   return (
-    <div>
+    <div >
      <EventCreation/>
     </div>
         

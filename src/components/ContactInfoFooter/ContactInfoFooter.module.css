@@ -1,6 +1,6 @@
 .footer {
-    background-color: #0b090a;
-    color: #aaa;
+    background: linear-gradient(rgba(86, 199, 216, 0.5),rgba(56, 246, 164, 0.5));
+    color: black;
     padding: 40px 70px;
     display: flex;
     flex-wrap: wrap;
@@ -39,7 +39,7 @@
   
   .messageTitle {
     font-size: 24px;
-    color: #fff;
+    color: black;
     margin-bottom: 20px;
   }
   
@@ -57,7 +57,7 @@
   }
   
   .submitButton {
-    background-color: #02a1f9;
+    background-color: #ffffff;
     border: none;
     border-radius: 0 30px 30px 0;
     padding: 10px 20px;
@@ -65,8 +65,8 @@
   }
   
   .submitIcon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
   
   .socialMediaText {
@@ -97,7 +97,7 @@
   }
   
   .footerLink {
-    color: #aaa;
+    color: black;
     text-decoration: none;
     font-size: 14px;
   }

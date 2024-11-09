@@ -1,0 +1,26 @@
+.tag {
+    align-self: stretch;
+    border-radius: 93px;
+    padding: 7px 9px;
+    font: 500 11px Inter, sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .active {
+    background-color: #02a1f9;
+    color: #fff;
+  }
+  
+  .inactive {
+    background-color: #f2f4f7;
+    color: #4b4b4b;
+  }
+  
+  @media (max-width: 991px) {
+    .tag {
+      white-space: normal;
+    }
+  }
