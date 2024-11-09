@@ -4,7 +4,7 @@
     flex-direction: column;
     overflow: hidden;
     align-items: flex-start;
-    padding: 40px 0px 21px 160px;
+    padding: 40px 0px 21px 0px;
     font: 500 11px Inter, sans-serif;
     justify-content: center;
   }

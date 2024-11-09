@@ -1,0 +1,62 @@
+.infoItemWrapper {
+    margin-bottom: 24px;
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1c2b38;
+    white-space: nowrap;
+    text-transform: capitalize;
+    justify-content: flex-start;
+    font: 700 24px/1 Mulish, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .infoItem {
+      white-space: initial;
+    }
+  }
+  
+  .infoIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 37px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .infoLabel {
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .infoValue {
+    color: #495560;
+    align-self: flex-end;
+    margin-top: 9px;
+    font: 400 20px/1.1 Mulish, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .feesIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 48px;
+    align-self: stretch;
+    margin: auto 0;
+  }
+  
+  .feesValue {
+    color: #495560;
+    margin-left: 55px;
+    font: 400 20px/1.1 Mulish, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .feesValue {
+      margin-left: 10px;
+    }
+  }

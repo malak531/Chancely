@@ -1,0 +1,11 @@
+.button {
+    background-color: #02a1f9;
+    border-radius: 22px;
+    color: #fff;
+    font: 400 12px Poppins, sans-serif;
+    padding: 9px 33px;
+    text-align: center;
+    white-space: nowrap;
+    border-color: #02a1f9;
+    margin-left: 1000px;
+  }

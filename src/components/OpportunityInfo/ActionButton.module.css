@@ -1,0 +1,24 @@
+.actionButton {
+    text-decoration: underline;
+    border-radius: 30px;
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    flex-grow: 1;
+    width: fit-content;
+    padding: 10px 20px;
+    color: #02a1f9;
+    font: 600 14px/24px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  
+  .actionButton:hover,
+  .actionButton:focus {
+    background-color: #e0e0e0;
+    outline: 2px solid #02a1f9;
+  }
+  
+  .actionButton:active {
+    background-color: #d0d0d0;
+  }
