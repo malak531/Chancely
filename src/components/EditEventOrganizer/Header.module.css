@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    width: 100%;
+    max-width: 1225px;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    font: 500 16px Poppins, sans-serif;
+  }
+  
+  .logo {
+    aspect-ratio: 6.71;
+    object-fit: contain;
+    width: 228px;
+    max-width: 100%;
+  }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: #2b2b2b;
+    padding: 13px 16px;
+    border-radius: 30px;
+  }
+  
+  .navLink:hover {
+    background-color: rgba(255, 255, 255, 0.36);
+  }
+  
+  .profileIcon {
+    aspect-ratio: 1.03;
+    object-fit: contain;
+    width: 37px;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      max-width: 100%;
+      flex-direction: column;
+    }
+  
+    .navigation {
+      justify-content: center;
+    }
+  }
