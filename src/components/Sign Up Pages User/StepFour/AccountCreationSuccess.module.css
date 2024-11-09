@@ -1,0 +1,134 @@
+.accountCreationSuccess {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Inter, sans-serif;
+    width:1400px;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 882px;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    padding: 43px 44px;
+  }
+  
+  .backgroundImage {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .cardContainer {
+    position: relative;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    padding: 46px 80px 202px;
+  }
+  
+  .cardHeader {
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .stepIndicator {
+    color: #bdbdbd;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+  }
+  
+  .pageTitle {
+    color: #86a2a6;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  
+  .successIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 180px;
+    margin-top: 92px;
+    max-width: 100%;
+  }
+  
+  .messageContainer {
+    display: flex;
+    margin-top: 14px;
+    width: 774px;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .successMessage {
+    color: #26203b;
+    font-size: 32px;
+    font-weight: 500;
+  }
+  
+  .welcomeMessage {
+    color: #9c9aa5;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 4px;
+  }
+  
+  .startButton {
+    align-self: stretch;
+    border-radius: 30px;
+    background-color: #00c874;
+    min-height: 48px;
+    width: 210px;
+    max-width: 100%;
+    color: #fff;
+    margin: 0 auto;
+    padding: 12px 20px;
+    font: 700 16px Poppins, sans-serif;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+
+  }
+  
+  @media (max-width: 991px) {
+    .contentWrapper {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  
+    .cardContainer {
+      max-width: 100%;
+      padding: 0 20px 100px;
+    }
+  
+    .successIcon {
+      margin-top: 40px;
+    }
+  
+    .successMessage,
+    .welcomeMessage {
+      max-width: 100%;
+    }
+  
+    .startButton {
+      margin: 40px 0 10px;
+    }
+  }

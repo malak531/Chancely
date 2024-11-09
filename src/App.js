@@ -14,6 +14,7 @@ import OpportunityDescription from './components/OpportunityInfo/OpportunityDesc
 import LoginForm from './components/LoginPage/LoginForm';
 import LoginPage from './components/LoginPage/LoginPage';
 import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer'
+
 function App() {
   return (
     <div >

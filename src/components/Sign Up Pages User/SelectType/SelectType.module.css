@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    max-width: 452px;
+    flex-direction: column;
+    overflow: hidden;
+    margin:  auto 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .card {
+    border-radius: 6px;
+    background-color: #f5f9ff;
+    box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.04);
+    display: flex;
+    gap: 20px;
+    font-family: Inter, sans-serif;
+    justify-content: space-between;
+    padding: 25px 33px 16px;
+    border: 1px solid #00c874;
+  }
+
+  .card:hover{
+    background-color: #c3fac0;
+  }
+  
+  .icon {
+    aspect-ratio: 1.15;
+    object-fit: contain;
+    object-position: center;
+    width: 53px;
+    background-color: #00d27a;
+    align-self: flex-start;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    align-self: flex-start;
+  }
+  
+  .description {
+    color: #8692a6;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 4px;
+  }
+  
+  .arrowIcon {
+    aspect-ratio: 1.1;
+    object-fit: contain;
+    object-position: center;
+    width: 22px;
+    margin: auto 0;
+  }
+  
+  .loginPrompt {
+    color: #8692a6;
+    text-align: right;
+    align-self: center;
+    margin-top: 144px;
+    font: 400 18px/2 Inter, sans-serif;
+  }
+  
+  .loginLink {
+    font-weight: 500;
+    color: #00d27a;
+  }
+  
+  @media (max-width: 991px) {
+    .cardContent {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+  
+    .iconColumn {
+      width: 100%;
+    }
+  
+    .textColumn {
+      width: 100%;
+    }
+  }
