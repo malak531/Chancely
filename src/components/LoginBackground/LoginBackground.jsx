@@ -1,7 +1,7 @@
 import React from "react";
 import "./LoginBackground.css";
 
-export const LoginBackground = () => {
+const LoginBackground = () => {
   return (
     <div className="chancely-new">
       <div className="div">
@@ -12,8 +12,7 @@ export const LoginBackground = () => {
             src="https://c.animaapp.com/DvWBMqHZ/img/logofull-2@2x.png"
           />
         </div>
-
-        <div className="text-wrapper">Save</div>
+        <div className="text-wrapper">Welcome <br/>Back!</div> 
       </div>
     </div>
   );

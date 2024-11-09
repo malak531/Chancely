@@ -9,11 +9,17 @@ import EventCreation from './components/OrganizationPages/EventCreation/EventCre
 import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
 import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
 
+import OpportunityInfoTop from './components/OpportunityInfo/OpportunityInfoTop';
+import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
+import OpportunityDescription from './components/OpportunityInfo/OpportunityDescription';
+import LoginForm from './components/LoginPage/LoginForm';
+import LoginPage from './components/LoginPage/LoginPage';
 
 function App() {
   return (
     <div >
       <EventCreation/>
+      <LoginPage/>
     </div>
         
   );
