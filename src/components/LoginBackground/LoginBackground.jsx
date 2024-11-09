@@ -12,7 +12,6 @@ const LoginBackground = () => {
             src="https://c.animaapp.com/DvWBMqHZ/img/logofull-2@2x.png"
           />
         </div>
-        <div className="text-wrapper">Welcome <br/>Back!</div> 
       </div>
     </div>
   );

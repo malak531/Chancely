@@ -14,11 +14,14 @@ import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
 import OpportunityDescription from './components/OpportunityInfo/OpportunityDescription';
 import LoginForm from './components/LoginPage/LoginForm';
 import LoginPage from './components/LoginPage/LoginPage';
-
+import StepOne from './components/Sign Up Pages User/SelectType/StepOne';
+import StepTwo from './components/Sign Up Pages User/StepTwo/StepTwo';
+import InterestSelection from './components/Sign Up Pages User/StepThree/InterestSelection';
+import AccountCreationSuccess from './components/Sign Up Pages User/StepFour/AccountCreationSuccess';
 function App() {
   return (
     <div >
-      <EditEventOrganizer/>
+      <AccountCreationSuccess/>
     </div>
         
   );

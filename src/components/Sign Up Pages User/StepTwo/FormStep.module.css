@@ -1,0 +1,17 @@
+.stepContainer {
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  .stepIndicator {
+    color: #bdbdbd;
+    font: 500 14px Inter, sans-serif;
+    display: block;
+  }
+  
+  .stepDescription {
+    color: #8692a6;
+    font: 600 16px Inter, sans-serif;
+    display: block;
+    margin-top: 6px;
+  }

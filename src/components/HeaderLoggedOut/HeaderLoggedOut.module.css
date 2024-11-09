@@ -20,8 +20,9 @@
   .navLink {
     color: #2b2b2b;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
+    
   }
   
   .signOutButton {
@@ -31,6 +32,7 @@
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    font-size: 15px;
   }
   
   @media (max-width: 768px) {
@@ -44,4 +46,24 @@
       flex-direction: column;
       align-items: flex-start;
     }
+}
+
+    @media (max-width: 991px) {
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 10px;
+        }
+      
+        .navigation {
+          margin-top: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .navLink{
+            font-size: 12px;
+        }
+        .signOutButton{
+            font-size: 12px;
+        }
   }
