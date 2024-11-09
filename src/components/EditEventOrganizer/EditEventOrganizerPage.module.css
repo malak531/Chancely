@@ -1,0 +1,55 @@
+.editEventOrganizerPage {
+    background-color:#fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 41px 80px 101px;
+  }
+  
+  .contentContainer {
+    align-self: center;
+    display: flex;
+    width: 100%;
+    max-width: 1225px;
+    flex-direction: column;
+    color: #2b2b2b;
+    font: 500 16px Poppins, sans-serif;
+  }
+  
+  .twoColumnLayout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .saveButton {
+    border-radius: 31px;
+    background-color: #02a1f9;
+    box-shadow: 4px 10px 31px rgba(0, 0, 0, 0.06);
+    align-self: center;
+    width: 302px;
+    max-width: 100%;
+    color: #fff;
+    text-align: center;
+    margin: 41px 0 -22px;
+    padding: 19px 70px;
+    font: 600 25px Poppins, sans-serif;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 991px) {
+    .editEventOrganizerPage {
+      padding: 0 20px 100px;
+    }
+  
+    .contentContainer {
+      max-width: 100%;
+    }
+  
+    .saveButton {
+      margin: 40px 0 10px;
+      padding: 19px 20px;
+    }
+  }

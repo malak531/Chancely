@@ -1,0 +1,49 @@
+.eventDates {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .dateRange,
+  .deadline {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .label {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .datePickerWrapper {
+    position: relative;
+  }
+  
+  .datePicker {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #bdbdbd;
+    font-size: 14px;
+    font-family: Helvetica Neue, -apple-system, Roboto, Helvetica, sans-serif;
+  }
+  
+  .calendarIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  @media (max-width: 991px) {
+    .eventDates {
+      flex-direction: column;
+    }
+  }

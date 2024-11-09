@@ -9,9 +9,13 @@ import DropdownField from './DropdownField';
 import TextAreaField from './TextAreaField';
 import OrgnizerHeader from '../../OrgnizerHeader/OrgnizerHeader';
 import InterestsSection from '../../User Pages/Profile/InterestsSection';
+import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
+
 const EventCreation = () => {
-  let EventType = ['non-profit', 'Educational'
-  ];
+  let EventType = ['Conference', 'Exhibition', 'Competition', 'Short Course', 'Summer Program'];
+  let EventLocation = ['Bahrain', 'Saudi Arabia', 'Lebanon', 'Jordan', 'Kuwait', 'Yemen', 'Egypt', 'Syria', 'Oman', 'United Arab Emirates', 'Qatar', 'Iraq'];
+  let FeesType = ['Free', 'Partially-Funded', 'Self-Funded'];
+
   return (
     <>
       {/* Organizer header positioned at the top of the page */}
@@ -35,14 +39,14 @@ const EventCreation = () => {
             
             <FormField label="Event Title*" placeholder="Type event title" />
             
-            <DropdownField label="Event Type*" options={EventType} />
+            <DropdownField label="Event Type*" placeholder='Select Event Type' options={EventType} />
          
             
-            <DropdownField label="Event Location*" placeholder="Select" />
+            <DropdownField label="Event Location*" placeholder="Select Event Location" options = {EventLocation}/>
             
             <FormField label="Event Venue*" placeholder="Type your event venue" />
             
-            <DropdownField label="Fees*" placeholder="Select" />
+            <DropdownField label="Fees*" placeholder="Select Fees Type" options = {FeesType}/>
             
             <DateRangePicker label="Event Registration Deadline*" singleDate />
             
@@ -54,6 +58,7 @@ const EventCreation = () => {
           </form>
         </section>
       </main>
+      <ContactInfoFooter/>
     </>
   );
 };

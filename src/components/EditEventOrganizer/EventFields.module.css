@@ -1,0 +1,35 @@
+.eventFields {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    color: #4b4b4b;
+    font: 500 15px/1 Inter, sans-serif;
+  }
+  
+  .fieldButton {
+    align-self: stretch;
+    border-radius: 122px;
+    background-color: #f2f4f7;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .fieldButton:first-child {
+    background-color: #02a1f9;
+    color: #fff;
+  }
+  
+  .fieldButton:hover {
+    background-color: #e0e3e7;
+  }
+  
+  @media (max-width: 991px) {
+    .eventFields {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
