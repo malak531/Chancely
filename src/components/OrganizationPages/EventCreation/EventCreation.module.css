@@ -1,23 +1,27 @@
-body {
+* {
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
   margin: 0;
-  background: linear-gradient(rgba(86, 199, 216, 0.5), rgba(56, 246, 164, 0.5));
+  padding: 0;
+}
+
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensures the background covers the full viewport height */
-  padding: 20px; /* Optional padding for spacing */
-  box-sizing: border-box;
+  background: linear-gradient(rgba(86, 199, 216, 0.5), rgba(56, 246, 164, 0.5));
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .eventCreationContainer {
   display: flex;
   justify-content: center;
-  align-items: center; /* Center content vertically */
-  padding: 102px 20px;
+  padding: 50px 20px;
   flex-direction: column;
-  width: 100%; /* Full width for responsiveness */
-  max-width: 600px; /* Sets a narrower limit on larger screens */
-  margin: 0 auto; /* Center container horizontally */
+  max-width: 1400px; /* Wider on large screens */
+  width: 100%; /* Allows full width on smaller screens */
+  margin: auto;
 }
 
 .formWrapper {
@@ -25,29 +29,33 @@ body {
   background-color: #fff;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
   width: 100%;
-  padding: 54px 46px;
+  max-width: 1200px; /* Expands on larger screens */
+  padding: 30px 20px;
+  margin: auto;
 }
 
 .formHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .formTitle {
-  font: 600 44px Poppins, sans-serif;
-  margin-left: 20px;
+  font: 600 28px Poppins, sans-serif;
+  text-align: center;
+  width: 100%;
 }
 
 .sectionTitle {
-  font: 500 30px Poppins, sans-serif;
-  margin-bottom: 30px;
+  font: 500 24px Poppins, sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .eventForm {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .submitButton {
@@ -55,8 +63,8 @@ body {
   background-color: #02a1f9;
   box-shadow: 4px 10px 30px rgba(0, 0, 0, 0.06);
   color: #fff;
-  font: 600 24px Poppins, sans-serif;
-  padding: 19px 70px;
+  font: 600 18px Poppins, sans-serif;
+  padding: 10px 40px;
   align-self: center;
   border: none;
   cursor: pointer;
@@ -70,62 +78,51 @@ body {
 /* Media Queries for smaller screens */
 @media (max-width: 991px) {
   .eventCreationContainer {
-    padding: 50px 10px 0;
+    padding: 30px 10px;
+    max-width: 100%;
   }
 
   .formWrapper {
     padding: 20px 15px;
+    max-width: 700px; /* Narrower width for medium screens */
   }
 
   .formTitle {
-    font-size: 28px;
-  }
-
-  .sectionTitle {
     font-size: 24px;
   }
 
+  .sectionTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
   .submitButton {
-    padding: 10px 30px;
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Additional adjustments for extra-small screens */
+@media (max-width: 576px) {
+  .eventCreationContainer {
+    padding: 20px 10px;
+  }
+
+  .formWrapper {
+    padding: 15px;
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .formTitle {
+    font-size: 22px;
+  }
+
+  .sectionTitle {
     font-size: 18px;
   }
-}
 
-/* Footer Styles */
-.footer {
-  background: linear-gradient(rgba(86, 199, 216, 0.5), rgba(56, 246, 164, 0.5));
-  color: black;
-  padding: 40px 70px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.footer .footerNav {
-  display: flex;
-  gap: 20px;
-}
-
-.footerBottom {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-}
-
-/* Footer mobile responsiveness */
-@media (max-width: 768px) {
-  .footer {
-    padding: 40px 20px;
-    flex-direction: column;
-  }
-
-  .footerBottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+  .submitButton {
+    padding: 8px 15px;
+    font-size: 14px;
   }
 }
