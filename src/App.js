@@ -7,11 +7,15 @@ import BrowseOpportunities from './components/User Pages/BrowseOpportunities/Bro
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import OrgnizerHeader from './components/OrgnizerHeader/OrgnizerHeader';
+import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
+import OpportunityInfoTop from './components/OpportunityInfo/OpportunityInfoTop';
+import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
+import OpportunityDescription from './components/OpportunityInfo/OpportunityDescription';
 
 function App() {
   return (
     <div >
-     <EventCreation/>
+      <OpportunityInfo/>
     </div>
         
   );

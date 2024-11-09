@@ -1,0 +1,120 @@
+.container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    color: #1c2b38;
+    padding: 30px 80px 108px;
+    font: 700 40px Volkhov, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .container {
+      padding: 0 20px 100px;
+    }
+  }
+  
+  .content {
+    display: flex;
+    width: 100%;
+    max-width: 1214px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  @media (max-width: 991px) {
+    .content {
+      max-width: 100%;
+    }
+  }
+  
+  .sectionTitle {
+    width: 348px;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .sectionDescription {
+    color: #495560;
+    text-align: justify;
+    align-self: stretch;
+    margin-top: 42px;
+    font: 400 26px/40px Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+  
+}
+  
+  @media (max-width: 991px) {
+    .sectionDescription {
+        font-size: 22px;
+        line-height: 36px;
+    }
+    .sectionTitle {
+        font-size: 25px;
+      }
+      
+  }
+  
+  .criteriaTitle {
+    margin-top: 65px;
+    font-family: Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .criteriaTitle {
+      margin-top: 40px;
+    }
+  }
+  
+  .criteriaDescription {
+    color: #495560;
+    margin-top: 37px;
+    font: 400 26px/1 Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .criteriaDescription {
+      max-width: 100%;
+      font-size: 22px;
+    }
+    .criteriaTitle{
+        font-size: 26px;
+
+    }
+    .applyNowTitle{
+        font-size: 26px;
+    }
+  }
+  
+  .applyNowTitle {
+    margin-top: 66px;
+    width: 348px;
+    font-family: Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .applyNowTitle {
+      margin-top: 40px;
+    }
+  }
+  
+  .buttonContainer {
+    display: flex;
+    margin-top: 59px;
+    width: 632px;
+    max-width: 100%;
+    gap: 28px;
+    color: #02a1f9;
+    text-align: center;
+    letter-spacing: 0.2px;
+    font: 600 14px/24px Montserrat, -apple-system, Roboto, Helvetica, sans-serif;
+    
+
+  }
+  
+  @media (max-width: 991px) {
+    .buttonContainer {
+      margin-top: 40px;
+      flex-direction: column
+
+    }
+  }

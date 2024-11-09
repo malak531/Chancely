@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './InfoItem.module.css';
 import { placeholder } from '@babel/types';
 
+
+
 const InfoItem = ({ label, value }) => {
   return (
     <div className={styles.infoItem}>
