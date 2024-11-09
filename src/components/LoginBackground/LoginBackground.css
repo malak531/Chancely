@@ -2,16 +2,15 @@
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    position: relative;
   }
   
   .chancely-new .div {
     background-color: #ffffff;
     height: 882px;
+    width: 700px;
     overflow: hidden;
     position: relative;
-    width: 1440px;
   }
   
   .chancely-new .frame {
@@ -23,7 +22,7 @@
     left: 0;
     position: absolute;
     top: 0;
-    width: 705px;
+    width:100%;
   }
   
   .chancely-new .logofull {
@@ -37,17 +36,22 @@
   
   .chancely-new .text-wrapper {
     color: #ffffff;
-    font-family: "Inter", Helvetica;
-    font-size: 16px;
-    font-weight: 700;
-    height: 19px;
-    left: 979px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    top: 517px;
-    white-space: nowrap;
-    width: 141px;
+  font-family: "Inter", Helvetica;
+  font-size: 140px; /* Increased font size */
+  font-weight: 700;
+  position: absolute; /* Makes the text layer above the image */
+  top: 50%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Corrects offset from centering */
+  text-align: center;
+  width: 100%; /* Ensures the text will fit within the container */
+  white-space: nowrap; /* Prevents text from wrapping */
+  }
+
+  @media (max-width: 991px) {
+    .chancely-new .div{
+      width: 90%;
+    }
+   
   }
   
