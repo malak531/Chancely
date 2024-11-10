@@ -1,0 +1,115 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.centeredBox {
+  width: 90%; /* Allows the box to adapt more closely to the screen size */
+  max-width: 900px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.title {
+  font-size: 24px;
+  color: #06c167;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mainContent {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.imageSection, .overviewSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.organizationImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover; /* Ensures the image fills the container */
+}
+
+.imageLabel, .label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.textarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.infoSection {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.formGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.approveButton, .rejectButton {
+  flex: 1; /* Ensures buttons take up equal space */
+  padding: 12px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.approveButton {
+  background-color: #06c167;
+  color: white;
+}
+
+.rejectButton {
+  background-color: #ff4d4f;
+  color: white;
+}
