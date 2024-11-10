@@ -3,10 +3,12 @@ import styles from './OpportunityInfoTop.module.css';
 import InfoItem from './InfoItem';
 import HeaderLoggedIn from '../HeaderLoggedIn/HeaderLoggedInUser';
 import { useParams } from 'react-router-dom';
-
+import Header from '../EditEventOrganizer/Header';
+import { useAuth } from '../AuthContext';
 
 const OpportunityInfoTop = () => {
     const { id } = useParams();
+    const{userRole} = useAuth();
     
     let eventData = [{
         id:1,
@@ -93,7 +95,11 @@ const OpportunityInfoTop = () => {
 
   return (
     <div>
-        <HeaderLoggedIn/>
+{(
+    userRole === "organization" ? 
+  <Header/> :
+      <HeaderLoggedIn />
+  ) }
     <main className={styles.container}>
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>

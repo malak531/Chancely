@@ -1,38 +1,32 @@
-import React from "react";
-import fullLogoGradinat2 from "./full-logo-gradinat-2.png";
-import image from "./image.svg";
-import "./style.css";
-import vector2 from "./vector-2.svg";
-import vector from "./vector.svg";
+import React from 'react';
+import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
-export const Box = () => {
+
+
+const Header = () => {
+  const { login } = useAuth();
+  const handleSignOut = () => {
+    logout();
+    navigate('/BrowseOpportunities');
+  };
   return (
-    <div className="box">
-      <div className="navbar">
-        <img
-          className="full-logo-gradinat"
-          alt="Full logo gradinat"
-          src={fullLogoGradinat2}
-        />
-
-        <div className="text-wrapper">Pending Requests</div>
-
-        <div className="div">Create Event</div>
-
-        <div className="text-wrapper-2">Organizations</div>
-
-        <div className="text-wrapper-3">Opportunities</div>
-
-        <div className="text-wrapper-4">Sign out</div>
-
-        <div className="overlap-group">
-          <img className="vector" alt="Vector" src={vector} />
-
-          <img className="img" alt="Vector" src={image} />
-
-          <img className="vector-2" alt="Vector" src={vector2} />
-        </div>
-      </div>
-    </div>
+    <header className={styles.header}>
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9163b62f940413608d344ef328f147b6739f79d565eb62aa790ac271175fa94e?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="Logo" className={styles.logo} />
+      <nav className={styles.navigation}>
+        <Link to="/PendingRequests" className={styles.navLink}>Pending Request</Link>
+        <Link to="/CreateEvent" className={styles.navLink}>Create Event</Link>
+        <Link to="/BrowseOpportunities" className={styles.navLink}>Browse Opportunities</Link>
+        <Link to="/about" className={styles.navLink}>About us</Link>
+        <Link to = "/" className={styles.signOutButton} onClick={handleSignOut}>Sign out</Link>
+        <Link to = "/OrganizationProfile" className={styles.container}><div
+      className={styles.container}
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/Images/profile.png)` }}
+    ></div></Link>      
+    </nav>
+    </header>
   );
 };
+
+export default Header;
