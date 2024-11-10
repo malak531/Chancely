@@ -6,12 +6,36 @@ Our mission is simple: to provide a centralized platform that connects individua
 ### Our Vision:
 We envision a Middle East where education and professional opportunities are accessible to all, regardless of geographic or socio-economic barriers. By fostering connections between organizations and individuals, we hope to inspire a future of innovation, collaboration, and progress.
 
-## How to Use Chancely:
+## How to Start Chancely:
     to start using Chancely, follow these steps:
     1- download a javaScript IDE to run the website from and then download node.js.
     2- download the needed packages like npm, React Router DOM, react-scripts.
     3- run "npm start" in the terminal to start the website.
     4- Enjoy the awesomeness!
+
+## How to Use Chancley:
+### For User:
+- to test the User functionalities you can use the following log-in info and see the user's view when logged into the website.
+- username: user@domain.com         password: user123
+- after you log in you can browse, filter, and search the various opportunities on our websites through the opportunities page.
+- you can also view opportunities you like and check out the organizations that have posted them and see more details about them.
+- you can see and edit your personal profile through the top right icon.
+
+### For Organization:
+- to test the Organization functionalities you can use the following log-in info and see the Organization's view when logged into the website.
+- username: org@domain.com         password: org123
+- after you log in you can browse, filter, and search the various opportunities on our websites through the opportunities page.
+- you can create new amazing events from the create events page and post them on your organization profile.
+- you can also view events and opportunities you have created and see more details about them or even edit them through your organization profile.
+- you can see and edit your organization profile through the top right icon.
+
+### For Admin:
+- to test the Admin functionalities you can use the following log-in info and see the Admin's view when logged into the website.
+- username: admin@domain.com         password: admin123
+- after you log in you can browse, filter, and search the various opportunities on our websites through the opportunities page.
+- you can create new amazing events from the create events page and post them on your organization profile.
+- you can also view events and opportunities you have created and see more details about them or even edit them through your organization profile.
+- you can see and edit your organization profile through the top right icon.
 
 
 

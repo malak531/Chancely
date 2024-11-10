@@ -3,7 +3,7 @@ import styles from './BrowseOrganizations.module.css';
 import OrganizationFilterSection from './OrganizationFilterSection.jsx';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
 
-function OrganizationSearch() {
+function BrowseOrganizations() {
   const [organizations, setOrganizations] = useState([
     {
       name: 'Aramco',
