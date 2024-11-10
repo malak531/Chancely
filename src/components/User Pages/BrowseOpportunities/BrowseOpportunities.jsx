@@ -6,6 +6,7 @@ import CompanyBox from '../../CompanyBox/CompanyBox';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
 import Header from '../../EditEventOrganizer/Header';
 import { useAuth } from '../../AuthContext';
+import AdminHeader from '../../AdminHeader/AdminHEader';
 
 const BrowseOpportunities = () => {
     const{userRole} = useAuth();
@@ -73,7 +74,7 @@ const BrowseOpportunities = () => {
   (
     userRole === "organization" ? 
   <Header/> :
-      <HeaderLoggedIn />
+  userRole === "user" ?<HeaderLoggedIn />:<AdminHeader/>
   ) 
 }
       <main className={styles.mainContent}>

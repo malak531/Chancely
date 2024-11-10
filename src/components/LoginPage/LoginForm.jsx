@@ -50,7 +50,7 @@ const LoginForm = ({ onLoginSuccess }) => {
 
     // Redirect based on role
     if (account.role === 'admin') {
-      navigate('/adminDashboard');
+      navigate('/BrowseOpportunities');
     } else if (account.role === 'organization') {
       navigate('/BrowseOpportunities');
     } else {

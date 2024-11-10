@@ -5,6 +5,7 @@ import OpportunityCard from './OpportunityCard';
 import Header from '../../EditEventOrganizer/Header';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
 import EventsSection from '../../ChancelyHomepageNotLoggedIn/EventsSection';
+import OrganizationOppCard from './OrganizationOppCard';
 
 const OrganizationProfile = () => {
   const navItems = [
@@ -104,7 +105,7 @@ const OrganizationProfile = () => {
 
         <section className={styles.opportunitiesSection}>
           <h2>This Organization's Opportunities</h2>
-          <EventsSection/>
+          <OrganizationOppCard/>
             
         </section>
       </section>

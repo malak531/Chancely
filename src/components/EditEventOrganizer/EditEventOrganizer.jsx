@@ -8,7 +8,6 @@ import JoiningCriteria from './JoiningCriteria';
 import EventDescription from './EventDescription';
 import EventVenue from './EventVenue';
 import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
-import OrgnizerHeader from '../OrgnizerHeader/OrgnizerHeader';
 import EventTitle from './EventTitle';
 import EventFees from './EventFees';
 

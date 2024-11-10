@@ -10,7 +10,7 @@ import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
 import { useAuth } from '../AuthContext';
 import HeaderLoggedIn from '../HeaderLoggedIn/HeaderLoggedInUser';
 import Header from '../EditEventOrganizer/Header';
- 
+import AdminHeader from '../AdminHeader/AdminHEader'; 
 const ChancelyHomePageNotLoggedIn = () => {
   const { isLoggedIn } = useAuth();
   const { userRole } = useAuth();
@@ -25,8 +25,7 @@ const ChancelyHomePageNotLoggedIn = () => {
   <Header/>
     ) : userRole === "user" ? (
       <HeaderLoggedIn />
-    ) : null // You can add more conditions if needed
-  ) : (
+    ) : <AdminHeader/>) : (
     <HeaderLoggedOut />
   )
 }
