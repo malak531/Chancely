@@ -18,6 +18,7 @@ const SelectType = () => {
       title: "I Would Like to Post Opportunities",
       description: "Promote your events to a wide audience and connect with engaged professionals and students",
       arrowIcon: "https://cdn.builder.io/api/v1/image/assets/TEMP/769d02ff16e9fe4dc411071f6401bb7bd5da325278a81c052569a87ea09e71bb?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a"
+      ,link:"/OrganizationRegistration"
     }
   ];
 

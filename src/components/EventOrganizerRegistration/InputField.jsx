@@ -9,6 +9,7 @@ const InputField = ({ label, placeholder, type = 'text' }) => {
         type={type}
         className={styles.inputField}
         placeholder={placeholder}
+        required
       />
     </div>
   );

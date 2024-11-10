@@ -6,7 +6,7 @@ const dropdown = ({ label, placeholder, options=[]}) => {
     <div className={styles.dropdownContainer}>
       <label className={styles.dropdownLabel}>{label}</label>
       <div className={styles.selectWrapper}>
-        <select className={styles.selectField} aria-label={label}>
+        <select className={styles.selectField} aria-label={label} required>
         <option value="">{placeholder}</option>
           {options.map((option, index) => (
             <option key={index} value={option.value || option}>

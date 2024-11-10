@@ -4,8 +4,9 @@ import InputField from './InputField';
 import RememberMe from './RememberMe';
 import HeaderLoggedOut from '../HeaderLoggedOut/HeaderLoggedOut';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
-const LoginForm = () => {
+const LoginForm = ({ onLoginSuccess }) => {
   // Sample accounts data (can be replaced with actual API calls)
   const accounts = {
     admin: { email: 'admin@domain.com', password: 'admin123', role: 'admin' },
@@ -13,6 +14,7 @@ const LoginForm = () => {
     user: { email: 'user@domain.com', password: 'user123', role: 'user' },
   };
 
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -44,15 +46,17 @@ const LoginForm = () => {
       setError('Invalid email or password.');
       return false;
     }
+    login(account.role); // Log in with the account's role
 
     // Redirect based on role
     if (account.role === 'admin') {
       navigate('/adminDashboard');
     } else if (account.role === 'organization') {
-      navigate('/organizationDashboard');
+      navigate('/BrowseOpportunities');
     } else {
       navigate('/BrowseOpportunities');
     }
+    
 
     return true;
   };

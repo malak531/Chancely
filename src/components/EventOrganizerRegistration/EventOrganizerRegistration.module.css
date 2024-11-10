@@ -19,11 +19,11 @@
 .registrationContainer {
   background-color: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
-  padding: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
 .registrationWrapper {
@@ -31,7 +31,7 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   padding: 53px 44px;
   align-items: center;
 }
@@ -139,11 +139,7 @@
   line-height: 1.5;
 }
 
-.termsContainer {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
+
 
 .registerButton {
   padding: 15px 0;

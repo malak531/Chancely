@@ -35,7 +35,7 @@ function InterestSelection() {
   const handleSubmit = () => {
     if (selectedInterests.length >= 3) {
       console.log('Selected interests:', selectedInterests);
-      navigate('/BrowseOpportunities')
+      navigate('/Step4')
     } else {
       alert('Please select at least 3 interests before continuing.');
     }

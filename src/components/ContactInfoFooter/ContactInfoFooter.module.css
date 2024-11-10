@@ -7,7 +7,7 @@ html, body {
   min-height: 100vh;
 }
 
-body {
+.footer {
   background: linear-gradient(rgba(86, 199, 216, 0.5), rgba(56, 246, 164, 0.5));
 }
 

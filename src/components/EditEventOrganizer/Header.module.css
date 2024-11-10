@@ -1,51 +1,48 @@
 .header {
-    display: flex;
-    width: 100%;
-    max-width: 1225px;
-    align-items: center;
-    gap: 20px;
-    justify-content: space-between;
-    font: 500 16px Poppins, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 26px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 40px;
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navLink {
+  color: #2b2b2b;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.signOutButton {
+  background-color: transparent;
+  border: none;
+  color: #2b2b2b;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .logo {
-    aspect-ratio: 6.71;
-    object-fit: contain;
-    width: 228px;
-    max-width: 100%;
-  }
-  
+
   .navigation {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .navLink {
-    text-decoration: none;
-    color: #2b2b2b;
-    padding: 13px 16px;
-    border-radius: 30px;
-  }
-  
-  .navLink:hover {
-    background-color: rgba(255, 255, 255, 0.36);
-  }
-  
-  .profileIcon {
-    aspect-ratio: 1.03;
-    object-fit: contain;
-    width: 37px;
-  }
-  
-  @media (max-width: 991px) {
-    .header {
-      max-width: 100%;
-      flex-direction: column;
-    }
-  
-    .navigation {
-      justify-content: center;
-    }
-  }
+}

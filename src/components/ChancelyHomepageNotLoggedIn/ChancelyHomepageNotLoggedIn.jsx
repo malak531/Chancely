@@ -7,15 +7,29 @@ import EventsSection from './EventsSection';
 import RegisterSection from './RegisterSection';
 import Services from '../AboutUsPage/Services';
 import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
+import { useAuth } from '../AuthContext';
+import HeaderLoggedIn from '../HeaderLoggedIn/HeaderLoggedInUser';
+import Header from '../EditEventOrganizer/Header';
  
 const ChancelyHomePageNotLoggedIn = () => {
+  const { isLoggedIn } = useAuth();
+  const { userRole } = useAuth();
   return (
     <div
       className={styles.container}
       style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/Images/HomepageNotloggedIn.png)` }}
     >
-      <HeaderLoggedOut />
-
+{
+  isLoggedIn ? (
+    userRole === "organization" ? (
+  <Header/>
+    ) : userRole === "user" ? (
+      <HeaderLoggedIn />
+    ) : null // You can add more conditions if needed
+  ) : (
+    <HeaderLoggedOut />
+  )
+}
       <main>
         <Hero />
         <TrustedCompanies />

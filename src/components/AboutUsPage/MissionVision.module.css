@@ -64,7 +64,14 @@
     .missionVision {
       max-width: 100%;
       margin-top: 40px;
+      margin-left: 12px;
     }
+    .description{
+        font-size: 100%;
+        margin-left: 10px;
+    }
+
+  
   
     .title {
       font-size: 40px;

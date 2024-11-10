@@ -4,8 +4,12 @@ import FilterSection from './FilterSection';
 import HeaderLoggedIn from '../../HeaderLoggedIn/HeaderLoggedInUser';
 import CompanyBox from '../../CompanyBox/CompanyBox';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
+import Header from '../../EditEventOrganizer/Header';
+import { useAuth } from '../../AuthContext';
 
 const BrowseOpportunities = () => {
+    const{userRole} = useAuth();
+
   const [opportunities, setOpportunities] = useState([
     {
       id: 1,
@@ -64,12 +68,19 @@ const BrowseOpportunities = () => {
 
   return (
     <div className={styles.browseOpportunities}>
+        
+        {
+  (
+    userRole === "organization" ? 
+  <Header/> :
       <HeaderLoggedIn />
+  ) 
+}
       <main className={styles.mainContent}>
         <h1 className={styles.pageTitle}>Explore Exciting Opportunities</h1>
         <p className={styles.pageDescription}>Find the perfect event to boost your career or expand your knowledge.</p>
         <div className={styles.contentWrapper}>
-            <FilterSection/>
+        <FilterSection/>
           <section className={styles.opportunitiesSection}>
             <div className={styles.searchBar}>
               <input

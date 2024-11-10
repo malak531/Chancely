@@ -8,9 +8,16 @@ import AboutUs from './components/AboutUsPage/AboutUs';
 import InterestSelection from './components/Sign Up Pages User/StepThree/InterestSelection';
 import BrowseOpportunities from './components/User Pages/BrowseOpportunities/BrowseOpportunities';
 import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
-
+import { AuthProvider } from './components/AuthContext';
+import AccountCreationSuccess from './components/Sign Up Pages User/StepFour/AccountCreationSuccess';
+import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
+import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
+import EventOrganizerRegistration from './components/EventOrganizerRegistration/EventOrganizerRegistration';
+import Registration from './components/EventOrganizerRegistration/AccountCreationSuccess';
+import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <Routes>
         {/* This will render ChancelyHomepageNotLoggedIn for the home route */}
@@ -21,11 +28,21 @@ function App() {
         <Route path="/Step2" element={<StepTwo />} />
         <Route path="/Step1" element={<StepOne />} />
         <Route path="/Step3" element={<InterestSelection />} />
+        <Route path="/Step4" element={<AccountCreationSuccess />} />
         <Route path="/UserProfile" element={<EditUserProfile />} />
+        <Route path="/OppInfo/:id" element={<OpportunityInfo />} />
+        <Route path="/OrganizationRegistration" element={<EventOrganizerRegistration />} />
+        <Route path="/success" element={<Registration />} />
+        <Route path="/createEvent" element={<EventCreation />} />
+
+        
+
 
 
       </Routes>
     </Router>
+   </AuthProvider>
+
         
   );
 }

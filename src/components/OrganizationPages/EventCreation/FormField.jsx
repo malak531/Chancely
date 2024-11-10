@@ -5,7 +5,7 @@ const FormField = ({ label, placeholder }) => {
   return (
     <div className={styles.formFieldContainer}>
       <label className={styles.fieldLabel}>{label}</label>
-      <input type="text" className={styles.fieldInput} placeholder={placeholder} aria-label={label} />
+      <input type="text" className={styles.fieldInput} placeholder={placeholder} aria-label={label} required />
     </div>
   );
 };

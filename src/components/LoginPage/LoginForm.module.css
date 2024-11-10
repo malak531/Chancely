@@ -122,5 +122,6 @@
   .inputPlaceholder{
     border-color: white;
     border-width: 0px;
+    width: 80%;
   }
   

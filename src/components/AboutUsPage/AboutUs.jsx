@@ -10,10 +10,28 @@ import LabeledTitle from './LabeledTitle';
 import StorySection from './StorySection';
 import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
 import TeamSection from './TeamSection';
+import { useAuth } from '../AuthContext';
+import HeaderLoggedOut from '../HeaderLoggedOut/HeaderLoggedOut';
+import Header from '../EditEventOrganizer/Header';
 const AboutUs = () => {
+    const { isLoggedIn } = useAuth();
+    const{userRole} = useAuth();
   return (
     <div className={styles.content}>
-    <HeaderLoggedIn />
+    <header>
+{
+  isLoggedIn ? (
+    userRole === "organization" ? (
+  <Header/>
+    ) : userRole === "user" ? (
+      <HeaderLoggedIn />
+    ) : null // You can add more conditions if needed
+  ) : (
+    <HeaderLoggedOut />
+  )
+}
+
+    </header>
     <div className={styles.homePage}>
       <TopContent />
     </div>
