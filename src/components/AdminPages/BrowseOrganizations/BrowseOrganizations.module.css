@@ -1,0 +1,183 @@
+.pageContainer {
+  background: linear-gradient(135deg, #a0e8ff, #caf7e3);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+  color: #007bff;
+  font-size: 1em;
+}
+
+/* Search Section */
+.searchContainer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 50px 0 0 50px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1em;
+  color: #333;
+}
+
+.searchInput::placeholder {
+  color: #aaa;
+}
+
+.searchButton {
+  padding: 12px 20px;
+  border-radius: 0 50px 50px 0;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchButton:hover {
+  background-color: #0056b3;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+/* Main Content */
+.content {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Organization Cards */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-height: 400px; /* Limit the max height */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardLogo {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #34c759, #00bfff);
+  padding: 10px;
+}
+
+.card h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.card p {
+  color: #666;
+  margin: 5px 0;
+}
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 5px 0 15px;
+  font-size: 0.9em;
+}
+
+.cardButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.detailsButton, .deleteButton {
+  padding: 8px 16px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.detailsButton {
+  background-color: #34c759;
+  color: #fff;
+}
+
+.deleteButton {
+  background-color: #ff4b4b;
+  color: #fff;
+}
+
+.detailsButton:hover {
+  background-color: #28a745;
+}
+
+.deleteButton:hover {
+  background-color: #e63946;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
