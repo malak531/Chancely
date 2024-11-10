@@ -9,6 +9,8 @@ import Header from '../../EditEventOrganizer/Header';
 import InterestTags from './InterestTags';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import AdminHeader from '../../AdminHeader/AdminHEader';
+import { useAuth } from '../../AuthContext';
 
 const EventCreation = () => {
   let EventType = ['Conference', 'Exhibition', 'Competition', 'Short Course', 'Summer Program'];
@@ -29,10 +31,12 @@ const EventCreation = () => {
         navigate("/BrowseOpportunities");
       }, 5000);
     };
+    const {userRole} = useAuth();
   return (
     <div className={styles.container}>
-      {/* Organizer header positioned at the top of the page */}
-      <Header />
+
+      {userRole === "organization" ? 
+  <Header/>: <AdminHeader/>}
       <main className={styles.eventCreationContainer}>
         <section className={styles.formWrapper}>
           <header className={styles.formHeader}>

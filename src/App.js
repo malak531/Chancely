@@ -14,9 +14,11 @@ import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
 import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
 import EventOrganizerRegistration from './components/EventOrganizerRegistration/EventOrganizerRegistration';
 import Registration from './components/EventOrganizerRegistration/AccountCreationSuccess';
+import DeleteOrg from './components/AdminPages/DeleteOrgPage/DeleteOrg';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 import PendingOrganizationDetails from './components/AdminPages/PendingRequestsPage/PendingOrganizationDetails';
+
 function App() {
   return (
     <AuthProvider>
@@ -38,6 +40,7 @@ function App() {
         <Route path="/createEvent" element={<EventCreation />} />
         <Route path="/OrganizationProfile" element={<OrganizationProfile />} />
         <Route path="/PendingRequests" element={<PendingOrganizationDetails />} />
+        <Route path="/Delete" element={<DeleteOrg />} />
 
       </Routes>
     </Router>
