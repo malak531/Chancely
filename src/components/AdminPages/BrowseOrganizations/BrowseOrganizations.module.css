@@ -1,0 +1,161 @@
+.pageContainer {
+    background: linear-gradient(135deg, #a0e8ff, #caf7e3);
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 15px;
+    color: #007bff;
+    font-size: 1em;
+  }
+  
+  .searchContainer {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .searchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .searchInput {
+    padding: 10px;
+    width: 300px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .searchButton {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cardLogo {
+    width: 100%;
+    max-height: 120px;
+    height:min-content;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #34c759, #00bfff);
+    padding: 10px;
+  }
+  
+  .card h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 5px;
+  }
+  
+  .card p {
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .card a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 5px 0 15px;
+    font-size: 0.9em;
+  }
+  
+  .cardButtons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .detailsButton, .deleteButton {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .detailsButton {
+    background-color: #34c759;
+    color: #fff;
+  }
+  
+  .deleteButton {
+    background-color: #ff4b4b;
+    color: #fff;
+  }
+  
+  .detailsButton:hover {
+    background-color: #28a745;
+  }
+  
+  .deleteButton:hover {
+    background-color: #e63946;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .pagination span {
+    padding: 0 8px;
+    font-weight: bold;
+  }
+  
+  .pagination button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
