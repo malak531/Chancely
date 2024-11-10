@@ -21,9 +21,12 @@ const HeaderLoggedIn = () => {
         <Link to="/BrowseOpportunities" className={styles.navLink}>Browse Opportunities</Link>
         <Link to="/about" className={styles.navLink}>About us</Link>
         <Link to = "/" className={styles.signOutButton} onClick={handleSignOut}>Sign out</Link>
-        <Link to = "/UserProfile" className={styles.profile}><FontAwesomeIcon icon={faUser} size="lg" /></Link>
+        <Link to = "/UserProfile" className={styles.container}><div
+      className={styles.container}
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/Images/profile.png)` }}
+    ></div></Link>
       </nav>
-    </header>
+    </header> 
   );
 };
 

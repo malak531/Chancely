@@ -15,6 +15,9 @@ import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganiz
 import EventOrganizerRegistration from './components/EventOrganizerRegistration/EventOrganizerRegistration';
 import Registration from './components/EventOrganizerRegistration/AccountCreationSuccess';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
+import PendingOrganizationDetails from './components/AdminPages/PendingRequestsPage/PendingOrganizationDetails';
+
+
 function App() {
   return (
     <AuthProvider>
@@ -40,7 +43,7 @@ function App() {
    </AuthProvider>
 
         
-  );
-}
+ );
+ }
 
 export default App;

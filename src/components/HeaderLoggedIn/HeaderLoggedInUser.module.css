@@ -46,3 +46,12 @@
       align-items: flex-start;
     }
   }
+
+  .container {
+    width: 40px; /* Set appropriate width */
+    height: 40px; /* Set appropriate height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; /* Optional for a circular image */
+  }
+  
