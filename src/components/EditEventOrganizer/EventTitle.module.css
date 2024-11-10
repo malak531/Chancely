@@ -1,0 +1,49 @@
+.eventTitle {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .titleInput {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .inputWrapper,
+  .selectWrapper {
+    position: relative;
+  }
+  
+  .input,
+  .select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #b8bbc2;
+    font-size: 16px;
+    font-family: Mulish, sans-serif;
+  }
+  
+  .inputIcon,
+  .selectIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  @media (max-width: 991px) {
+    .eventTitle {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  

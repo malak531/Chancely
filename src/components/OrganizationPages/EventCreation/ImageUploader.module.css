@@ -21,12 +21,18 @@
     padding: 48px 24px;
     cursor: pointer;
     transition: border-color 0.3s ease;
-    cursor: pointer; /* Ensures users see it as clickable */
+    width: 100%; /* Make it take full width of its container */
+    max-width: 600px; /* Set a maximum width if needed */
+    box-sizing: border-box;
+}
+
+.dropzone:hover {
+  cursor: pointer; /* Ensures users see it as clickable */
   }
   
   .dropzone:hover {
     border-color: #02a1f9;
-  }
+}
   
   .uploadIcon {
     width: 50%;

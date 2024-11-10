@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './EventDetails.module.css';
 
 function EventDetails() {
+  
   return (
     <>
     <section className={styles.eventDetails}>
