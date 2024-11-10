@@ -15,10 +15,8 @@ import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganiz
 import EventOrganizerRegistration from './components/EventOrganizerRegistration/EventOrganizerRegistration';
 import Registration from './components/EventOrganizerRegistration/AccountCreationSuccess';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
-import PendingOrganizationDetails from './components/AdminPages/PendingRequestsPage/PendingOrganizationDetails';
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 import PendingOrganizationDetails from './components/AdminPages/PendingRequestsPage/PendingOrganizationDetails';
-
 function App() {
   return (
     <AuthProvider>
@@ -39,7 +37,7 @@ function App() {
         <Route path="/success" element={<Registration />} />
         <Route path="/createEvent" element={<EventCreation />} />
         <Route path="/OrganizationProfile" element={<OrganizationProfile />} />
-        <Route path="/PendingRequests" element={<OrganizationProfile />} />
+        <Route path="/PendingRequests" element={<PendingOrganizationDetails />} />
 
       </Routes>
     </Router>

@@ -13,6 +13,7 @@ import TeamSection from './TeamSection';
 import { useAuth } from '../AuthContext';
 import HeaderLoggedOut from '../HeaderLoggedOut/HeaderLoggedOut';
 import Header from '../EditEventOrganizer/Header';
+import AdminHeader from '../AdminHeader/AdminHEader';
 const AboutUs = () => {
     const { isLoggedIn } = useAuth();
     const{userRole} = useAuth();
@@ -25,7 +26,7 @@ const AboutUs = () => {
   <Header/>
     ) : userRole === "user" ? (
       <HeaderLoggedIn />
-    ) : null // You can add more conditions if needed
+    ) : <AdminHeader/> // You can add more conditions if needed
   ) : (
     <HeaderLoggedOut />
   )

@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Header.module.css';
+import styles from './AdminHeader.module.css';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 
 
 
-const Header = () => {
+const AdminHeader = () => {
   const { login } = useAuth();
   const handleSignOut = () => {
     logout();
@@ -29,4 +29,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AdminHeader;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './PendingOrganizationDetails.module.css';
-
+import AdminHeader from '../../AdminHeader/AdminHEader';
 const PendingOrganizationDetails = () => {
   const [organizationData] = useState({
     name: 'Organization name',
@@ -23,7 +23,9 @@ const PendingOrganizationDetails = () => {
 
   return (
     <div className={styles.pageContainer}>
-      <Header />
+      <header className={styles.head}>
+      <AdminHeader />
+      </header>
       <div className={styles.centeredBox}>
         <h1 className={styles.title}>Pending Organization Details</h1>
 

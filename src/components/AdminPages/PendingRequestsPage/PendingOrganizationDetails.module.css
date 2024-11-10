@@ -4,7 +4,11 @@
   align-items: center;
   background: linear-gradient(to bottom right, #e0f7fa, #80deea);
   min-height: 100vh;
-  padding: 20px;
+  padding: px;
+  width: 100%;
+}
+.head{
+  width:100%;
 }
 
 .centeredBox {
@@ -14,6 +18,7 @@
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+  margin-top: 70px;
 }
 
 .title {
