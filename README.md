@@ -10,6 +10,7 @@ We envision a Middle East where education and professional opportunities are acc
     To start using Chancely, follow these steps:
     1- Download a javaScript IDE to run the website from and then download node.js.
     2- Download the needed packages like npm, React Router DOM, react-scripts.
+    3- clone the repositries......
     3- Run "npm start" in the terminal to start the website.
     4- Enjoy the awesomeness!
 
@@ -17,6 +18,7 @@ We envision a Middle East where education and professional opportunities are acc
 ### For User:
 - To test the User functionalities you can use the following log-in info and see the user's view when logged into the website.
 - Username: user@domain.com         Password: user123
+- when you first sign up as an
 - After you log in you can browse, filter, and search the various opportunities on our websites through the opportunities page or even go to the registrations forms or the official websites for the event.
 - You can also view opportunities you like and check out the organizations that have posted them and see more details about them.
 - You can see and edit your personal profile through the top right icon.
