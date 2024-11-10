@@ -3,14 +3,14 @@ import styles from './PendingOrganizationDetails.module.css';
 import AdminHeader from '../../AdminHeader/AdminHEader';
 const PendingOrganizationDetails = () => {
   const [organizationData] = useState({
-    name: 'Organization name',
-    location: 'Country',
-    website: 'www.domain.com',
+    name: 'KFUPM',
+    location: 'Saudi Arabia',
+    website: 'www.kfupm.edu.sa',
     size: '12k',
-    type: 'type',
+    type: 'University',
     totalEvents: '17',
-    description: 'Description of the organization',
-    imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/31cda728f6f2d2f53f9f3c842951a5a817fc524191f870b4ea7624a7aa4ec6e3?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a'
+    description: "King Fahd University of Petroleum and Minerals is a nonprofit research university in Dhahran, Eastern Province, Saudi Arabia. Established in 1963 by King Saud bin Abdulalziz as the College of Petroleum and Minerals, it is ranked among the most prestigious academic institutions in Saudi Arabia.",
+    imageUrl: '/Images/kfupm.png'
   });
 
   const handleApprove = () => {
