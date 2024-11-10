@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './DeleteOrg.css';
+import styles from './DeleteOrg.model.css';
 
 function DeleteOrg() {
   return (
