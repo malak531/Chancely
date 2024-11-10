@@ -8,7 +8,7 @@ const AccountCreationSuccess = () => {
 
   useEffect(() => {
     // Log the user in when this page loads
-    login("organizer");
+    login("user");
     // Redirect to the next page after a short delay
     const timer = setTimeout(() => navigate('/BrowseOpportunities'), 20000);
     return () => clearTimeout(timer); // Cleanup the timer

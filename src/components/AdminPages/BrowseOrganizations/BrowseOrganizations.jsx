@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router';
 
 function BrowseOrganizations() {
   let navigate = useNavigate();
+
+  // Define the state for organizations and search term
   const [organizations] = useState([
     {
       id:1,
@@ -26,29 +28,33 @@ function BrowseOrganizations() {
     // Add more organization objects as needed
   ]);
 
+  // Define the state for search term
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter organizations based on searchTerm
+  // Filter organizations based on search term (name or location)
   const filteredOrganizations = organizations.filter((org) =>
     org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     org.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Handle the delete button click (navigate to delete route)
   const handleDelete = (id) => {
     navigate(`/Delete/${id}`);
   };
+
+  // Handle the details button click (navigate to the organization profile)
   const handleDetail = () => {
     navigate(`/OrganizationProfile`);
   };
 
   return (
     <div className={styles.pageContainer}>
-      {/* Header */}
+      {/* Header section */}
       <header className={styles.header}>
         <AdminHeader />
       </header>
 
-      {/* Search Section */}
+      {/* Search section with input field */}
       <div className={styles.searchContainer}>
         <h1>Search for an Organization</h1>
         <div className={styles.searchBar}>
@@ -57,9 +63,10 @@ function BrowseOrganizations() {
             placeholder="Search"
             className={styles.searchInput}
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => setSearchTerm(e.target.value)}  // Update search term on input change
           />
           <button className={styles.searchButton}>
+            {/* Search icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -74,16 +81,17 @@ function BrowseOrganizations() {
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Main content section */}
       <div className={styles.content}>
-        {/* Filters Sidebar */}
+        {/* Filters sidebar */}
         <div className={styles.filterSection}>
           <OrganizationFilterSection />
         </div>
 
-        {/* Organization Cards */}
+        {/* Organization cards display */}
         <section className={styles.cardsContainer}>
           {filteredOrganizations.length > 0 ? (
+            // Render a card for each organization in the filtered list
             filteredOrganizations.map((org, index) => (
               <div key={index} className={styles.card}>
                 <img src={org.logo} alt={`${org.name} logo`} className={styles.cardLogo} />
@@ -91,18 +99,20 @@ function BrowseOrganizations() {
                 <p>{org.location}</p>
                 <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">{org.website}</a>
                 <div className={styles.cardButtons}>
+                  {/* Button to view organization details */}
                   <button className={styles.detailsButton} onClick={handleDetail}>Details</button>
+                  {/* Button to delete the organization */}
                   <button className={styles.deleteButton} onClick={() => handleDelete(org.id)}>Delete</button>
                 </div>
               </div>
             ))
           ) : (
-            <p>No organizations found.</p>
+            <p>No organizations found.</p>  // Message if no organizations match the search term
           )}
         </section>
       </div>
 
-      {/* Footer */}
+      {/* Footer section */}
       <div className={styles.footer}>
         <ContactInfoFooter />
       </div>

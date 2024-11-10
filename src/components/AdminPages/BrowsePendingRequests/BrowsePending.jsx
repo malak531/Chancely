@@ -4,6 +4,7 @@ import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
 import AdminHeader from '../../AdminHeader/AdminHEader.jsx';
 
 function BrowsePending() {
+  // Initializing state for organizations data
   const [organizations] = useState([
     {
       name: 'King Fahd University of Petroleum and Minerals',
@@ -19,9 +20,10 @@ function BrowsePending() {
     },
   ]);
 
+  // State for managing search input
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter organizations based on searchTerm
+  // Filter organizations based on the search term (name or location)
   const filteredOrganizations = organizations.filter((org) =>
     org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     org.location.toLowerCase().includes(searchTerm.toLowerCase())
@@ -29,7 +31,7 @@ function BrowsePending() {
 
   return (
     <div className={styles.pageContainer}>
-      {/* Header */}
+      {/* Header Section */}
       <header className={styles.header}>
         <AdminHeader />
       </header>
@@ -38,13 +40,16 @@ function BrowsePending() {
       <div className={styles.searchContainer}>
         <h1>Search for an Organization</h1>
         <div className={styles.searchBar}>
+          {/* Search input field */}
           <input
             type="text"
             placeholder="Search"
             className={styles.searchInput}
             value={searchTerm}
+            // Update searchTerm state as user types
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          {/* Search button with SVG icon */}
           <button className={styles.searchButton}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -62,28 +67,34 @@ function BrowsePending() {
 
       {/* Main Content */}
       <div className={styles.content}>
-
-        {/* Organization Cards */}
+        {/* Organization Cards Section */}
         <section className={styles.cardsContainer}>
+          {/* Check if there are filtered organizations to display */}
           {filteredOrganizations.length > 0 ? (
+            // Loop through filtered organizations and display each as a card
             filteredOrganizations.map((org, index) => (
               <div key={index} className={styles.card}>
+                {/* Display organization logo */}
                 <img src={org.logo} alt={`${org.name} logo`} className={styles.cardLogo} />
                 <h2>{org.name}</h2>
                 <p>{org.location}</p>
-                <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">{org.website}</a>
+                <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">
+                  {org.website}
+                </a>
+                {/* Buttons for details and other actions */}
                 <div className={styles.cardButtons}>
                   <button className={styles.detailsButton}>Details</button>
                 </div>
               </div>
             ))
           ) : (
+            // Message shown if no organizations match the search term
             <p>No organizations found.</p>
           )}
         </section>
       </div>
 
-      {/* Footer */}
+      {/* Footer Section */}
       <div className={styles.footer}>
         <ContactInfoFooter />
       </div>
