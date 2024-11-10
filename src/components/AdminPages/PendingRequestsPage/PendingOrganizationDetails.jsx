@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styles from './PendingOrganizationDetails.module.css';
-import Header from './Header';
 
 const PendingOrganizationDetails = () => {
-  const [organizationData, setOrganizationData] = useState({
+  const [organizationData] = useState({
     name: 'Organization name',
     location: 'Country',
     website: 'www.domain.com',
@@ -13,14 +12,6 @@ const PendingOrganizationDetails = () => {
     description: 'Description of the organization',
     imageUrl: 'https://cdn.builder.io/api/v1/image/assets/TEMP/31cda728f6f2d2f53f9f3c842951a5a817fc524191f870b4ea7624a7aa4ec6e3?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a'
   });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setOrganizationData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
 
   const handleApprove = () => {
     console.log('Organization approved');
@@ -46,103 +37,44 @@ const PendingOrganizationDetails = () => {
           {/* Right: Overview */}
           <div className={styles.overviewSection}>
             <label className={styles.label}>Overview</label>
-            <textarea
-              name="description"
-              value={organizationData.description}
-              onChange={handleInputChange}
-              className={styles.textarea}
-            />
+            <div className={`${styles.textarea} ${styles.disabledField}`}>{organizationData.description}</div>
           </div>
         </div>
 
         {/* Organization Information */}
         <div className={styles.infoSection}>
           <h2 className={styles.sectionTitle}>Organization Information</h2>
-          
+
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
-              <label className={styles.label}>Organization Name</label>
-              <input
-                type="text"
-                name="name"
-                value={organizationData.name}
-                onChange={handleInputChange}
-                className={styles.input}
-              />
+              <label>Organization Name</label>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.name}</div>
             </div>
-            <div className={styles.column2}>
-              <textarea
-                name="description"
-                value={organizationData.description}
-                onChange={handleInputChange}
-                className={styles.rectangle1}
-                rows="5"
-              />
+            <div className={styles.formGroup}>
+              <label>Organization Website</label>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.website}</div>
             </div>
           </div>
-        </div>
-        <div className={styles.div7}>
-          <div className={styles.div8}>
-            <div className={styles.column3}>
-              <div className={styles.div9}>
-                <h2 className={styles.organizationInformation}>Organization Information</h2>
-                <label className={styles.organizationName}>Organization Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={organizationData.name}
-                  onChange={handleInputChange}
-                  className={styles.rectangle12}
-                />
-                <label className={styles.organizationLocation}>Organization Location</label>
-                <input
-                  type="text"
-                  name="location"
-                  value={organizationData.location}
-                  onChange={handleInputChange}
-                  className={styles.rectangle13}
-                />
-              </div>
+
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <label>Organization Location</label>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.location}</div>
             </div>
-            <div className={styles.column4}>
-              <div className={styles.div10}>
-                <label className={styles.organizationWebsite}>Organization Website</label>
-                <input
-                  type="text"
-                  name="website"
-                  value={organizationData.website}
-                  onChange={handleInputChange}
-                  className={styles.rectangle14}
-                />
-                <label className={styles.organizationSize}>Organization Size</label>
-                <input
-                  type="text"
-                  name="size"
-                  value={organizationData.size}
-                  onChange={handleInputChange}
-                  className={styles.rectangle15}
-                />
-              </div>
+            <div className={styles.formGroup}>
+              <label>Organization Size</label>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.size}</div>
             </div>
-            <div className={styles.column5}>
-              <div className={styles.div11}>
-                <label className={styles.organizationType}>Organization Type</label>
-                <input
-                  type="text"
-                  name="type"
-                  value={organizationData.type}
-                  onChange={handleInputChange}
-                  className={styles.rectangle16}
-                />
-                <label className={styles.totalEvents}>Total Events</label>
-                <input
-                  type="text"
-                  name="totalEvents"
-                  value={organizationData.totalEvents}
-                  onChange={handleInputChange}
-                  className={styles.rectangle17}
-                />
-              </div>
+          </div>
+
+          <div className={styles.formRow}>
+            <div className={styles.formGroup}>
+              <label>Organization Type</label>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.type}</div>
+            </div>
+            <div className={styles.formGroup}>
+              <label>Total Events</label>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.totalEvents}</div>
             </div>
           </div>
         </div>
