@@ -1,19 +1,31 @@
 import React from 'react';
 import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../AuthContext';
 
-function Header() {
+
+
+const Header = () => {
+  const { login } = useAuth();
+  const handleSignOut = () => {
+    logout();
+    navigate('/BrowseOpportunities');
+  };
   return (
     <header className={styles.header}>
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/554d2f8a9c43ad0c289b6be83ba8e4bce49b588eaac5fe8a95ab97076f3dc710?placeholderIfAbsent=true&apiKey=ce557df0286d497daef1a15e3e8396b4" alt="Company Logo" className={styles.logo} />
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9163b62f940413608d344ef328f147b6739f79d565eb62aa790ac271175fa94e?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="Logo" className={styles.logo} />
       <nav className={styles.navigation}>
-        <a href="#" className={styles.navLink}>Home</a>
-        <a href="#" className={styles.navLink}>Create Event</a>
-        <a href="#" className={styles.navLink}>Explore</a>
-        <a href="#" className={styles.navLink}>About us</a>
-        <a href="#" className={styles.navLink}>Sign out</a>
+        <Link to="/" className={styles.navLink}>Home</Link>
+        <Link to="/CreateEvent" className={styles.navLink}>Create Event</Link>
+        <Link to="/BrowseOpportunities" className={styles.navLink}>Browse Opportunities</Link>
+        <Link to="/about" className={styles.navLink}>About us</Link>
+        <Link to = "/" className={styles.signOutButton} onClick={handleSignOut}>Sign out</Link>
+        {/* <Link to = "/OrganizationProfile" className={styles.profile}><FontAwesomeIcon icon={faUser} size="lg" /></Link> */}
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

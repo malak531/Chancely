@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './InterestSelection.module.css';
 import InterestCard from './InterestCard';
+import { useNavigate } from 'react-router-dom';
 
 const interestData = [
   { id: 1, imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/67b0889a5970ba1e0ab13f22a727f1f35334d36126585ed4f791986a05ce60a9?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a", text: "Information Technology" },
@@ -19,6 +20,7 @@ const interestData = [
 
 function InterestSelection() {
   const [selectedInterests, setSelectedInterests] = useState([]);
+  const navigate = useNavigate();
 
   const handleInterestClick = (id) => {
     setSelectedInterests((prevSelected) => {
@@ -33,7 +35,7 @@ function InterestSelection() {
   const handleSubmit = () => {
     if (selectedInterests.length >= 3) {
       console.log('Selected interests:', selectedInterests);
-      // Here you would typically send the data to a server or perform further actions
+      navigate('/Step4')
     } else {
       alert('Please select at least 3 interests before continuing.');
     }

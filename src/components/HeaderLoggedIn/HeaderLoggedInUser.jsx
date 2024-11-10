@@ -1,15 +1,27 @@
 import React from 'react';
 import styles from './HeaderLoggedInUser.module.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../AuthContext';
+
+
 
 const HeaderLoggedIn = () => {
+  const { login } = useAuth();
+  const handleSignOut = () => {
+    logout();
+    navigate('/BrowseOpportunities');
+  };
   return (
     <header className={styles.header}>
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9163b62f940413608d344ef328f147b6739f79d565eb62aa790ac271175fa94e?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a" alt="Logo" className={styles.logo} />
       <nav className={styles.navigation}>
-        <a href="/" className={styles.navLink}>Home</a>
-        <a href="/opportunities" className={styles.navLink}>Browse Opportunities</a>
-        <a href="/about" className={styles.navLink}>About us</a>
-        <button className={styles.signOutButton}>Sign out</button>
+        <Link to="/" className={styles.navLink}>Home</Link>
+        <Link to="/BrowseOpportunities" className={styles.navLink}>Browse Opportunities</Link>
+        <Link to="/about" className={styles.navLink}>About us</Link>
+        <Link to = "/" className={styles.signOutButton} onClick={handleSignOut}>Sign out</Link>
+        <Link to = "/UserProfile" className={styles.profile}><FontAwesomeIcon icon={faUser} size="lg" /></Link>
       </nav>
     </header>
   );

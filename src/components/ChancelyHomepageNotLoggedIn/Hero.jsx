@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './Hero.module.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
 const Hero = () => {
+    const navigate=useNavigate();
+    const handleSignUp = () => {
+        navigate('/Step1');
+      };
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
@@ -12,7 +18,7 @@ const Hero = () => {
         <p className={styles.description}>
           Unlock a World of Educational and Professional Opportunities in the Middle East.
         </p>
-        <button className={styles.ctaButton}>Sign Up Now!</button>
+        <button className={styles.ctaButton} onClick={handleSignUp}>Sign Up Now!</button>
       </div>
     </section>
   );
