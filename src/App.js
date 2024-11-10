@@ -16,7 +16,7 @@ import EventOrganizerRegistration from './components/EventOrganizerRegistration/
 import Registration from './components/EventOrganizerRegistration/AccountCreationSuccess';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import PendingOrganizationDetails from './components/AdminPages/PendingRequestsPage/PendingOrganizationDetails';
-
+import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
         <Route path="/OrganizationRegistration" element={<EventOrganizerRegistration />} />
         <Route path="/success" element={<Registration />} />
         <Route path="/createEvent" element={<EventCreation />} />
+        <Route path="/OrganizationProfile" element={<OrganizationProfile />} />
 
       </Routes>
     </Router>

@@ -22,8 +22,10 @@ const Header = () => {
         <Link to="/BrowseOpportunities" className={styles.navLink}>Browse Opportunities</Link>
         <Link to="/about" className={styles.navLink}>About us</Link>
         <Link to = "/" className={styles.signOutButton} onClick={handleSignOut}>Sign out</Link>
-        {/* <Link to = "/OrganizationProfile" className={styles.profile}><FontAwesomeIcon icon={faUser} size="lg" /></Link> */}
-      </nav>
+        <Link to = "/OrganizationProfile" className={styles.container}><div
+      className={styles.container}
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/Images/profile.png)` }}
+    ></div></Link>      </nav>
     </header>
   );
 };
