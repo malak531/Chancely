@@ -9,6 +9,8 @@ import EventDescription from './EventDescription';
 import EventVenue from './EventVenue';
 import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
 import OrgnizerHeader from '../OrgnizerHeader/OrgnizerHeader';
+import EventTitle from './EventTitle';
+import EventFees from './EventFees';
 
 function EditEventOrganizer() {
   return (
@@ -18,6 +20,10 @@ function EditEventOrganizer() {
         <EventDetails/>
         <div className={styles.twoColumnLayout}>
           <InterestTags/>
+          <div>
+          <EventTitle/>
+          <EventFees/>
+          </div>
           <EventVenue/>
         </div>
         <EventDates/>

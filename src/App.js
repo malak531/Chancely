@@ -13,8 +13,7 @@ import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
 import OpportunityDescription from './components/OpportunityInfo/OpportunityDescription';
 import LoginForm from './components/LoginPage/LoginForm';
 import LoginPage from './components/LoginPage/LoginPage';
-import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer'
-
+import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
 function App() {
   return (
     <div >
