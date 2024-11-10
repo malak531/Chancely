@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import styles from './BrowseOrganizations.module.css';
 import OrganizationFilterSection from './OrganizationFilterSection.jsx';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
+import AdminHeader from '../../AdminHeader/AdminHEader.jsx';
 
-function OrganizationSearch() {
-  const [organizations, setOrganizations] = useState([
+function BrowseOrganizations() {
+  const [organizations] = useState([
     {
       name: 'Aramco',
       location: 'Saudi Arabia',
       website: 'www.aramco.com',
-      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZnXDVW1Yz7NhfsVpJypVr8UrEycUs-BwdFA&s', // Replace with actual image links
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZnXDVW1Yz7NhfsVpJypVr8UrEycUs-BwdFA&s',
     },
     {
       name: 'Sabic',
@@ -20,25 +21,32 @@ function OrganizationSearch() {
     // Add more organization objects as needed
   ]);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Filter organizations based on searchTerm
+  const filteredOrganizations = organizations.filter((org) =>
+    org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    org.location.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.pageContainer}>
       {/* Header */}
       <header className={styles.header}>
-        <img src="link_to_logo" alt="Chancely Logo" className={styles.logo} />
-        <nav className={styles.nav}>
-          <span>Pending Requests</span>
-          <span>Create Event</span>
-          <span>Organizations</span>
-          <span>Opportunities</span>
-          <span>Sign out</span>
-        </nav>
+        <AdminHeader />
       </header>
 
       {/* Search Section */}
       <div className={styles.searchContainer}>
         <h1>Search for an Organization</h1>
         <div className={styles.searchBar}>
-          <input type="text" placeholder="Search" className={styles.searchInput} />
+          <input
+            type="text"
+            placeholder="Search"
+            className={styles.searchInput}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <button className={styles.searchButton}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,41 +65,37 @@ function OrganizationSearch() {
       {/* Main Content */}
       <div className={styles.content}>
         {/* Filters Sidebar */}
-        <OrganizationFilterSection />
+        <div className={styles.filterSection}>
+          <OrganizationFilterSection />
+        </div>
 
         {/* Organization Cards */}
-        <div className={styles.cardsContainer}>
-          {organizations.map((org, index) => (
-            <div key={index} className={styles.card}>
-              <img src={org.logo} alt={`${org.name} logo`} className={styles.cardLogo} />
-              <h2>{org.name}</h2>
-              <p>{org.location}</p>
-              <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">{org.website}</a>
-              <div className={styles.cardButtons}>
-                <button className={styles.detailsButton}>Details</button>
-                <button className={styles.deleteButton}>Delete</button>
+        <section className={styles.cardsContainer}>
+          {filteredOrganizations.length > 0 ? (
+            filteredOrganizations.map((org, index) => (
+              <div key={index} className={styles.card}>
+                <img src={org.logo} alt={`${org.name} logo`} className={styles.cardLogo} />
+                <h2>{org.name}</h2>
+                <p>{org.location}</p>
+                <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">{org.website}</a>
+                <div className={styles.cardButtons}>
+                  <button className={styles.detailsButton}>Details</button>
+                  <button className={styles.deleteButton}>Delete</button>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Pagination */}
-      <div className={styles.pagination}>
-        <button disabled>Previous</button>
-        <span>1</span>
-        <span>2</span>
-        <button>Next</button>
+            ))
+          ) : (
+            <p>No organizations found.</p>
+          )}
+        </section>
       </div>
 
       {/* Footer */}
-        <div>
-          <ContactInfoFooter />
-        </div>
+      <div className={styles.footer}>
+        <ContactInfoFooter />
+      </div>
     </div>
   );
 }
 
-export default OrganizationSearch;
-
-
+export default BrowseOrganizations;

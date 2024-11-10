@@ -18,7 +18,7 @@ import DeleteOrg from './components/AdminPages/DeleteOrgPage/DeleteOrg';
 import EventCreation from './components/OrganizationPages/EventCreation/EventCreation';
 import OrganizationProfile from './components/OrganizationProfilePage/OrganizationProfile/OrganizationProfile';
 import PendingOrganizationDetails from './components/AdminPages/PendingRequestsPage/PendingOrganizationDetails';
-
+import BrowseOrganizations from './components/AdminPages/BrowseOrganizations/BrowseOrganizations';
 function App() {
   return (
     <AuthProvider>
@@ -41,6 +41,7 @@ function App() {
         <Route path="/OrganizationProfile" element={<OrganizationProfile />} />
         <Route path="/PendingRequests" element={<PendingOrganizationDetails />} />
         <Route path="/Delete" element={<DeleteOrg />} />
+        <Route path="/browse" element={<BrowseOrganizations />} />
 
       </Routes>
     </Router>

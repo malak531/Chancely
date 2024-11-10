@@ -1,20 +1,16 @@
 .pageContainer {
   background: linear-gradient(135deg, #a0e8ff, #caf7e3);
   min-height: 100vh;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+
 }
 
 /* Header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  width: 100%;
-  box-sizing: border-box;
+  width:100%;
 }
 
 .logo {
@@ -85,8 +81,16 @@
 .content {
   display: flex;
   gap: 20px;
-  width: 100%;
-  max-width: 1200px;
+  width: 80%;
+  border-radius: 20px;
+  margin:0 auto;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  background-color: white;
+
+
+
+
 }
 
 /* Organization Cards */
@@ -99,6 +103,7 @@
   overflow-y: auto; /* Enable vertical scrolling if content overflows */
   padding: 10px;
   box-sizing: border-box;
+
 }
 
 .card {
@@ -181,3 +186,40 @@
   gap: 10px;
   margin-top: 20px;
 }
+
+.footer{
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap; /* Wrap nav links to new line if needed */
+    font-size: 0.85em; /* Reduce font size further */
+  }
+
+  .content {
+    width: 95%; /* Use full width with padding */
+    margin: 0;
+  }
+
+  .cardsContainer {
+    padding: 5px; /* Adjust padding for mobile */
+  }
+
+  .card {
+    padding: 10px; /* Reduce padding for mobile */
+    width: 60%;
+  }
+
+  .detailsButton, .deleteButton {
+    font-size: 0.85em; /* Smaller font size for buttons */
+    padding: 6px 12px;
+  }
+
+
+}
+
