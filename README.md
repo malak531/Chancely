@@ -10,8 +10,8 @@ We envision a Middle East where education and professional opportunities are acc
     To start using Chancely, follow these steps:
     1- Download a javaScript IDE to run the website from and then download node.js.
     2- Download the needed packages like npm, React Router DOM, react-scripts.
-    3- clone the repositries......
-    3- Run "npm start" in the terminal to start the website.
+    3- clone all files in the reposeitry and then go to src/app.js and start a new terminal.  
+    3- Run "npm start" in the terminal to start the website om port 3000.
     4- Enjoy the awesomeness!
 
 ## How to Use Chancley:
