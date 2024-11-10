@@ -5,6 +5,7 @@ import HeaderLoggedIn from '../HeaderLoggedIn/HeaderLoggedInUser';
 import { useParams } from 'react-router-dom';
 import Header from '../EditEventOrganizer/Header';
 import { useAuth } from '../AuthContext';
+import AdminHeader from '../AdminHeader/AdminHEader';
 
 const OpportunityInfoTop = () => {
     const { id } = useParams();
@@ -86,7 +87,6 @@ const OpportunityInfoTop = () => {
     ]
   }];
   const event = eventData.find(event => event.id === parseInt(id));
-//   let { title, publisher, bannerImage, infoItems } = event.title;
   let title = event.title;
   let publisher = event.publisher;
   let bannerImage = event.bannerImage;
@@ -97,9 +97,9 @@ const OpportunityInfoTop = () => {
     <div>
 {(
     userRole === "organization" ? 
-  <Header/> :
-      <HeaderLoggedIn />
-  ) }
+  <Header/> :(userRole === "user"?
+      <HeaderLoggedIn />: <AdminHeader/>
+  ))}
     <main className={styles.container}>
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>

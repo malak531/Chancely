@@ -21,7 +21,6 @@ const OrganizationOppCard = ({ image, title, date, location, isPopular }) => {
       <p className={styles.eventDate}>{date}</p>
       <p className={styles.eventLocation}>{location}</p>
       <Link to="/OppInfo/1" className={styles.viewDetails} >View Details</Link>
-      <Link to="/OppInfo/1" className={styles.viewDetails} >Edit Details</Link>
     </article>
   );
 };

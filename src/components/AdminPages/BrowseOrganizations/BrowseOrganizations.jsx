@@ -3,16 +3,21 @@ import styles from './BrowseOrganizations.module.css';
 import OrganizationFilterSection from './OrganizationFilterSection.jsx';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
 import AdminHeader from '../../AdminHeader/AdminHEader.jsx';
+import { useNavigate } from 'react-router';
+
 
 function BrowseOrganizations() {
+  let navigate = useNavigate();
   const [organizations] = useState([
     {
+      id:1,
       name: 'Aramco',
       location: 'Saudi Arabia',
       website: 'www.aramco.com',
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZnXDVW1Yz7NhfsVpJypVr8UrEycUs-BwdFA&s',
     },
     {
+      id:2,
       name: 'Sabic',
       location: 'Saudi Arabia',
       website: 'www.sabic.com',
@@ -28,6 +33,13 @@ function BrowseOrganizations() {
     org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     org.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleDelete = (id) => {
+    navigate(`/Delete/${id}`);
+  };
+  const handleDetail = () => {
+    navigate(`/OrganizationProfile`);
+  };
 
   return (
     <div className={styles.pageContainer}>
@@ -79,8 +91,8 @@ function BrowseOrganizations() {
                 <p>{org.location}</p>
                 <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">{org.website}</a>
                 <div className={styles.cardButtons}>
-                  <button className={styles.detailsButton}>Details</button>
-                  <button className={styles.deleteButton}>Delete</button>
+                  <button className={styles.detailsButton} onClick={handleDetail}>Details</button>
+                  <button className={styles.deleteButton} onClick={() => handleDelete(org.id)}>Delete</button>
                 </div>
               </div>
             ))

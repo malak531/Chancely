@@ -40,7 +40,7 @@ function App() {
         <Route path="/createEvent" element={<EventCreation />} />
         <Route path="/OrganizationProfile" element={<OrganizationProfile />} />
         <Route path="/PendingRequests" element={<PendingOrganizationDetails />} />
-        <Route path="/Delete" element={<DeleteOrg />} />
+        <Route path="/Delete/:id" element={<DeleteOrg />} />
         <Route path="/browse" element={<BrowseOrganizations />} />
 
       </Routes>

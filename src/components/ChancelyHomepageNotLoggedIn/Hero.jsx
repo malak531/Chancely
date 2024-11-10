@@ -18,7 +18,6 @@ const Hero = () => {
         <p className={styles.description}>
           Unlock a World of Educational and Professional Opportunities in the Middle East.
         </p>
-        <button className={styles.ctaButton} onClick={handleSignUp}>Sign Up Now!</button>
       </div>
     </section>
   );

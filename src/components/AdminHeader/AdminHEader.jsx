@@ -18,9 +18,7 @@ const AdminHeader = () => {
         <Link to="/PendingRequests" className={styles.navLink}>Pending Request</Link>
         <Link to="/CreateEvent" className={styles.navLink}>Create Event</Link>
         <Link to="/BrowseOpportunities" className={styles.navLink}>Browse Opportunities</Link>
-        <Link to="/about" className={styles.navLink}>About us</Link>
-        <Link to="/Delete" className={styles.navLink}>Delete Organizations</Link>
-        <Link to="/Browse" className={styles.navLink}>Browse</Link>
+        <Link to="/Browse" className={styles.navLink}>Browse Organizations</Link>
         <Link to = "/" className={styles.signOutButton} onClick={handleSignOut}>Sign out</Link>
     </nav>
     </header>

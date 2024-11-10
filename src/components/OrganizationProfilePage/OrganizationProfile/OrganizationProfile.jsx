@@ -6,8 +6,11 @@ import Header from '../../EditEventOrganizer/Header';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
 import EventsSection from '../../ChancelyHomepageNotLoggedIn/EventsSection';
 import OrganizationOppCard from './OrganizationOppCard';
+import AdminHeader from '../../AdminHeader/AdminHEader';
+import { useAuth } from '../../AuthContext';
 
 const OrganizationProfile = () => {
+  const {userRole}=useAuth;
   const navItems = [
     { text: 'Home', isActive: true },
     { text: 'Explore', isActive: false },
@@ -50,7 +53,8 @@ const OrganizationProfile = () => {
 
   return (
     <main className={styles.organizationProfile}> 
-    <Header/>
+    {userRole === "organization" ? 
+  <Header/>: <AdminHeader/>}
       <section className={styles.mainContent}>
         <div className={styles.profileHeader}>
           <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/80253d05671816f31a5201bcaa88c6e8860998b68062a74620e7482f646d30a4?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Cover" className={styles.coverImage} />
