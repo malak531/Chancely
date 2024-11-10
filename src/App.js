@@ -35,10 +35,6 @@ function App() {
         <Route path="/success" element={<Registration />} />
         <Route path="/createEvent" element={<EventCreation />} />
 
-        
-
-
-
       </Routes>
     </Router>
    </AuthProvider>

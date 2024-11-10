@@ -7,17 +7,32 @@ import DropdownField from './DropdownField';
 import TextAreaField from './TextAreaField';
 import Header from '../../EditEventOrganizer/Header';
 import InterestTags from './InterestTags';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const EventCreation = () => {
   let EventType = ['Conference', 'Exhibition', 'Competition', 'Short Course', 'Summer Program'];
   let EventLocation = ['Bahrain', 'Saudi Arabia', 'Lebanon', 'Jordan', 'Kuwait', 'Yemen', 'Egypt', 'Syria', 'Oman', 'United Arab Emirates', 'Qatar', 'Iraq'];
   let FeesType = ['Free', 'Partially-Funded', 'Self-Funded'];
-
+    const [showAlert, setShowAlert] = useState(false);
+    const navigate = useNavigate();
+  
+    const handlePostOpportunity = () => {
+      event.preventDefault();
+      // Code to post opportunity (e.g., API call)
+      setShowAlert(true);
+  
+  
+      // Hide alert after 3 seconds
+      setTimeout(() => {
+        setShowAlert(false);
+        navigate("/BrowseOpportunities");
+      }, 5000);
+    };
   return (
-    <>
+    <div className={styles.container}>
       {/* Organizer header positioned at the top of the page */}
       <Header />
-      
       <main className={styles.eventCreationContainer}>
         <section className={styles.formWrapper}>
           <header className={styles.formHeader}>
@@ -50,11 +65,16 @@ const EventCreation = () => {
             
             <TextAreaField label="Event Description*" placeholder="This event aims to..." />
             
-            <button type="submit" className={styles.submitButton}>Post</button>
+            <button onClick={handlePostOpportunity} type="submit" className={styles.submitButton}>Post</button>
+            {showAlert && (
+        <div className={styles.alert}>
+          Opportunity posted successfully!
+        </div>
+      )}
           </form>
         </section>
       </main>
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const Registration = () => {
 
   useEffect(() => {
     // Log the user in when this page loads
-    login("user");
+    login("organization");
     // Redirect to the next page after a short delay
     const timer = setTimeout(() => navigate('/BrowseOpportunities'), 20000);
     return () => clearTimeout(timer); // Cleanup the timer
