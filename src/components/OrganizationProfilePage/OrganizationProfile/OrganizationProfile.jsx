@@ -2,6 +2,9 @@ import React from 'react';
 import styles from './OrganizationProfile.module.css';
 import NavItem from './NavItem';
 import OpportunityCard from './OpportunityCard';
+import Header from '../../EditEventOrganizer/Header';
+import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
+import EventsSection from '../../ChancelyHomepageNotLoggedIn/EventsSection';
 
 const OrganizationProfile = () => {
   const navItems = [
@@ -45,17 +48,8 @@ const OrganizationProfile = () => {
   ];
 
   return (
-    <main className={styles.organizationProfile}>
-      <header className={styles.header}>
-        <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/14a49acdbe988ff958bcef9a7752e8f640bf2dad03cdd3bc8a4e4e9567c0cfcb?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Organization Logo" className={styles.logo} />
-        <nav className={styles.navContainer}>
-          {navItems.map((item, index) => (
-            <NavItem key={index} text={item.text} isActive={item.isActive} />
-          ))}
-          <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/3d6de7d767d4aabea1478af1c0668e49f79d1db7bb4219de7a29e350e31b2af1?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="User Icon" className={styles.userIcon} />
-        </nav>
-      </header>
-
+    <main className={styles.organizationProfile}> 
+    <Header/>
       <section className={styles.mainContent}>
         <div className={styles.profileHeader}>
           <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/80253d05671816f31a5201bcaa88c6e8860998b68062a74620e7482f646d30a4?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Cover" className={styles.coverImage} />
@@ -66,7 +60,6 @@ const OrganizationProfile = () => {
 
         <div className={styles.profileInfo}>
           <h1 className={styles.organizationName}>King Fahd University of Petroleum & Minerals</h1>
-          <button className={styles.editProfileBtn}>Edit Profile</button>
         </div>
 
         <div className={styles.overviewSection}>
@@ -111,15 +104,11 @@ const OrganizationProfile = () => {
 
         <section className={styles.opportunitiesSection}>
           <h2>This Organization's Opportunities</h2>
-          <div className={styles.opportunitiesGrid}>
-            <div className={styles.opportunitiesRow}>
-              {opportunities.map((opportunity, index) => (
-                <OpportunityCard key={index} {...opportunity} />
-              ))}
-            </div>
-          </div>
+          <EventsSection/>
+            
         </section>
       </section>
+      <ContactInfoFooter/>
     </main>
   );
 };
