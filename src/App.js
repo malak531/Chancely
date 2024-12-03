@@ -11,7 +11,6 @@ import EditUserProfile from './components/User Pages/Profile/EditUserProfile';
 import { AuthProvider } from './components/AuthContext';
 import AccountCreationSuccess from './components/Sign Up Pages User/StepFour/AccountCreationSuccess';
 import OpportunityInfo from './components/OpportunityInfo/OpportunityInfo';
-import EditEventOrganizer from './components/EditEventOrganizer/EditEventOrganizer';
 import EventOrganizerRegistration from './components/EventOrganizerRegistration/EventOrganizerRegistration';
 import Registration from './components/EventOrganizerRegistration/AccountCreationSuccess';
 import DeleteOrg from './components/AdminPages/DeleteOrgPage/DeleteOrg';
