@@ -13,5 +13,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:3001`);
+    console.log(`Server is running at http://ec2-13-61-3-118.eu-north-1.compute.amazonaws.com:8080/`);
 });
