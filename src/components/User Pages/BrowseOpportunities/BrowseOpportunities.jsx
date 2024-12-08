@@ -20,7 +20,7 @@ const BrowseOpportunities = () => {
   useEffect(() => {
     const fetchOpportunities = async () => {
         try {
-            const response = await fetch("/api/opportunities");
+            const response = await fetch("/api/opportunities:8080");
             const data = await response.json();
             setOpportunities(data);
         } catch (error) {
