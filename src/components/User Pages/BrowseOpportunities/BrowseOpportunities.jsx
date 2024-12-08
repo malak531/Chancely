@@ -20,7 +20,12 @@ const BrowseOpportunities = () => {
   useEffect(() => {
     const fetchOpportunities = async () => {
         try {
-            const response = await fetch("/api/opportunities");
+            const response = await fetch("/api/opportunities", {
+              headers:{
+                accept: 'application/json',
+                'User-agent': 'learning app',
+              }
+            });
             const data = await response.json();
             setOpportunities(data);
         } catch (error) {
