@@ -26,7 +26,7 @@ const BrowseOpportunities = () => {
                 'User-agent': 'learning app',
               }
             });
-            const data = await response.text();
+            const data = await response.json();
             setOpportunities(data);
         } catch (error) {
             console.error("Error fetching opportunities:", error);
