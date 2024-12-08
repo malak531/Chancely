@@ -13,11 +13,8 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
   const OpportunitySchema = new mongoose.Schema({
-    Type: { type: String },
     Field: { type: String },
-    Country: { type: String },
     City: { type: String },
-    Organization: { type: String },
     Venue: { type: String },
     Description: { type: String },
     OpportunityName: { type: String },
@@ -29,6 +26,8 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     Website: { type: String },
     Deadline: { type: String, required: true },
     EventDate: { type: String, required: true },
+    Country: { type: String },
+    Type: { type: String },
   }, { collection: 'opportunities' });
   
   const Opportunity = mongoose.model("Opportunity", OpportunitySchema, "opportunities");
@@ -57,6 +56,15 @@ app.get("/api/opportunities", async (req, res) => {
         console.error("Error fetching opportunities:", error);
         res.status(500).json({ error: "Failed to fetch opportunities" });
       }
+  });
+
+  app.get('/api/opportunity/:id', async (req, res) => {
+    try {
+      const opportunity = await Opportunity.findById(req.params.id);
+      res.json(opportunity);
+    } catch (err) {
+      res.status(500).send('Server error');
+    }
   });
 
   app.get("/loginemails", async (req,res)=>{

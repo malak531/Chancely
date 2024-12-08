@@ -75,6 +75,7 @@ const BrowseOpportunities = () => {
               {/* Map through filtered opportunities and display them in CompanyBox components */}
               {filteredOpportunities.map(opportunity => (
                 <CompanyBox key={opportunity._id} // Use MongoDB's `_id` as the key
+                id={opportunity._id}  
                 title={opportunity.OpportunityName}
                 date={opportunity.EventDate}
                 location={`${opportunity.City}, ${opportunity.Country}`}
