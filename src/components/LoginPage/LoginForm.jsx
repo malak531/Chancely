@@ -72,7 +72,7 @@ const LoginForm = ({ onLoginSuccess }) => {
   return (
     <div>
       <HeaderLoggedOut />
-      <form className={styles.loginContainer} onSubmit={handleSubmit}>
+      <form className={styles.loginContainer} onSubmit={handleSubmit} action ='/login' method ='POST'>
         {/* Input fields */}
         <InputField
           label="Email address*"
