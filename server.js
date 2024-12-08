@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 
-
 const mongoURI = "mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {

@@ -20,11 +20,12 @@ const BrowseOpportunities = () => {
   useEffect(() => {
     const fetchOpportunities = async () => {
         try {
-            const response = await fetch("/api/opportunities");
+            const response = await fetch("/api/opportunities", {
+            });
             const data = await response.json();
             setOpportunities(data);
         } catch (error) {
-            console.error("Error fetching opportunities:", error);
+            console.error("Error fetching opportunities:", error);            
         }
     };
 
