@@ -42,7 +42,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const app = express();
-const PORT = 3001;
+const PORT = 8080;
 
 app.use(express.json());
 // Serve static files from the build directory
@@ -81,5 +81,5 @@ app.get("/loginemails", async (req,res)=>{
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:3001`);
+    console.log(`Server is running at http://ec2-13-61-3-118.eu-north-1.compute.amazonaws.com:8080/`);
 });
