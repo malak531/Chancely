@@ -21,15 +21,11 @@ const BrowseOpportunities = () => {
     const fetchOpportunities = async () => {
         try {
             const response = await fetch("/api/opportunities", {
-              headers:{
-                accept: 'application/json',
-                'User-agent': 'learning app',
-              }
             });
             const data = await response.json();
             setOpportunities(data);
         } catch (error) {
-            console.error("Error fetching opportunities:", error);
+            console.error("Error fetching opportunities:", error);            
         }
     };
 
