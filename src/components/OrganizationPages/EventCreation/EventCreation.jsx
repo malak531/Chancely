@@ -14,7 +14,7 @@ import TextAreaField from './TextAreaField';
 const EventCreation = () => {
   const navigate = useNavigate(); // Initialize navigate for routing
   const { userRole } = useAuth(); // Get user role from authentication context
-
+  const [message, setMessage] = useState(""); // Declares the state variable and its updater function
   const [formData, setFormData] = useState({ // State to store form data
     eventImage: null,
     eventTitle: '',
@@ -22,10 +22,13 @@ const EventCreation = () => {
     eventLocation: '',
     eventVenue: '',
     feesType: '',
-    eventDates: null,
-    registrationDeadline: null,
+    eventDates: '2003/05/02',
     joiningCriteria: '',
     eventDescription: '',
+    registrationLink: '',
+    officialWebsite: '',
+    Deadline: 'TBA', 
+    eventCity: ''
   });
 
   const [errors, setErrors] = useState({}); // State to store validation errors
@@ -72,16 +75,43 @@ const EventCreation = () => {
         return value ? null : 'Joining Criteria is required';
       case 'eventDescription':
         return value ? null : 'Event Description is required';
+      case 'registrationLink':
+        return value ? null : 'Registration link is required';
+      case 'officialWebsite':
+        return value ? null : 'Official Website is required';
+        case 'eventCity':
+          return value ? null : 'The city is required';
       default:
         return null;
     }
   };
 
+  
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (Object.keys(errors).length === 0) {
-      handleSuccessSubmission();
+      try {
+        console.log(formData);
+        const response = await fetch("/api/eventCreation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+   
+        if (response.ok) {
+          const result = await response.json();
+          setMessage(`Opportunity "${result.OpportunityName}" has been created successfully!`);
+          navigate('/BrowseOpportunities'); // Navigate after successful submission
+        } else {
+          setMessage("Failed to create the opportunity. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setMessage("An error occurred while creating the opportunity.");
+      }
     }
   };
 
@@ -94,7 +124,7 @@ const EventCreation = () => {
     <main className={styles.eventCreationContainer}>
       <div className={styles.eventCreationWrapper}>
         {userRole === 'organization' ? <Header /> : <AdminHeader />}
-        <form className={styles.formContainer} onSubmit={handleSubmit}>
+        <form className={styles.formContainer} onSubmit={handleSubmit} method='POST' >
           <h1 className={styles.formTitle}>Create Opportunity Post</h1>
           <p className={styles.formDescription}>
             Share your exciting event with the community. Fill in the details below to post your opportunity.
@@ -122,7 +152,7 @@ const EventCreation = () => {
                 />
               </div>
               <div className={styles.formColumn}>
-                <drop 
+                <DropdownField 
                   label="Event Type*" 
                   name="eventType"
                   value={formData.eventType}
@@ -141,6 +171,14 @@ const EventCreation = () => {
                   error={errors.eventLocation}
                 />
                 <FormField 
+                  label="City*" 
+                  name="eventCity"
+                  value={formData.eventCity}
+                  placeholder="Type your event city location" 
+                  onChange={handleInputChange} 
+                  error={errors.eventCity}
+                />
+                <FormField 
                   label="Event Venue*" 
                   name="eventVenue"
                   value={formData.eventVenue}
@@ -156,6 +194,23 @@ const EventCreation = () => {
                   options={FeesType} 
                   onChange={handleInputChange} 
                   error={errors.feesType}
+                />
+
+                <FormField 
+                  label="Registration Link*" 
+                  name="registrationLink"
+                  value={formData.registrationLink}
+                  placeholder="Type the registration link" 
+                  onChange={handleInputChange} 
+                  error={errors.registrationLink}
+                />
+                <FormField 
+                  label="Official Website*" 
+                  name="officialWebsite"
+                  value={formData.officialWebsite}
+                  placeholder="Type the official website link" 
+                  onChange={handleInputChange} 
+                  error={errors.officialWebsite}
                 />
               </div>
             </div>

@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './FormField.module.css';
 
-const FormField = ({ label, placeholder }) => {
+const FormField = ({ label, name, value, placeholder, onChange}) => {
   return (
     <div className={styles.formFieldContainer}>
       <label className={styles.fieldLabel}>{label}</label>
-      <input type="text" className={styles.fieldInput} placeholder={placeholder} aria-label={label} required />
+      <input type="text" className={styles.fieldInput} name={name}
+        value={value}
+        placeholder={placeholder}
+        onChange={onChange} aria-label={label} required />
     </div>
   );
 };

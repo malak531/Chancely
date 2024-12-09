@@ -24,7 +24,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     RegistrationLink: { type: String },
     Website: { type: String },
     Deadline: { type: String, required: true },
-    EventDate: { type: String, required: true },
+    EventDate: { type: String},
     Country: { type: String },
     Type: { type: String },
   }, { collection: 'opportunities' });
@@ -65,6 +65,57 @@ app.get("/api/opportunities", async (req, res) => {
       res.status(500).send('Server error');
     }
   });
+
+  app.post("/api/eventCreation", async (req, res) => {
+    try {
+
+        const Picture = req.body.eventImage;
+        const OpportunityName = req.body.eventTitle;
+        const Type = req.body.eventType;
+        const Country = req.body.eventLocation;
+        const Venue = req.body.eventVenue;
+        const FundingType = req.body.feesType;
+        const EventDate = req.body.eventDates;
+        const Criteria = req.body.joiningCriteria;
+        const Description = req.body.eventDescription;
+        const RegistrationLink = req.body.registrationLink;
+        const Website = req.body.officialWebsite;
+        const Deadline = req.body.Deadline;
+        const City = req.body.eventCity;
+
+     
+   
+      // Create a new Opportunity document
+      const newOpportunity = new Opportunity({
+        Field: Type,
+        City,
+        Venue,
+        Description,
+        OpportunityName,
+        Organization: "Organization",
+        Criteria,
+        FundingType,
+        Picture,
+        RegistrationLink,
+        Website,
+        Deadline,
+        EventDate,
+        Country,
+        Type,
+      });
+   
+      // Save the opportunity to the database
+      await newOpportunity.save();
+   
+      // Respond with the newly created opportunity
+      res.status(201).json(newOpportunity);
+    } catch (error) {
+      console.error("Error saving opportunity:", error);
+      res.status(500).json({ error: "Failed to create opportunity" });
+    }
+  });
+
+
 
   app.get("/loginemails", async (req,res)=>{
     try {
