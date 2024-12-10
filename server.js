@@ -2,9 +2,8 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 
-// use mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority to connect with localhost
-const mongoURI = "mongodb+srv://vercel-admin-user:JKfvw12JgUJWkDL4@cluster0.rckvi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const mongoURI = "mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority";
+// const mongoURI = "mongodb+srv://vercel-admin-user:JKfvw12JgUJWkDL4@cluster0.rckvi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoURI = "mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to MongoDB successfully!");
