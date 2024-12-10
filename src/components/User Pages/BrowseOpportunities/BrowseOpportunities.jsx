@@ -10,39 +10,27 @@ import AdminHeader from '../../AdminHeader/AdminHeader';
 
 
 const BrowseOpportunities = () => {
-  app.get('/api/opportunities', async (req, res) => {
-    try {
-      const opportunities = await Opportunity.find(); // Example query
-      res.json(opportunities);
-    } catch (error) {
-      console.error('Database Error:', error);
-      res.status(500).json({ error: 'Database query failed' });
-    }
-  });
-}
+    const { userRole } = useAuth();  // Get the user role from the authentication context
 
+  // Initial state for opportunities list with mock data
+  const [opportunities, setOpportunities] = useState([]);
 
-  //   const { userRole } = useAuth();  // Get the user role from the authentication context
+  const [searchTerm, setSearchTerm] = useState('');  // State to store the search term for filtering opportunities
 
-  // // Initial state for opportunities list with mock data
-  // const [opportunities, setOpportunities] = useState([]);
+  useEffect(() => {
+    const fetchOpportunities = async () => {
+        try {
+            const response = await fetch("/api/opportunities", {
+            });
+            const data = await response.json();
+            setOpportunities(data);
+        } catch (error) {
+            console.error("Error fetching opportunities:", error);            
+        }
+    };
 
-  // const [searchTerm, setSearchTerm] = useState('');  // State to store the search term for filtering opportunities
-
-  // useEffect(() => {
-  //   const fetchOpportunities = async () => {
-  //       try {
-  //           const response = await fetch("/api/opportunities", {
-  //           });
-  //           const data = await response.json();
-  //           setOpportunities(data);
-  //       } catch (error) {
-  //           console.error("Error fetching opportunities:", error);            
-  //       }
-  //   };
-
-  //   fetchOpportunities();
-//}, []);
+    fetchOpportunities();
+}, []);
 
   // Handle search input changes
   const handleSearch = (event) => {
