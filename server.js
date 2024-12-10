@@ -108,7 +108,6 @@ app.get("/api/opportunities", async (req, res) => {
   });
   app.get("/api/organizationWithEmail", async (req, res) => {
     try {
-        console.log("hello", user);
         const organizations = await Organization.find({email: user}); // Fetch all organizations
         res.json(organizations); // Send the full data to the frontend
       } catch (error) {
@@ -118,6 +117,7 @@ app.get("/api/opportunities", async (req, res) => {
   });
   app.post("/api/login-success", async (req, res) => {
     user = req.body.email;
+    res.status(200);
   });
   
   app.get("/api/accounts", async (req, res) => {
