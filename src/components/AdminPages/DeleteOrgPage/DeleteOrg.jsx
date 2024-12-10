@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './DeleteOrg.module.css';
-import AdminHeader from '../../AdminHeader/AdminHEader';
+import AdminHeader from '../../AdminHeader/AdminHeader';
 import { useNavigate } from 'react-router';
 import { useParams } from 'react-router-dom';
 
@@ -9,44 +9,56 @@ function DeleteOrg() {
   const { id } = useParams();
 
   // Sample data representing organizations (in a real scenario, this could come from an API)
-  let info = [
-    {
-      id: 1,
-      description: "Saudi Aramco, officially the Saudi Arabian Oil Company or simply Aramco, is a majority state-owned petroleum and natural gas company that is the national oil company of Saudi Arabia. As of 2024, it is the fourth-largest company in the world by revenue and is headquartered in Dhahran.",
-      image: "/Images/aramco.png",
-      companyName: "Aramco",
-      link: "https://www.aramco.com/",
-      location: "Saudi Arabia",
-      size: "100k",
-      type: "Petroleum",
-      events: 60,
-    },
-    {
-      id: 2,
-      description: "From making cars and planes more fuel-efficient, to helping conserve the world’s water supply and enabling colorful smartphone cases, we find solutions to the challenges of today to help our customers achieve their ambitions and build a better tomorrow.",
-      image: "/Images/sabic.png",
-      companyName: "Sabic",
-      link: "https://www.sabic.com/en",
-      location: "Saudi Arabia",
-      size: "70k",
-      type: "Petroleum",
-      events: 40,
-    },
-  ];
+  const [organization, setOrganization] = useState([]);
+
 
   // Find the organization that matches the 'id' parameter from the URL
-  const event = info.find(event => event.id === parseInt(id));
+  useEffect(() => {
+    // Fetch opportunity data when component mounts
+    const fetchOrganization = async () => {
+      try {
+        const response = await fetch (`/api/organization/${id}`);
+        const data = await response.json();
+        console.log(data);
+        setOrganization(data);
+      } catch (error) {
+        console.error('Error fetching organization:', error);
+      }
+    };
+
+    fetchOrganization();
+  }, [id]);
+
+  if (!organization) {
+    return <div>Loading...</div>; // Display loading message until data is fetched
+  }
 
   // Destructure the details of the organization from the found event
-  let { description, image, companyName, link, location, size, type, events } = event;
 
   // useNavigate hook to navigate programmatically
   let navigate = useNavigate();
 
   // Function to handle the delete action (navigates back to BrowseOpportunities page)
-  const handleDelete = () => {
-    navigate('/BrowseOpportunities');
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm('Are you sure you want to delete this organization?');
+    if (!confirmDelete) return;
+  
+    try {
+      const response = await fetch(`/api/organization/${id}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        console.log('Organization deleted successfully.');
+        navigate('/BrowseOpportunities'); // Navigate after successful deletion
+      } else {
+        console.error('Failed to delete the organization:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error deleting organization:', error);
+    }
   };
+  
 
   return (
     <div className={styles.deleteOrganizationAdmin}>
@@ -60,13 +72,13 @@ function DeleteOrg() {
         <section className={styles.organizationDetails}>
           <div className={styles.orgImageContainer}>
             {/* Displaying the organization's image as background */}
-            <div className={styles.image} style={{ backgroundImage: `url(${image})` }}></div>
+            <div className={styles.image} style={{ backgroundImage: `url(${organization.logo})` }}></div>
           </div>
           <div className={styles.overview}>
             {/* Displaying the description in a disabled textarea */}
             <textarea
               className={styles.overviewText}
-              placeholder={description}
+              placeholder={organization.overview}
               disabled
             ></textarea>
           </div>
@@ -77,32 +89,32 @@ function DeleteOrg() {
           <div className={styles.infoField}>
             <label>Organization Name</label>
             {/* Displaying organization name in a disabled input field */}
-            <input type="text" placeholder={companyName} disabled />
+            <input type="text" placeholder={organization.organizationName} disabled />
           </div>
           <div className={styles.infoField}>
             <label>Organization Website</label>
             {/* Displaying organization website in a disabled input field */}
-            <input type="text" placeholder={link} disabled />
+            <input type="text" placeholder={organization.organizationURL} disabled />
           </div>
           <div className={styles.infoField}>
             <label>Organization Location</label>
             {/* Displaying organization location in a disabled input field */}
-            <input type="text" placeholder={location} disabled />
+            <input type="text" placeholder={organization.country} disabled />
           </div>
           <div className={styles.infoField}>
             <label>Organization Size</label>
             {/* Displaying organization size in a disabled input field */}
-            <input type="text" placeholder={size} disabled />
+            <input type="text" placeholder="10k" disabled />
           </div>
           <div className={styles.infoField}>
             <label>Organization Type</label>
             {/* Displaying organization type in a disabled input field */}
-            <input type="text" placeholder={type} disabled />
+            <input type="text" placeholder={organization.industry} disabled />
           </div>
           <div className={styles.infoField}>
             <label>Total Events</label>
             {/* Displaying total events in a disabled input field */}
-            <input type="text" placeholder={events} disabled />
+            <input type="text" placeholder="5" disabled />
           </div>
         </section>
 

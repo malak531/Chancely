@@ -10,9 +10,19 @@
 
   display: flex;
   justify-content: center;
-  padding: 50px 26px;
   flex-direction: column;
-  max-width: 1400px; /* Wider on large screens */
+  max-width: 100%; /* Wider on large screens */
+  width: 100%; /* Allows full width on smaller screens */
+  margin: auto;
+}
+
+.eventCreationWrapper {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 26px;
+  max-width: 100%; /* Wider on large screens */
   width: 100%; /* Allows full width on smaller screens */
   margin: auto;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './OrganizationProfile.module.css';
 import NavItem from './NavItem';
 import OpportunityCard from './OpportunityCard';
@@ -6,11 +6,15 @@ import Header from '../../EditEventOrganizer/Header';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter';
 import EventsSection from '../../ChancelyHomepageNotLoggedIn/EventsSection';
 import OrganizationOppCard from './OrganizationOppCard';
-import AdminHeader from '../../AdminHeader/AdminHEader';
+import AdminHeader from '../../AdminHeader/AdminHeader';
 import { useAuth } from '../../AuthContext';
+import { useParams } from 'react-router-dom';
+
 
 const OrganizationProfile = () => {
   const {userRole}=useAuth;
+  const { id } = useParams();
+  const [organization, setOrganization] = useState(null);
   const navItems = [
     { text: 'Home', isActive: true },
     { text: 'Explore', isActive: false },
@@ -42,6 +46,26 @@ const OrganizationProfile = () => {
     },
   ];
 
+  useEffect(() => {
+    // Fetch opportunity data when component mounts
+    const fetchOrganization = async () => {
+      try {
+        const response = await fetch (`/api/organization/${id}`);
+        const data = await response.json();
+        console.log(data);
+        setOrganization(data);
+      } catch (error) {
+        console.error('Error fetching organization:', error);
+      }
+    };
+
+    fetchOrganization();
+  }, [id]);
+
+  if (!organization) {
+    return <div>Loading...</div>; // Display loading message until data is fetched
+  }
+
   const interestTags = [
     'Information Technology',
     'Engineering',
@@ -57,14 +81,14 @@ const OrganizationProfile = () => {
   <Header/>: <AdminHeader/>}
       <section className={styles.mainContent}>
         <div className={styles.profileHeader}>
-          <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/80253d05671816f31a5201bcaa88c6e8860998b68062a74620e7482f646d30a4?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Cover" className={styles.coverImage} />
+          <img src={organization.backgroundImage} alt="Cover" className={styles.coverImage} />
           <div className={styles.profileLogo}>
-            <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/169d94c56d8fe3e8b53a9672e5f6dcb7dc1875a725a90fc909a5b20d636e3a8d?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="Profile Logo" className={styles.logoImage} />
+            <img src={organization.logo} alt="Profile Logo" className={styles.logoImage} />
           </div>
         </div>
 
         <div className={styles.profileInfo}>
-          <h1 className={styles.organizationName}>King Fahd University of Petroleum & Minerals</h1>
+          <h1 className={styles.organizationName}>{organization.organizationName}</h1>
         </div>
 
         <div className={styles.overviewSection}>
@@ -73,7 +97,7 @@ const OrganizationProfile = () => {
               <div className={styles.overviewText}>
                 <h2>Overview</h2>
                 <p className={styles.description}>
-                  King Fahd University of Petroleum & Minerals (KFUPM) is a leading educational institution located in the heart of Dhahran, Saudi Arabia. Renowned for its world-class programs in engineering, science, and business, KFUPM empowers both undergraduate and graduate students to dream big and achieve their ambitions. The university is dedicated to fostering innovation, research, and leadership skills, preparing its students to thrive in a rapidly evolving global landscape. Through this platform, KFUPM offers a range of opportunities, workshops, and seminars designed to connect students, alumni, and professionals with enriching experiences and valuable networks.
+                  {organization.overview}
                 </p>
                 <h3 className={styles.fieldsOfInterest}>Fields of Interest</h3>
               </div>
@@ -83,17 +107,17 @@ const OrganizationProfile = () => {
                 <h3 className={styles.sidebarTitle}>About</h3>
                 <div className={styles.sidebarItem}>
                   <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/7170454516998f89084ff6bd3d49b67dba4d5aa4829ff7fec2b45943f966e55b?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="" className={styles.sidebarIcon} />
-                  <span className={styles.sidebarText}>Higher Education</span>
+                  <span className={styles.sidebarText}>{organization.industry}</span>
                 </div>
                 <div className={styles.divider} />
                 <div className={styles.sidebarSubItem}>
                   <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/e9b6b152edb267a589fc5de77611782d1f01f0d034c31aa92c642d4a3169f5fb?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="" className={styles.sidebarSubIcon} />
-                  <span className={styles.sidebarSubText}>Dhahran, Saudi Arabia</span>
+                  <span className={styles.sidebarSubText}>{organization.country}</span>
                 </div>
                 <div className={styles.divider} />
                 <div className={styles.sidebarLink}>
                   <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/a785e68d94d6a58f910e43ae910e4b44ab477f60ed6a1ddd118de00b9d639efa?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="" className={styles.linkIcon} />
-                  <a href="https://www.kfupm.edu.sa" className={styles.linkText}>www.kfupm.edu.sa</a>
+                  <a href={organization.organizationURL} className={styles.linkText}>{organization.organizationURL}</a>
                 </div>
                 <img src="https://cdn.builder.io/api/v1/image/assets/05d1d044449441c1b326e0ad9c21dcf1/c6991b3b2d6d9e7b8e4b99e6f4d2ee72fca25016109cecbea7c21ca6cdb9d65d?apiKey=05d1d044449441c1b326e0ad9c21dcf1&" alt="University Campus" className={styles.sidebarImage} />
               </div>
@@ -109,7 +133,7 @@ const OrganizationProfile = () => {
 
         <section className={styles.opportunitiesSection}>
           <h2>This Organization's Opportunities</h2>
-          <OrganizationOppCard/>
+          <OrganizationOppCard id1 = {id}/>
             
         </section>
       </section>

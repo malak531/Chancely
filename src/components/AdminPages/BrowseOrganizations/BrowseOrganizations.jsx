@@ -1,40 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './BrowseOrganizations.module.css';
 import OrganizationFilterSection from './OrganizationFilterSection.jsx';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
-import AdminHeader from '../../AdminHeader/AdminHEader.jsx';
 import { useNavigate } from 'react-router';
-
+import AdminHeader from '../../AdminHeader/AdminHeader.jsx';
 
 function BrowseOrganizations() {
   let navigate = useNavigate();
 
   // Define the state for organizations and search term
-  const [organizations] = useState([
-    {
-      id:1,
-      name: 'Aramco',
-      location: 'Saudi Arabia',
-      website: 'www.aramco.com',
-      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZnXDVW1Yz7NhfsVpJypVr8UrEycUs-BwdFA&s',
-    },
-    {
-      id:2,
-      name: 'Sabic',
-      location: 'Saudi Arabia',
-      website: 'www.sabic.com',
-      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLxCpkPJwuUNLFF9iShJerjzErTvIecghD0g&s',
-    },
-    // Add more organization objects as needed
-  ]);
+  const [organizations, setOrganizations] = useState([]);
 
   // Define the state for search term
   const [searchTerm, setSearchTerm] = useState('');
 
+  useEffect(() => {
+    const fetchOrganizations = async () => {
+        try {
+            const response = await fetch("/api/organizations", {
+            });
+            const data = await response.json();
+            setOrganizations(data);
+        } catch (error) {
+            console.error("Error fetching organizations:", error);            
+        }
+    };
+
+    fetchOrganizations();
+}, []);
+
+  // Handle search input changes
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);  // Update the search term as the user types
+  };
+
   // Filter organizations based on search term (name or location)
   const filteredOrganizations = organizations.filter((org) =>
-    org.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    org.location.toLowerCase().includes(searchTerm.toLowerCase())
+    org.organizationName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    org.country.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Handle the delete button click (navigate to delete route)
@@ -43,8 +46,8 @@ function BrowseOrganizations() {
   };
 
   // Handle the details button click (navigate to the organization profile)
-  const handleDetail = () => {
-    navigate(`/OrganizationProfile`);
+  const handleDetail = (id) => {
+    navigate(`/OrganizationProfile/${id}`);
   };
 
   return (
@@ -92,17 +95,17 @@ function BrowseOrganizations() {
         <section className={styles.cardsContainer}>
           {filteredOrganizations.length > 0 ? (
             // Render a card for each organization in the filtered list
-            filteredOrganizations.map((org, index) => (
-              <div key={index} className={styles.card}>
-                <img src={org.logo} alt={`${org.name} logo`} className={styles.cardLogo} />
-                <h2>{org.name}</h2>
-                <p>{org.location}</p>
-                <a href={`https://${org.website}`} target="_blank" rel="noopener noreferrer">{org.website}</a>
+            filteredOrganizations.map((organization) => (
+              <div key={organization._id} className={styles.card}>
+                <img src={organization.logo} alt={`${organization.organizationName} logo`} className={styles.cardLogo} />
+                <h2>{organization.organizationName}</h2>
+                <p>{organization.country}</p>
+                <a href={organization.organizationURL} target="_blank" rel="noopener noreferrer">{organization.organizationURL}</a>
                 <div className={styles.cardButtons}>
                   {/* Button to view organization details */}
-                  <button className={styles.detailsButton} onClick={handleDetail}>Details</button>
+                  <button className={styles.detailsButton} onClick={() => handleDetail(organization._id)}>Details</button>
                   {/* Button to delete the organization */}
-                  <button className={styles.deleteButton} onClick={() => handleDelete(org.id)}>Delete</button>
+                  <button className={styles.deleteButton} onClick={() => handleDelete(organization._id)}>Delete</button>
                 </div>
               </div>
             ))

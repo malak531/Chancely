@@ -55,7 +55,7 @@ function App() {
           <Route path="/createEvent" element={<EventCreation />} />  {/* Event creation for organization */}
           
           {/* Organization Profile Route - Displays organization profile */}
-          <Route path="/OrganizationProfile" element={<OrganizationProfile />} />
+          <Route path="/OrganizationProfile/:id" element={<OrganizationProfile />} />
 
           {/* Admin Routes */}
           <Route path="/PendingRequests" element={<PendingOrganizationDetails />} />  {/* Admin view of pending requests */}

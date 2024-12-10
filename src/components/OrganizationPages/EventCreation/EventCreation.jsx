@@ -122,8 +122,8 @@ const EventCreation = () => {
 
   return (
     <main className={styles.eventCreationContainer}>
+      {userRole === 'organization' ? <Header /> : <AdminHeader />}
       <div className={styles.eventCreationWrapper}>
-        {userRole === 'organization' ? <Header /> : <AdminHeader />}
         <form className={styles.formContainer} onSubmit={handleSubmit} method='POST' >
           <h1 className={styles.formTitle}>Create Opportunity Post</h1>
           <p className={styles.formDescription}>

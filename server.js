@@ -31,6 +31,21 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   
   const Opportunity = mongoose.model("Opportunity", OpportunitySchema, "opportunities");
 
+  const OrganizationSchema = new mongoose.Schema({
+    organizationName: { type: String },
+    country: { type: String },
+    email: { type: String },
+    industry: { type: String },
+    organizationPassword: { type: String },
+    organizationType: { type: String },
+    overview: { type: String },
+    logo: { type: String },
+    backgroundImage: {type: String},
+    organizationURL: { type: String },
+  }, { collection: 'organization' });
+  
+  const Organization = mongoose.model("Organization", OrganizationSchema, "organization");
+
   const AccountSchema = new mongoose.Schema({
     email: { type: String },
     password: { type: String },
@@ -65,6 +80,53 @@ app.get("/api/opportunities", async (req, res) => {
       res.status(500).send('Server error');
     }
   });
+
+  app.get("/api/organizations", async (req, res) => {
+    try {
+        const organizations = await Organization.find({}); // Fetch all organizations
+        res.json(organizations); // Send the full data to the frontend
+      } catch (error) {
+        console.error("Error fetching organizations:", error);
+        res.status(500).json({ error: "Failed to fetch organizations" });
+      }
+  });
+
+  app.get("/api/organization/:id", async (req, res) => {
+    try {
+        const organization = await Organization.findById(req.params.id);
+        res.json(organization);
+      } catch (err) {
+        res.status(500).send('Server error');
+      }
+  });
+  app.get("/api/organizationEvents/:id", async (req, res) => {
+    try {
+        const organization = await Organization.findById(req.params.id);
+        const events = await Opportunity.find()
+        res.json(organization);
+      } catch (err) {
+        res.status(500).send('Server error');
+      }
+  });
+
+  app.delete('/api/organization/:id', async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      // Delete organization from database
+      const result = await Organization.findByIdAndDelete(id); // MongoDB example
+  
+      if (!result) {
+        return res.status(404).send({ message: 'Organization not found' });
+      }
+  
+      res.status(200).send({ message: 'Organization deleted successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send({ message: 'Error deleting organization' });
+    }
+  });
+  
 
   app.post("/api/eventCreation", async (req, res) => {
     try {
