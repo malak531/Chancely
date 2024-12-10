@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const serverless = require("serverless-http");
 
 // const mongoURI = "mongodb+srv://vercel-admin-user:JKfvw12JgUJWkDL4@cluster0.rckvi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const mongoURI = "mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority";
@@ -62,7 +63,7 @@ const PORT = 3000;
 
 app.use(express.json());
 // Serve static files from the build directory
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 app.get("/api/opportunities", async (req, res) => {
     try {
@@ -211,12 +212,14 @@ app.get("/api/opportunities", async (req, res) => {
 });
 
 // Handle any requests by sending the React app's index.html
-app.get("/test", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:3001`);
+    console.log(`Server is running at http://localhost:3000`);
 });
+
+module.exports.handler = serverless(app);

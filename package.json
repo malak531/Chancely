@@ -15,14 +15,16 @@
     "mongoose": "^6.12.8",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "serverless-http": "^3.2.0"
   },
+  
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
     "vite": "^6.0.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node api/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
