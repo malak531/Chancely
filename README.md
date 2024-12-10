@@ -39,3 +39,6 @@ We envision a Middle East where education and professional opportunities are acc
 - You can see the pending organizations in the Pending Requests page and approve them or reject them.
 - You can delete organizations and see their details before confirming the delete.
 
+### Deployed website:
+- You can access the website through this link: https://chancely-swe363.vercel.app/
+- The test user accounts still can be used or you can make a new user to get the full expeirence.
