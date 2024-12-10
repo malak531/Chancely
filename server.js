@@ -58,7 +58,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 app.use(express.json());
 // Serve static files from the build directory
