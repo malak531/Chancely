@@ -11,8 +11,11 @@ import AdminHeader from '../../AdminHeader/AdminHeader';
 
 const BrowseOpportunities = () => {
   fetch('/api/opportunities')
-  .then(response => response.json())
-  .then(data => console.log(data))
+  .then(response => {
+    console.log('Response:', response);
+    return response.json();
+  })
+  .then(data => console.log('Data:', data))
   .catch(error => console.error('Error:', error));
 }
 
