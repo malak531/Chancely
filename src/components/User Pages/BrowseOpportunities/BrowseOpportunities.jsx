@@ -10,27 +10,34 @@ import AdminHeader from '../../AdminHeader/AdminHeader';
 
 
 const BrowseOpportunities = () => {
-    const { userRole } = useAuth();  // Get the user role from the authentication context
+  fetch('/api/opportunities')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+}
 
-  // Initial state for opportunities list with mock data
-  const [opportunities, setOpportunities] = useState([]);
 
-  const [searchTerm, setSearchTerm] = useState('');  // State to store the search term for filtering opportunities
+  //   const { userRole } = useAuth();  // Get the user role from the authentication context
 
-  useEffect(() => {
-    const fetchOpportunities = async () => {
-        try {
-            const response = await fetch("/api/opportunities", {
-            });
-            const data = await response.json();
-            setOpportunities(data);
-        } catch (error) {
-            console.error("Error fetching opportunities:", error);            
-        }
-    };
+  // // Initial state for opportunities list with mock data
+  // const [opportunities, setOpportunities] = useState([]);
 
-    fetchOpportunities();
-}, []);
+  // const [searchTerm, setSearchTerm] = useState('');  // State to store the search term for filtering opportunities
+
+  // useEffect(() => {
+  //   const fetchOpportunities = async () => {
+  //       try {
+  //           const response = await fetch("/api/opportunities", {
+  //           });
+  //           const data = await response.json();
+  //           setOpportunities(data);
+  //       } catch (error) {
+  //           console.error("Error fetching opportunities:", error);            
+  //       }
+  //   };
+
+  //   fetchOpportunities();
+//}, []);
 
   // Handle search input changes
   const handleSearch = (event) => {
