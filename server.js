@@ -115,9 +115,26 @@ app.get("/api/opportunities", async (req, res) => {
         res.status(500).json({ error: "Failed to fetch organizations" });
       }
   });
+  
   app.post("/api/login-success", async (req, res) => {
-    user = req.body.email;
-    res.status(200);
+    try {
+      const { email } = req.body;
+  
+      if (!email) {
+        return res.status(400).json({ error: "Email is required" });
+      }
+  
+      // Update the global user object (or session, database, etc.)
+      user = email;
+  
+      console.log("User object updated:", user);
+  
+      // Send a success response
+      res.status(200).json({ message: "Login successful", user });
+    } catch (error) {
+      console.error("Error handling login:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
   });
   
   app.get("/api/accounts", async (req, res) => {
