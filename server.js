@@ -66,7 +66,8 @@ app.use(express.static(path.join(__dirname, "build")));
 app.get("/api/opportunities", async (req, res) => {
     try {
         const opportunities = await Opportunity.find({}); // Fetch all opportunities
-        res.json(opportunities); // Send the full data to the frontend
+        // res.json(opportunities); // Send the full data to the frontend
+        res.json(opportunities.length)
       } catch (error) {
         console.error("Error fetching opportunities:", error);
         res.status(500).json({ error: "Failed to fetch opportunities" });
