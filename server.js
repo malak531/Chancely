@@ -211,7 +211,7 @@ app.get("/api/opportunities", async (req, res) => {
 });
 
 // Handle any requests by sending the React app's index.html
-app.get("/test", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
