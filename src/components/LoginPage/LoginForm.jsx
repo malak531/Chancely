@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './LoginForm.module.css';
 import InputField from './InputField';
 import RememberMe from './RememberMe';
@@ -8,17 +8,31 @@ import { useAuth } from '../AuthContext';
 
 const LoginForm = ({ onLoginSuccess }) => {
   // Sample accounts data (can be replaced with actual API calls)
-  const accounts = {
-    admin: { email: 'admin@domain.com', password: 'admin123', role: 'admin' },
-    organization: { email: 'org@domain.com', password: 'org123', role: 'organization' },
-    user: { email: 'user@domain.com', password: 'user123', role: 'user' },
-  };
+  const [accounts, setAccounts] = useState([]);
+
 
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    async function fetchAccounts() {
+      try {
+        const response = await fetch('/api/accounts'); // Adjust the API endpoint
+        if (response.ok) {
+          const data = await response.json();
+          setAccounts(data);
+        } else {
+          console.error('Failed to fetch accounts');
+        }
+      } catch (error) {
+        console.error('Error fetching accounts:', error);
+      }
+    }
+    fetchAccounts();
+  }, []);
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -38,7 +52,7 @@ const LoginForm = ({ onLoginSuccess }) => {
     }
 
     // Check credentials against predefined accounts
-    const account = Object.values(accounts).find(
+    const account = accounts.find(
       (account) => account.email === email && account.password === password
     );
 
@@ -46,12 +60,12 @@ const LoginForm = ({ onLoginSuccess }) => {
       setError('Invalid email or password.');
       return false;
     }
-    login(account.role); // Log in with the account's role
+    login(account.type); // Log in with the account's role
 
     // Redirect based on role
-    if (account.role === 'admin') {
+    if (account.type === 'admin') {
       navigate('/BrowseOpportunities');
-    } else if (account.role === 'organization') {
+    } else if (account.type === 'organization') {
       navigate('/BrowseOpportunities');
     } else {
       navigate('/BrowseOpportunities');

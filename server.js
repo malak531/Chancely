@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+const { type } = require("os");
 
 const mongoURI = "mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -31,17 +32,18 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   
   const Opportunity = mongoose.model("Opportunity", OpportunitySchema, "opportunities");
 
+
   const OrganizationSchema = new mongoose.Schema({
     organizationName: { type: String },
     country: { type: String },
     email: { type: String },
     industry: { type: String },
-    organizationPassword: { type: String },
     organizationType: { type: String },
     overview: { type: String },
     logo: { type: String },
-    backgroundImage: {type: String},
+    organizationPassword: { type: String },
     organizationURL: { type: String },
+    backgroundImage: {type: String},
     pending: {type: Boolean},
   }, { collection: 'organization' });
   
@@ -54,6 +56,18 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   }, { collection: 'account' });
 
   const Account = mongoose.model("Account", AccountSchema, "account");
+
+  const UserSchema = new mongoose.Schema({
+    firstName: { type: String },
+    lastName: { type: String },
+    email: { type: String },
+    password: { type: String },
+    fieldOfInterest: {type: Array},
+    type: { type: String },
+    
+  }, { collection: 'user' });
+
+  const User = mongoose.model("User", UserSchema, "user");
 
 
 const app = express();
@@ -89,6 +103,16 @@ app.get("/api/opportunities", async (req, res) => {
       } catch (error) {
         console.error("Error fetching organizations:", error);
         res.status(500).json({ error: "Failed to fetch organizations" });
+      }
+  });
+
+  app.get("/api/accounts", async (req, res) => {
+    try {
+        const accounts = await Account.find({}); // Fetch all organizations
+        res.json(accounts); // Send the full data to the frontend
+      } catch (error) {
+        console.error("Error fetching accounts:", error);
+        res.status(500).json({ error: "Failed to fetch accounts" });
       }
   });
   app.get("/api/organizationsPending", async (req, res) => {
@@ -196,18 +220,98 @@ app.get("/api/opportunities", async (req, res) => {
     }
   });
 
-
-
-  app.get("/loginemails", async (req,res)=>{
+  app.post("/api/userAccount", async (req, res) => {
     try {
-        const accounts = await Account.find({}); // Fetch all documents
-        res.json(accounts); // Return them in JSON format
-      } catch (error) {
-        console.error("Error fetching accounts:", error); // Log errors
-        res.status(500).json({ error: "Failed to fetch accounts" }); // Return a 500 response
-      }
 
-});
+        const firstName = req.body.firstName;
+        const lastName = req.body.lastName;
+        const email = req.body.email;
+        const password = req.body.password;
+        const fieldOfInterest = ["sports", "industry"];
+        const type = "user";
+
+        const newAccount = new Account({
+        email,
+        password,
+        type,
+
+      });
+
+      const newUser = new User({
+        firstName,
+        lastName,
+        email,
+        password,
+        fieldOfInterest,
+        type,
+
+      });
+   
+   
+      // Save the opportunity to the database
+      await newAccount.save();
+      await newUser.save();
+   
+      // Respond with the newly created opportunity
+      res.status(201).json(newAccount);
+    } catch (error) {
+      console.error("Error saving account:", error);
+      res.status(500).json({ error: "Failed to create account" });
+    }
+  });
+
+  app.post("/api/organizationAccount", async (req, res) => {
+    try {
+
+        const organizationName = req.body.orgName;
+        const country = req.body.country;
+        const email = req.body.email;
+        const industry = req.body.industry;
+        const organizationType = req.body.orgType;
+        const overview = req.body.overview;
+        const logo = "https://organization-logosss.s3.eu-north-1.amazonaws.com/websummitlogo.jpeg";
+        const organizationPassword = req.body.password
+        const organizationURL = req.body.url;
+        const backgroundImage = "https://chancelyevents.s3.eu-north-1.amazonaws.com/Web-Summit-Qatar.png" ;
+        const pending = false;
+        
+        const newOrganization = new Organization({
+        organizationName,
+        country,
+        email,
+        industry,
+        organizationType,
+        overview,
+        logo,
+        organizationPassword,
+        organizationURL,
+        backgroundImage,
+        pending,
+
+      });
+
+      const newAccount = new Account({
+        email: email,
+        password: organizationPassword,
+        type: "organization",
+
+      });
+   
+   
+      // Save the opportunity to the database
+      await newAccount.save();
+      await newOrganization.save();
+   
+      // Respond with the newly created opportunity
+      res.status(201).json(newAccount);
+    } catch (error) {
+      console.error("Error saving account:", error);
+      res.status(500).json({ error: "Failed to create account" });
+    }
+  });
+
+
+
 
 // Handle any requests by sending the React app's index.html
 app.get("*", (req, res) => {

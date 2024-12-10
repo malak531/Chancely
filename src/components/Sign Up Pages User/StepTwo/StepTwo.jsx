@@ -10,14 +10,15 @@ import { useNavigate } from 'react-router-dom';
 function StepTwo() {
   // State for form data
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName:'',
     email: '',
     password: '',
   });
 
   // State for error messages
   const [error, setError] = useState('');
-
+  const [message, setMessage] = useState("");
   // Using useNavigate for programmatic navigation
   const navigate = useNavigate();
 
@@ -32,10 +33,10 @@ function StepTwo() {
 
   // Validate form
   const validateForm = () => {
-    const { name, email, password } = formData;
+    const { firstName,lastName, email, password } = formData;
 
     // Check if fields are filled
-    if (!name || !email || !password) {
+    if (!firstName||!lastName || !email || !password) {
       setError('Please fill out all fields.');
       return false;
     }
@@ -58,10 +59,30 @@ function StepTwo() {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault(); // Prevent form default submission
     if (validateForm()) {
-      navigate('/Step3'); // Navigate to Step3 if validation passes
+      try {
+        console.log(formData);
+        const response = await fetch("/api/userAccount", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+   
+        if (response.ok) {
+          const result = await response.json();
+          setMessage(`Opportunity "${result.email}" has been created successfully!`);
+          navigate('/Step3'); // Navigate after successful submission
+        } else {
+          setMessage("Failed to create the account. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setMessage("An error occurred while creating the account.");
+      } // Navigate to Step3 if validation passes
     }
   };
 
@@ -86,11 +107,19 @@ function StepTwo() {
 
           <form className={styles.registrationForm} onSubmit={handleSubmit}>
             <InputField
-              label="Your Name*"
+              label="First Name*"
               type="text"
               placeholder="Enter name"
-              id="name"
-              value={formData.name}
+              id="firstName"
+              value={formData.firstName}
+              onChange={handleInputChange}
+            />
+            <InputField
+              label="Last Name*"
+              type="text"
+              placeholder="Enter name"
+              id="lastName"
+              value={formData.lastName}
               onChange={handleInputChange}
             />
             <InputField

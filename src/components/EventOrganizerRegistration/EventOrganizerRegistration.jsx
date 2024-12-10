@@ -8,7 +8,7 @@ import { useAuth } from '../AuthContext'; // Importing useAuth hook for authenti
 const EventOrganizerRegistration = () => {
   const navigate = useNavigate(); // Initializing the navigate function for routing
   const { login } = useAuth(); // Getting login function from the auth context
-  
+  const [message, setMessage] = useState("");
   const [logo, setLogo] = useState(null); // State to manage logo file upload
   const [formData, setFormData] = useState({ // State to store form data
     orgName: '',
@@ -82,13 +82,33 @@ const EventOrganizerRegistration = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
 
     // Only submit if there are no errors
     if (Object.keys(errors).length === 0) {
       // If no errors, proceed with registration
-      handleSuccessRegistration();
+      try {
+        console.log(formData);
+        const response = await fetch("/api/organizationAccount", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+   
+        if (response.ok) {
+          const result = await response.json();
+          setMessage(`Account "${result.email}" has been created successfully!`);
+          handleSuccessRegistration(); // Navigate after successful submission
+        } else {
+          setMessage("Failed to create the account. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        setMessage("An error occurred while creating the account.");
+      } // Navigate to Step3 if validation passes
     }
   };
 
