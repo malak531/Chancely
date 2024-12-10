@@ -23,6 +23,7 @@ const BrowseOpportunities = () => {
             const response = await fetch("/api/opportunities", {
             });
             const data = await response.json();
+            console.log(data);
             setOpportunities(data);
         } catch (error) {
             console.error("Error fetching opportunities:", error);            
