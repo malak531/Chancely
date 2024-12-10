@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 
 
 const OrganizationProfile = () => {
-  const {userRole}=useAuth;
+  const { userRole } = useAuth();
   const { id } = useParams();
   const [organization, setOrganization] = useState(null);
   const navItems = [

@@ -1,30 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './PendingOrganizationDetails.module.css';
 import AdminHeader from '../../AdminHeader/AdminHeader';
 
 const PendingOrganizationDetails = () => {
   // Initializing the organization data state
-  const [organizationData] = useState({
-    name: 'KFUPM',
-    location: 'Saudi Arabia',
-    website: 'www.kfupm.edu.sa',
-    size: '12k',
-    type: 'University',
-    totalEvents: '17',
-    description: "King Fahd University of Petroleum and Minerals is a nonprofit research university in Dhahran, Eastern Province, Saudi Arabia. Established in 1963 by King Saud bin Abdulalziz as the College of Petroleum and Minerals, it is ranked among the most prestigious academic institutions in Saudi Arabia.",
-    imageUrl: '/Images/kfupm.png'
-  });
+  const [organizations, setOrganizations] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0); 
 
+  useEffect(() => {
+    const fetchOrganizations = async () => {
+        try {
+            const response = await fetch("/api/organizationsPending", {
+            });
+            const data = await response.json();
+            setOrganizations(data);
+        } catch (error) {
+            console.error("Error fetching organizations:", error);            
+        }
+    };
+
+    fetchOrganizations();
+}, []);
+  
   // Function to handle the approval action
-  const handleApprove = () => {
-    console.log('Organization approved');
+  const handleApprove = async () => {
+    const approvedOrganization = organizations[currentIndex];
+
+    // Send the updated organization with pending set to false
+    try {
+      const response = await fetch(`/api/organizations/${approvedOrganization._id}`, {
+        method: 'POST',  // or 'POST' if that's how your API is set up
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...approvedOrganization,
+          pending: false,  // Mark the organization as approved
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Organization approved and status updated');
+        // Move to the next organization after approval
+        if (currentIndex < organizations.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        }
+      } else {
+        console.error('Error updating organization status');
+      }
+    } catch (error) {
+      console.error('Error approving organization:', error);
+    }
   };
+
 
   // Function to handle the rejection action
   const handleReject = () => {
     console.log('Organization rejected');
+    if (currentIndex < organizations.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
-
+  const organizationData = organizations[currentIndex] || {};
   return (
     <div className={styles.pageContainer}>
       {/* Header Section */}
@@ -40,7 +77,7 @@ const PendingOrganizationDetails = () => {
         <div className={styles.mainContent}>
           {/* Left Section: Organization Image */}
           <div className={styles.imageSection}>
-            <img src={organizationData.imageUrl} alt="Organization" className={styles.organizationImage} />
+            <img src={organizationData.logo} alt="Organization" className={styles.organizationImage} />
             <label className={styles.imageLabel}>Organization Image</label>
           </div>
 
@@ -48,7 +85,7 @@ const PendingOrganizationDetails = () => {
           <div className={styles.overviewSection}>
             <label className={styles.label}>Overview</label>
             {/* Displaying description in a disabled field */}
-            <div className={`${styles.textarea} ${styles.disabledField}`}>{organizationData.description}</div>
+            <div className={`${styles.textarea} ${styles.disabledField}`}>{organizationData.overview}</div>
           </div>
         </div>
 
@@ -61,12 +98,12 @@ const PendingOrganizationDetails = () => {
             <div className={styles.formGroup}>
               <label>Organization Name</label>
               {/* Displaying organization name in a disabled field */}
-              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.name}</div>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.organizationName}</div>
             </div>
             <div className={styles.formGroup}>
               <label>Organization Website</label>
               {/* Displaying organization website in a disabled field */}
-              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.website}</div>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.organizationUrl}</div>
             </div>
           </div>
 
@@ -75,12 +112,12 @@ const PendingOrganizationDetails = () => {
             <div className={styles.formGroup}>
               <label>Organization Location</label>
               {/* Displaying organization location in a disabled field */}
-              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.location}</div>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.country}</div>
             </div>
             <div className={styles.formGroup}>
               <label>Organization Size</label>
               {/* Displaying organization size in a disabled field */}
-              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.size}</div>
+              <div className={`${styles.input} ${styles.disabledField}`}>10k</div>
             </div>
           </div>
 
@@ -89,12 +126,12 @@ const PendingOrganizationDetails = () => {
             <div className={styles.formGroup}>
               <label>Organization Type</label>
               {/* Displaying organization type in a disabled field */}
-              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.type}</div>
+              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.organizationType}</div>
             </div>
             <div className={styles.formGroup}>
               <label>Total Events</label>
               {/* Displaying total events in a disabled field */}
-              <div className={`${styles.input} ${styles.disabledField}`}>{organizationData.totalEvents}</div>
+              <div className={`${styles.input} ${styles.disabledField}`}>5</div>
             </div>
           </div>
         </div>

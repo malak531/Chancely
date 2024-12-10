@@ -44,6 +44,26 @@ const LoginForm = ({ onLoginSuccess }) => {
     }
   };
 
+  const sendEmailToServer = async (email) => {
+    try {
+      const response = await fetch('/api/login-success', { // Adjust the endpoint as per your backend
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }), // Send the email as part of the request body
+      });
+  
+      if (response.ok) {
+        console.log('Email sent to server successfully!');
+      } else {
+        console.error('Failed to send email to server');
+      }
+    } catch (error) {
+      console.error('Error sending email to server:', error);
+    }
+  };
+  
   // Validate login credentials
   const validateLogin = () => {
     if (!email || !password) {
@@ -61,7 +81,7 @@ const LoginForm = ({ onLoginSuccess }) => {
       return false;
     }
     login(account.type); // Log in with the account's role
-
+    sendEmailToServer(email); 
     // Redirect based on role
     if (account.type === 'admin') {
       navigate('/BrowseOpportunities');

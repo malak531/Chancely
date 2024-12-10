@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const { type } = require("os");
 
 const mongoURI = "mongodb+srv://s202156350:Zjmt2002@cluster0.rckvi.mongodb.net/chancely?retryWrites=true&w=majority";
+let user ='websummit@gmail.com'; 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to MongoDB successfully!");
@@ -98,14 +99,27 @@ app.get("/api/opportunities", async (req, res) => {
 
   app.get("/api/organizations", async (req, res) => {
     try {
-        const organizations = await Organization.find({pending: true}); // Fetch all organizations
+        const organizations = await Organization.find({pending: false}); // Fetch all organizations
         res.json(organizations); // Send the full data to the frontend
       } catch (error) {
         console.error("Error fetching organizations:", error);
         res.status(500).json({ error: "Failed to fetch organizations" });
       }
   });
-
+  app.get("/api/organizationWithEmail", async (req, res) => {
+    try {
+        console.log("hello", user);
+        const organizations = await Organization.find({email: user}); // Fetch all organizations
+        res.json(organizations); // Send the full data to the frontend
+      } catch (error) {
+        console.error("Error fetching organizations:", error);
+        res.status(500).json({ error: "Failed to fetch organizations" });
+      }
+  });
+  app.post("/api/login-success", async (req, res) => {
+    user = req.body.email;
+  });
+  
   app.get("/api/accounts", async (req, res) => {
     try {
         const accounts = await Account.find({}); // Fetch all organizations
@@ -117,7 +131,7 @@ app.get("/api/opportunities", async (req, res) => {
   });
   app.get("/api/organizationsPending", async (req, res) => {
     try {
-        const organizations = await Organization.find({pending: false}); // Fetch all organizations
+        const organizations = await Organization.find({pending: true}); // Fetch all organizations
         res.json(organizations); // Send the full data to the frontend
       } catch (error) {
         console.error("Error fetching organizations:", error);
@@ -169,12 +183,35 @@ app.get("/api/opportunities", async (req, res) => {
       res.status(500).send({ message: 'Error deleting organization' });
     }
   });
+
+  app.post('/api/organizations/:id', async (req, res) => {
+    const { id } = req.params;  // Extract the organization ID from the URL parameters
+    const { pending } = req.body.pending; 
+    try {
+      // Find the organization by its ID and update its 'pending' status
+      const updatedOrganization = await Organization.findByIdAndUpdate(
+        id, 
+        { pending: false },  // Update the 'pending' field
+ // Return the updated document
+      );
+  
+      if (!updatedOrganization) {
+        return res.status(404).json({ message: 'Organization not found' });
+      }
+  
+      // Respond with the updated organization
+      res.status(200).json(updatedOrganization);
+    } catch (error) {
+      console.error('Error updating organization:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
   
 
   app.post("/api/eventCreation", async (req, res) => {
     try {
 
-        const Picture = req.body.eventImage;
+        const Picture = "https://organization-logosss.s3.eu-north-1.amazonaws.com/websummitlogo.jpeg";
         const OpportunityName = req.body.eventTitle;
         const Type = req.body.eventType;
         const Country = req.body.eventLocation;
@@ -187,9 +224,6 @@ app.get("/api/opportunities", async (req, res) => {
         const Website = req.body.officialWebsite;
         const Deadline = req.body.Deadline;
         const City = req.body.eventCity;
-
-     
-   
       // Create a new Opportunity document
       const newOpportunity = new Opportunity({
         Field: Type,
@@ -222,14 +256,12 @@ app.get("/api/opportunities", async (req, res) => {
 
   app.post("/api/userAccount", async (req, res) => {
     try {
-
         const firstName = req.body.firstName;
         const lastName = req.body.lastName;
         const email = req.body.email;
         const password = req.body.password;
         const fieldOfInterest = ["sports", "industry"];
         const type = "user";
-
         const newAccount = new Account({
         email,
         password,
@@ -246,7 +278,8 @@ app.get("/api/opportunities", async (req, res) => {
         type,
 
       });
-   
+
+      user = email; 
    
       // Save the opportunity to the database
       await newAccount.save();
@@ -273,7 +306,7 @@ app.get("/api/opportunities", async (req, res) => {
         const organizationPassword = req.body.password
         const organizationURL = req.body.url;
         const backgroundImage = "https://chancelyevents.s3.eu-north-1.amazonaws.com/Web-Summit-Qatar.png" ;
-        const pending = false;
+        const pending = true;
         
         const newOrganization = new Organization({
         organizationName,
@@ -297,7 +330,7 @@ app.get("/api/opportunities", async (req, res) => {
 
       });
    
-   
+    user = email; 
       // Save the opportunity to the database
       await newAccount.save();
       await newOrganization.save();
