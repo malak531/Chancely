@@ -13,8 +13,7 @@ import TeamSection from './TeamSection';
 import { useAuth } from '../AuthContext';
 import HeaderLoggedOut from '../HeaderLoggedOut/HeaderLoggedOut';
 import Header from '../EditEventOrganizer/Header';
-import AdminHeader from '../AdminHeader/AdminHEader';
-
+import AdminHeader from '../AdminHeader/AdminHeader';
 const AboutUs = () => {
     // Get the login status and user role from AuthContext
     const { isLoggedIn } = useAuth();

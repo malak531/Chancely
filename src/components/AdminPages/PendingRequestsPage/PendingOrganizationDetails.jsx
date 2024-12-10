@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './PendingOrganizationDetails.module.css';
-import AdminHeader from '../../AdminHeader/AdminHEader';
+import AdminHeader from '../../AdminHeader/AdminHeader';
 
 const PendingOrganizationDetails = () => {
   // Initializing the organization data state

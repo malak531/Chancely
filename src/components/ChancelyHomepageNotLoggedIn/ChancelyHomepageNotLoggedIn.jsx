@@ -10,7 +10,8 @@ import ContactInfoFooter from '../ContactInfoFooter/ContactInfoFooter';
 import { useAuth } from '../AuthContext';
 import HeaderLoggedIn from '../HeaderLoggedIn/HeaderLoggedInUser';
 import Header from '../EditEventOrganizer/Header';
-import AdminHeader from '../AdminHeader/AdminHEader'; 
+import AdminHeader from '../AdminHeader/AdminHeader';
+
 const ChancelyHomePageNotLoggedIn = () => {
   const { isLoggedIn } = useAuth();
   const { userRole } = useAuth();

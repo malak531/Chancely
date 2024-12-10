@@ -4,7 +4,6 @@ import OrganizationFilterSection from './OrganizationFilterSection.jsx';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
 import { useNavigate } from 'react-router';
 import AdminHeader from '../../AdminHeader/AdminHeader.jsx';
-
 function BrowseOrganizations() {
   let navigate = useNavigate();
 
