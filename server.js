@@ -219,3 +219,5 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:3001`);
 });
+
+module.exports = app;
