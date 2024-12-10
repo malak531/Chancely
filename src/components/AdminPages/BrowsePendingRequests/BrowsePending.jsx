@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './BrowsePending.module.css';
 import ContactInfoFooter from '../../ContactInfoFooter/ContactInfoFooter.jsx';
-import AdminHeader from '../../AdminHeader/AdminHEader.jsx';
+import AdminHeader from '../../AdminHeader/AdminHeader.jsx';
 
 function BrowsePending() {
   // Initializing state for organizations data
