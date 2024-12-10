@@ -10,13 +10,15 @@ import AdminHeader from '../../AdminHeader/AdminHeader';
 
 
 const BrowseOpportunities = () => {
-  fetch('/api/opportunities')
-  .then(response => {
-    console.log('Response:', response);
-    return response.json();
-  })
-  .then(data => console.log('Data:', data))
-  .catch(error => console.error('Error:', error));
+  app.get('/api/opportunities', async (req, res) => {
+    try {
+      const opportunities = await Opportunity.find(); // Example query
+      res.json(opportunities);
+    } catch (error) {
+      console.error('Database Error:', error);
+      res.status(500).json({ error: 'Database query failed' });
+    }
+  });
 }
 
 
