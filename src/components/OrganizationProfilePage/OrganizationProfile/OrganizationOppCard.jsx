@@ -6,42 +6,55 @@ import { useAuth } from '../../AuthContext';
 
 const OrganizationOppCard = ({ id1 }) => {
     const navigate=useNavigate();
-    image= "https://cdn.builder.io/api/v1/image/assets/TEMP/9dcb55677e48d0699869861eb52c43ecc0f67505f072c86df146af707e1a2ec1?placeholderIfAbsent=true&apiKey=55c24d5bc077452fbbc72abbf22e994a";
-    title= "Web Summit Qatar";
-    date="February 23-26, 2025";
-    location= "Doha, Qatar";
-    isPopular= true;
-    const [organization, setOrganization] = useState(null);
+    
+    const [events, setEvents] = useState([]);
     useEffect(() => {
       // Fetch opportunity data when component mounts
-      const fetchOrganization = async () => {
+      const fetchEvents = async () => {
         try {
-          const response = await fetch (`/api/organization/${id}`);
+          const response = await fetch (`/api/organizationEvents/${id1}`);
           const data = await response.json();
           console.log(data);
-          setOrganization(data);
+          setEvents(data.events || []);
         } catch (error) {
           console.error('Error fetching organization:', error);
         }
       };
   
-      fetchOrganization();
-    }, [id]);
+      fetchEvents();
+    }, [id1]);
   
-    if (!organization) {
+    if (!events) {
       return <div>Loading...</div>; // Display loading message until data is fetched
     }
+
+    if (!events || events.length === 0) {
+      return <div>No events available for this organization.</div>; // Handle empty events
+    }
+  
     
   return (
-    <article className={styles.eventCard}>
-      <div className={styles.imageWrapper}>
-        <img src={image} alt={`Event: ${title}`} className={styles.eventImage} />
-      </div>
-      <h3 className={styles.eventTitle}>{title}</h3>
-      <p className={styles.eventDate}>{date}</p>
-      <p className={styles.eventLocation}>{location}</p>
-      <Link to="/OppInfo/1" className={styles.viewDetails} >View Details</Link>
-    </article>
+    <div className={styles.eventsContainer}>
+    {events.map((event) => (
+      <article key={event._id} className={styles.eventCard}>
+        <div className={styles.imageWrapper}>
+          <img
+            src={event.Picture || "default-image-url"} // Use event's picture or fallback to a default image
+            alt={`Event: ${event.OpportunityName}`}
+            className={styles.eventImage}
+          />
+        </div>
+        <h3 className={styles.eventTitle}>{event.OpportunityName}</h3>
+        <p className={styles.eventDate}>{event.EventDate}</p>
+        <p className={styles.eventLocation}>
+          {event.City}, {event.Country}
+        </p>
+        <Link to={`/OppInfo/${event._id}`} className={styles.viewDetails}>
+          View Details
+        </Link>
+      </article>
+    ))}
+  </div>
   );
 };
 

@@ -42,6 +42,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     logo: { type: String },
     backgroundImage: {type: String},
     organizationURL: { type: String },
+    pending: {type: Boolean},
   }, { collection: 'organization' });
   
   const Organization = mongoose.model("Organization", OrganizationSchema, "organization");
@@ -83,7 +84,16 @@ app.get("/api/opportunities", async (req, res) => {
 
   app.get("/api/organizations", async (req, res) => {
     try {
-        const organizations = await Organization.find({}); // Fetch all organizations
+        const organizations = await Organization.find({pending: true}); // Fetch all organizations
+        res.json(organizations); // Send the full data to the frontend
+      } catch (error) {
+        console.error("Error fetching organizations:", error);
+        res.status(500).json({ error: "Failed to fetch organizations" });
+      }
+  });
+  app.get("/api/organizationsPending", async (req, res) => {
+    try {
+        const organizations = await Organization.find({pending: false}); // Fetch all organizations
         res.json(organizations); // Send the full data to the frontend
       } catch (error) {
         console.error("Error fetching organizations:", error);
@@ -101,11 +111,20 @@ app.get("/api/opportunities", async (req, res) => {
   });
   app.get("/api/organizationEvents/:id", async (req, res) => {
     try {
+        // Fetch the organization by its ID
         const organization = await Organization.findById(req.params.id);
-        const events = await Opportunity.find()
-        res.json(organization);
+    
+        if (!organization) {
+          return res.status(404).send({ message: "Organization not found" });
+        }
+    
+        // Find all opportunities associated with this organization's name
+        const events = await Opportunity.find({ Organization: organization.organizationName });
+    
+        res.json({events});
       } catch (err) {
-        res.status(500).send('Server error');
+        console.error("Error fetching organization events:", err);
+        res.status(500).send({ message: "Server error" });
       }
   });
 
